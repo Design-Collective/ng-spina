@@ -48,8 +48,6 @@ or
 ### Add HTML Partial using Jade
 - `$ yo gulp-angular-subtask:partial pages --html-type=jade`
 
-Use the generator to create controllers 
-- `$ yo gulp-angular-subtask:controller user --script-type=coffee`
 
 
 ## Yo Options
