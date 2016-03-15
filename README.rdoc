@@ -46,7 +46,7 @@ NPM Components
 Bower Components
 `bower install`
 
-## Gulp Tasks
+## Avail Gulp Tasks
 `cd client`
 
 It's time to use Gulp tasks:
