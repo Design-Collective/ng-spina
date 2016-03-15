@@ -31,6 +31,8 @@ Rails is running correctly.
 
 The backend server should come up on port 3000.
 
+## Yo Options
+`$ yo gulp-angular --help`
 ## Setup
 ### Bundle
 From the root of the app `bundle install`
