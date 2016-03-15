@@ -35,21 +35,21 @@ The backend server should come up on port 3000.
 
 ## Generating Controllers (semi experimental)
 In order to stay organized, lets use the following
-`npm install -g generator-gulp-angular-subtask`
+`$ npm install -g generator-gulp-angular-subtask`
 or
-`npm install -g gulp-angular-subtask`
+`$ npm install -g gulp-angular-subtask`
 
 ### Add a controller
-`yo gulp-angular-subtask:controller pages --script-type=coffee`
+`$yo gulp-angular-subtask:controller pages --script-type=coffee`
 
 ### Add Styelsheet SCSS
-yo gulp-angular-subtask:style pages --style-type="scss"
+`$ yo gulp-angular-subtask:style pages --style-type="scss"`
 
 ### Add HTML Partial using Jade
-yo gulp-angular-subtask:partial pages --html-type=jade
+`yo gulp-angular-subtask:partial pages --html-type=jade`
 
 Use the generator to create controllers 
-yo gulp-angular-subtask:controller user --script-type=coffee
+`$ yo gulp-angular-subtask:controller user --script-type=coffee`
 
 
 ## Yo Options
@@ -59,18 +59,18 @@ yo gulp-angular-subtask:controller user --script-type=coffee
 From the root of the app `bundle install`
 
 ###  Database creation
-`rake db:create`
+`$ rake db:create`
 ### Add Seed Data
-`rake db:seed`
+`$ rake db:seed`
 
 ### Client
 NPM Components
-`npm install`
+`$ npm install`
 Bower Components
-`bower install`
+`$ bower install`
 
 ## Avail Gulp Tasks
-`cd client`
+`$ cd client`
 
 It's time to use Gulp tasks:
 - `$ gulp` to build an optimized version of your application in folder dist
