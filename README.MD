@@ -1,4 +1,4 @@
-== README
+# Design Collective
 
 ## Ruby version
 - ruby "2.2.2"
