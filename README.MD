@@ -23,6 +23,8 @@ Create a virtual host or user powder to run collective.dev on port 3619
 
 ### API Endpoints
 http://collective.dev/api/pages
+### Also uses Resource Factory via Angular Rails Resources
+https://github.com/FineLinePrototyping/angularjs-rails-resource
 
 The front-end server should come up on port 3619
 
