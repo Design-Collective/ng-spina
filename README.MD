@@ -5,15 +5,15 @@ ruby "2.2.2"
 
 ## System dependencies 
 
-Rails: '4.1.9'
-Rails API: 'rails-api'
-DB: Postgres
+- Rails: '4.1.9'
+- Rails API: 'rails-api'
+- DB: Postgres
 
 ## Client Dependancies 
-https://github.com/Swiip/generator-gulp-angular
+- https://github.com/Swiip/generator-gulp-angular
 
 ## Run the App 
-`$ gulp serve:full-stack`
+- `$ gulp serve:full-stack`
 
 This should run your rails app and the front end app together and open the browser sync instance proxied so that the back end application data can be retrieved with the same urls. 
 
@@ -35,42 +35,43 @@ The backend server should come up on port 3000.
 
 ## Generating Controllers (semi experimental)
 In order to stay organized, lets use the following
-`$ npm install -g generator-gulp-angular-subtask`
+- `$ npm install -g generator-gulp-angular-subtask`
 or
-`$ npm install -g gulp-angular-subtask`
+- `$ npm install -g gulp-angular-subtask`
 
 ### Add a controller
-`$yo gulp-angular-subtask:controller pages --script-type=coffee`
+- `$yo gulp-angular-subtask:controller pages --script-type=coffee`
 
 ### Add Styelsheet SCSS
-`$ yo gulp-angular-subtask:style pages --style-type="scss"`
+- `$ yo gulp-angular-subtask:style pages --style-type="scss"`
 
 ### Add HTML Partial using Jade
-`yo gulp-angular-subtask:partial pages --html-type=jade`
+- `$ yo gulp-angular-subtask:partial pages --html-type=jade`
 
 Use the generator to create controllers 
-`$ yo gulp-angular-subtask:controller user --script-type=coffee`
+- `$ yo gulp-angular-subtask:controller user --script-type=coffee`
 
 
 ## Yo Options
 `$ yo gulp-angular --help`
 ## Setup
 ### Bundle
-From the root of the app `bundle install`
+From the root of the app 
+- `bundle install`
 
 ###  Database creation
-`$ rake db:create`
+- `$ rake db:create`
 ### Add Seed Data
-`$ rake db:seed`
+- `$ rake db:seed`
 
 ### Client
 NPM Components
-`$ npm install`
+- `$ npm install`
 Bower Components
-`$ bower install`
+- `$ bower install`
 
 ## Avail Gulp Tasks
-`$ cd client`
+- `$ cd client`
 
 It's time to use Gulp tasks:
 - `$ gulp` to build an optimized version of your application in folder dist
