@@ -33,6 +33,25 @@ Rails is running correctly.
 
 The backend server should come up on port 3000.
 
+## Generating Controllers (semi experimental)
+In order to stay organized, lets use the following
+`npm install -g generator-gulp-angular-subtask`
+or
+`npm install -g gulp-angular-subtask`
+
+### Add a controller
+`yo gulp-angular-subtask:controller pages --script-type=coffee`
+
+### Add Styelsheet SCSS
+yo gulp-angular-subtask:style pages --style-type="scss"
+
+### Add HTML Partial using Jade
+yo gulp-angular-subtask:partial pages --html-type=jade
+
+Use the generator to create controllers 
+yo gulp-angular-subtask:controller user --script-type=coffee
+
+
 ## Yo Options
 `$ yo gulp-angular --help`
 ## Setup
