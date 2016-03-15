@@ -26,6 +26,11 @@ function browserSyncInit(baseDir, browser) {
     routes: routes
   };
 
+  var middlewareSettings = {
+    target: 'http://localhost:3000', 
+    changeOrigin: true 
+  }
+
   /*
    * You can add a proxy to your backend by uncommenting the line below.
    * You just have to configure a context which will we redirected and the target url.
@@ -34,6 +39,15 @@ function browserSyncInit(baseDir, browser) {
    * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.9.0/README.md
    */
   // server.middleware = proxyMiddleware('/users', {target: 'http://jsonplaceholder.typicode.com', changeOrigin: true});
+
+  server.middleware = proxyMiddleware('/api', middlewareSettings );
+
+  browserSync.instance = browserSync.init({
+    startPath: '/',
+    port: 9000,
+    server: server,
+    browser: browser
+  });
 
   browserSync.instance = browserSync.init({
     startPath: '/',

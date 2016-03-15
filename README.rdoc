@@ -12,6 +12,15 @@ DB: Postgres
 ## Client Dependancies 
 https://github.com/Swiip/generator-gulp-angular
 
+## Run the App 
+`$ gulp serve:full-stack`
+
+The front-end server should come up on port 9000 instead of 3619.
+If you navigate to http://localhost:9000/api/foo, you should get a Rails page that says No route matches [GET] "/api/foo", which means
+Rails is running on port 3619.
+
+Local Dev Host should be set by all devs to `collective.dev`
+
 ### Angular: 1.4.x (stable)
 - Angular Modules: angular-animate.js (enable animation features), angular-cookies.js (handle cookie management), angular-touch.js (for mobile development), angular-sanitize.js (to securely
  parse and manipulate HTML), angular-messages.js (enhanced support for displaying messages within templates), angular-aria.js (suppor
