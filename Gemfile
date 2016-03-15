@@ -16,6 +16,9 @@ gem 'paranoia', '~> 2.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.4', '>= 2.4.1'
 
+# Image Processing 
+gem "paperclip", "~> 4.3"
+
 # Assets and logging for heroku
 gem 'rails_12factor', group: :staging
 

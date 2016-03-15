@@ -14,3 +14,13 @@ Page.create([
   { title: 'Portfolio' },
   { title: 'Contact' },
 ])
+
+Member.create([
+  { title: 'Rodrigo Garcia' },
+  { title: 'Audrianna Talavera' },
+  { title: 'Klemen Novak' },
+  { title: 'Michael Domingo' },
+  { title: 'Ruben Movsesyan' },
+  { title: 'Bogdan O' },
+  { title: 'Andrii Ryepin' },
+])
