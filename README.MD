@@ -68,7 +68,8 @@ Go to http://collective.dev:3001/ and see configs and sync data
 - Angular Modules: angular-animate.js (enable animation features), angular-cookies.js (handle cookie management), angular-touch.js (for mobile development), angular-sanitize.js (to securely
  parse and manipulate HTML), angular-messages.js (enhanced support for displaying messages within templates), angular-aria.js (suppor
 t for common ARIA attributes)
-### Other Specs
+
+### Processors and Frameworks
 - jQuery: jQuery 2.x (new version, lighter, IE9+)
 - REST resource library: ngResource, the official support for RESTful services
 - Router:  UI Router, flexible routing with nested views
