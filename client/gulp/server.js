@@ -10,6 +10,8 @@ var browserSyncSpa = require('browser-sync-spa');
 var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
+//var exec = require('gulp-exec');
+var exec = require('child_process').exec;
 
 function browserSyncInit(baseDir, browser) {
   browser = browser === undefined ? 'default' : browser;
@@ -44,13 +46,9 @@ function browserSyncInit(baseDir, browser) {
 
   browserSync.instance = browserSync.init({
     startPath: '/',
-    port: 9000,
-    server: server,
-    browser: browser
-  });
-
-  browserSync.instance = browserSync.init({
-    startPath: '/',
+    port: 3619,
+    open: 'external',
+    host: 'collective.dev',
     server: server,
     browser: browser
   });
@@ -74,4 +72,10 @@ gulp.task('serve:e2e', ['inject'], function () {
 
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
+});
+
+gulp.task('serve:full-stack', ['rails', 'serve']);
+
+gulp.task('rails', function() {
+  exec('cd .. && rails s -b 0.0.0.0 -p 3000');
 });

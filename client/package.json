@@ -51,7 +51,8 @@
     "http-proxy-middleware": "~0.12.0",
     "chalk": "~1.1.1",
     "uglify-save-license": "~0.4.1",
-    "wrench": "~1.5.8"
+    "wrench": "~1.5.8",
+    "gulp-exec": "~2.1.2"
   },
   "engines": {
     "node": ">=0.10.0"
