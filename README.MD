@@ -31,6 +31,8 @@ Rails is running correctly.
 
 The backend server should come up on port 3000.
 
+## Yo Options
+`$ yo gulp-angular --help`
 ## Setup
 ### Bundle
 From the root of the app `bundle install`
@@ -68,6 +70,8 @@ Go to http://collective.dev:3001/ and see configs and sync data
 - Angular Modules: angular-animate.js (enable animation features), angular-cookies.js (handle cookie management), angular-touch.js (for mobile development), angular-sanitize.js (to securely
  parse and manipulate HTML), angular-messages.js (enhanced support for displaying messages within templates), angular-aria.js (suppor
 t for common ARIA attributes)
+
+### Processors and Frameworks
 - jQuery: jQuery 2.x (new version, lighter, IE9+)
 - REST resource library: ngResource, the official support for RESTful services
 - Router:  UI Router, flexible routing with nested views
