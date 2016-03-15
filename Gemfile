@@ -12,8 +12,9 @@ gem 'pg'
 
 # https://github.com/radar/paranoia
 gem 'paranoia', '~> 2.0'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.4', '>= 2.4.1'
 
 # Assets and logging for heroku
 gem 'rails_12factor', group: :staging
