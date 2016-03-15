@@ -1,7 +1,7 @@
 == README
 
 ## Ruby version
-ruby "2.2.2"
+- ruby "2.2.2"
 
 ## System dependencies 
 
@@ -61,14 +61,15 @@ From the root of the app
 
 ###  Database creation
 - `$ rake db:create`
+
 ### Add Seed Data
 - `$ rake db:seed`
 
 ### Client
-NPM Components
-- `$ npm install`
-Bower Components
-- `$ bower install`
+- NPM Components
+-- `$ npm install`
+- Bower Components
+-- `$ bower install`
 
 ## Avail Gulp Tasks
 - `$ cd client`
