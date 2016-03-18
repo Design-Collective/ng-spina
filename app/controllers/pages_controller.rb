@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Spina::Page.all
 
     render json: @pages
   end
@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @page = Page.new(page_params)
+    @page = Spina::Page.new(page_params)
 
     if @page.save
       render json: @page, status: :created, location: @page
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
   def update
-    @page = Page.find(params[:id])
+    @page = Spina::Page.find(params[:id])
 
     if @page.update(page_params)
       head :no_content
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
   private
 
     def set_page
-      @page = Page.find(params[:id])
+      @page = Spina::Page.find(params[:id])
     end
 
     def page_params
