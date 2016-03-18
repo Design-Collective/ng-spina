@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Spina::Page.all
+    @pages = Spina::Page.where({ :draft => false })
 
     render json: @pages
   end

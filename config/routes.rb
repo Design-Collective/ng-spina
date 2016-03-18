@@ -3,6 +3,7 @@ Dcollective::Application.routes.draw do
   scope '/api' do
     resources :pages, except: [:new, :edit]
     resources :members, except: [:new, :edit]
+    resources :page_parts, except: [:new, :edit]
   end
 
   mount Spina::Engine => '/'
@@ -62,3 +63,4 @@ Dcollective::Application.routes.draw do
   #     resources :products
   #   end
 end
+
