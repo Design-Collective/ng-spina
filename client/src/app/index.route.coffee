@@ -4,9 +4,24 @@ angular.module 'dcollective'
     $stateProvider
       .state 'home',
         url: '/'
-        templateUrl: 'app/main/main.html'
-        controller: 'MainController'
-        controllerAs: 'main'
+        templateUrl: 'app/home/partials/home.html'
+        controller: 'showHomeCtrl'
+        controllerAs: 'home'
+      .state 'about',
+        url: '/about'
+        templateUrl: 'app/about/partials/about.html'
+        controller: 'showAboutCtrl'
+        controllerAs: 'about'
+      .state 'process',
+        url: '/process'
+        templateUrl: 'app/process/partials/process.html'
+        controller: 'showProcessCtrl'
+        controllerAs: 'process'
+      .state 'work',
+        url: '/work'
+        templateUrl: 'app/work/partials/work.html'
+        controller: 'showWorkCtrl'
+        controllerAs: 'work'
 
     $urlRouterProvider.otherwise '/'
 
