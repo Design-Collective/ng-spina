@@ -7,7 +7,7 @@
 ###
 angular.module('dcollective')
 .directive('navMenu', ->
-  template: '<div></div>'
+  templateUrl: 'app/components/navMenu/partials/navMenu.html'
   restrict: 'E'
   link: (scope, element, attrs) ->
     element.text 'this is the navMenu directive'
