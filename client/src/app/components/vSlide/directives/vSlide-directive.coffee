@@ -7,7 +7,7 @@
 ###
 angular.module('dcollective')
 .directive('vSlide', ->
-  template: '<div></div>'
+  templateUrl: 'app/components/vSlide/partials/vSlide.html'
   restrict: 'E'
   link: (scope, element, attrs) ->
     element.text 'this is the vSlide directive'
