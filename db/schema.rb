@@ -17,11 +17,9 @@ ActiveRecord::Schema.define(version: 20160315003811) do
   enable_extension "plpgsql"
 
   create_table "pages", force: true do |t|
-    t.string   "title",      null: false
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "pages", ["title"], name: "index_pages_on_title", unique: true, using: :btree
 
 end
