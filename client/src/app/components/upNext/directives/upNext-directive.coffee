@@ -7,7 +7,7 @@
 ###
 angular.module('dcollective')
 .directive('upNext', ->
-  template: '<div></div>'
+  templateUrl: 'app/components/upNext/partials/upNext.html'
   restrict: 'E'
   link: (scope, element, attrs) ->
     element.text 'this is the upNext directive'
