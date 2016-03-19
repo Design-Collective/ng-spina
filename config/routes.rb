@@ -2,7 +2,6 @@ Dcollective::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :pages, except: [:new, :edit]
-    resources :members, except: [:new, :edit]
   end
 
   mount Spina::Engine => '/admin'
