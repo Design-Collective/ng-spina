@@ -17,7 +17,8 @@ We've updated the migrations for this project, starting from scratch. You can es
 - [ ] Spina basic page types & building blocks setup (still WIP / needs a 2nd look)
 - [x] Spina endpoints isolated under /admin
 - [x] Custom API Controller for all api views with jBuilder. See folder `/app/controllers/api`. For more info, look at [implementing-rails-apis-like-a-professional](http://blog.joshsoftware.com/2014/05/08/implementing-rails-apis-like-a-professional/) and [how-to-expose-a-rails-api](https://seecristicode.wordpress.com/2014/05/24/how-to-expose-a-rails-api/)).
-- [ ] *TBD -- Optimize API views on pages_index to include only sections starting with "include" (only info for included stacked sections into a parent)
+- [ ] API - missing page_structure information in `/app/views/api/pages/show.json.jbuilder`
+- [ ] *TBD -- Optimize API views (e.g. on pages_index to include only sections starting with "include" (only info for included stacked sections into a parent)
 - [ ] Setup API caching (due to the Spina Structure, there are nested requests going 4, 5 levels deep)
 - [ ] *Portfolio Module (TBD) - custom built up to spec
 - [ ] *Blog Module (TBD) - custom built up to spec
