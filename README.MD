@@ -39,6 +39,7 @@ In order to stay organized, lets use the following
 or
 - `$ npm install -g gulp-angular-subtask`
 
+[documentation](https://github.com/doronsever/generator-gulp-angular-subtask)
 ### Add a controller
 - `$yo gulp-angular-subtask:controller pages --script-type=coffee`
 
