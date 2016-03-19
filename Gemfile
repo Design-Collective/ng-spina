@@ -25,6 +25,7 @@ gem 'rails_12factor', group: :staging
 # CMS
 gem 'spina-template'
 gem 'spina'
+gem 'spina-reviews', path: '~/Sites/dcollective/spina-reviews'
 
 group :development, :test do
   gem 'dotenv-rails'

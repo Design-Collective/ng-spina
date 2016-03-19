@@ -10,7 +10,13 @@ module Spina
       name:               'text',
       title:              'Text',
       page_partable_type: 'Spina::Text'
-    }]
+    },
+    {
+      name:               'subheader',
+      title:              'Subheader',
+      page_partable_type: 'Spina::Text'
+    }
+    ]
 
     self.structures = {}
 
@@ -21,22 +27,34 @@ module Spina
         title:      'Homepage',
         page_parts: ['text']
       },
+      'members' => {
+        title:      'Members',
+        page_parts: ['text']
+      },
       'show' => {
         title:        'Default',
         description:  'A simple page',
         usage:        'Use for your content',
-        page_parts:   ['text']
+        page_parts:   ['text', 'subheader']
       }
     }
 
-    self.custom_pages = [{
-      name:           'homepage',
-      title:          'Homepage',
-      deletable:      false,
-      view_template:  'homepage'
-    }]
+    self.custom_pages = [
+      {
+        name:           'homepage',
+        title:          'Homepage',
+        deletable:      false,
+        view_template:  'homepage'
+      },
+      {
+        name:           'members',
+        title:          'Members',
+        deletable:      true,
+        view_template:  'members'
+      }
+    ]
 
-    self.plugins = []
+    self.plugins = ['reviews']
 
   end
 end

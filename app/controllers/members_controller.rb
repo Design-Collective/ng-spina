@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
+    @members = Spina::User.all
 
     render json: @members
   end
@@ -18,31 +18,31 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
-    @member = Member.new(member_params)
+    @member = Spina::User.new(member_params)
 
-    if @member.save
+    if @Spina::User.save
       render json: @member, status: :created, location: @member
     else
-      render json: @member.errors, status: :unprocessable_entity
+      render json: @Spina::User.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
-    @member = Member.find(params[:id])
+    @member = Spina::User.find(params[:id])
 
-    if @member.update(member_params)
+    if @Spina::User.update(member_params)
       head :no_content
     else
-      render json: @member.errors, status: :unprocessable_entity
+      render json: @Spina::User.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /members/1
   # DELETE /members/1.json
   def destroy
-    @member.destroy
+    @Spina::User.destroy
 
     head :no_content
   end
@@ -50,7 +50,7 @@ class MembersController < ApplicationController
   private
 
     def set_member
-      @member = Member.find(params[:id])
+      @member = Spina::User.find(params[:id])
     end
 
     def member_params

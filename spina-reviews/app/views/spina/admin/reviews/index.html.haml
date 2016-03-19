@@ -1,0 +1,35 @@
+.filters
+  = link_to "New Review", spina.new_admin_review_path, class: 'button button-primary', data: {icon: 't'}
+
+  .pull-right
+    %p Average rating: <strong>#{@average_rating.round(1)}</strong>
+
+.table-container
+  %table.table
+    %thead
+      %tr
+        %th Name
+        %th Review
+        %th
+
+    %tbody
+      - if @reviews.any?
+        - @reviews.each do |review|
+          %tr
+            %td.nowrap
+              = review.name
+              %small= time_ago_in_words(review.created_at) + " ago"
+            %td
+              .rating
+                - review.rating.times do
+                  %i{data: {icon: '5'}}
+                - (5 - review.rating).times do
+                  %i.icon-dimmed{data: {icon: '5'}}
+              %p= review.explanation
+            %td.nowrap
+              = link_to 'Edit', spina.edit_admin_review_path(review), class: 'button button-link', data: {icon: 'q'}
+
+      - else
+        %tr
+          %td.align-center{colspan: 4}
+            %em There are no reviews.

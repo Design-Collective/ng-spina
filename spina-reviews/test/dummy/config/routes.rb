@@ -1,14 +1,4 @@
-Dcollective::Application.routes.draw do
-
-  scope '/api' do
-    resources :pages, except: [:new, :edit]
-    resources :members, except: [:new, :edit]
-    resources :page_parts, except: [:new, :edit]
-    resources :reviews, except: [:new, :edit]
-  end
-
-  mount Spina::Engine => '/'
-
+Dummy::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -64,4 +54,3 @@ Dcollective::Application.routes.draw do
   #     resources :products
   #   end
 end
-
