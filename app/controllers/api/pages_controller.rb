@@ -1,18 +1,19 @@
-class PagesController < ApplicationController
+# NOTE: This is a first pass, and uses basic endpoints with copy-pasted class-names. May not be perfect.
+# TODO: menu (nav) endpoint, sitemap endpoint etc.
+
+class Api::PagesController < Api::ApiController
   before_action :set_page, only: [:show, :update, :destroy]
 
-  # GET /pages
-  # GET /pages.json
   def index
     @pages = Spina::Page.where({ :draft => false })
-
-    render json: @pages
+    render :index
   end
 
   # GET /pages/1
   # GET /pages/1.json
   def show
-    render json: @page
+    @page
+    render :show
   end
 
   # POST /pages
