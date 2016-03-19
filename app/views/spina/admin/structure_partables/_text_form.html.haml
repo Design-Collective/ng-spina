@@ -1,0 +1,4 @@
+%label
+  = text_form.object.title
+= text_form.fields_for :structure_partable, text_form.object.structure_partable do |ff|
+  = render 'spina/admin/shared/rich_text_field', form: ff, field: :content

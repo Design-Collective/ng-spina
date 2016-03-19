@@ -1,16 +1,33 @@
-== README
+# Design Collective
 
-## Ruby version
-- ruby "2.2.2"
+Spina CMS based system.
 
-## System dependencies 
+# Setup
 
-- Rails: '4.1.9'
-- Rails API: 'rails-api'
-- DB: Postgres
+We've updated the migrations for this project, starting from scratch. You can essentially run:
 
-## Client Dependancies 
-- https://github.com/Swiip/generator-gulp-angular
+`$ bundle install`
+
+`$ bundle exec rake db:reset`
+`$ bundle exec rake db:migrate
+
+# To-do
+
+## Back-end
+- [ ] Spina basic page types & building blocks setup (still WIP / needs a 2nd look)
+- [x] Spina endpoints isolated under /admin
+- [x] Custom API Controller for all api views with jBuilder. See folder `/app/controllers/api`. For more info, look at [implementing-rails-apis-like-a-professional](http://blog.joshsoftware.com/2014/05/08/implementing-rails-apis-like-a-professional/) and [how-to-expose-a-rails-api](https://seecristicode.wordpress.com/2014/05/24/how-to-expose-a-rails-api/)).
+- [ ] API - missing page_structure information in `/app/views/api/pages/show.json.jbuilder`
+- [ ] *TBD -- Optimize API views (e.g. on pages_index to include only sections starting with "include" (only info for included stacked sections into a parent)
+- [ ] Setup API caching (due to the Spina Structure, there are nested requests going 4, 5 levels deep)
+- [ ] *Portfolio Module (TBD) - custom built up to spec
+- [ ] *Blog Module (TBD) - custom built up to spec
+
+## Client
+- [ ] Setup NG Rails Resource to load in page endpoints
+- [ ] Comet Haley
+
+# Configuration & Setup
 
 ## Run the App 
 - `$ gulp serve:full-stack`
@@ -87,7 +104,22 @@ It's time to use Gulp tasks:
 ##BrowserSync 
 Go to http://collective.dev:3001/ and see configs and sync data
 
+
 ## Specs
+
+## Ruby version
+- ruby "2.2.2"
+
+## System dependencies 
+
+- Rails: '4.2'
+- Rails API: 'rails-api'
+- Rails CMS: 'spina'
+- DB: Postgres
+
+## Client Dependancies 
+- https://github.com/Swiip/generator-gulp-angular
+
 ### Angular: 1.4.x (stable)
 - Angular Modules: angular-animate.js (enable animation features), angular-cookies.js (handle cookie management), angular-touch.js (for mobile development), angular-sanitize.js (to securely
  parse and manipulate HTML), angular-messages.js (enhanced support for displaying messages within templates), angular-aria.js (suppor
