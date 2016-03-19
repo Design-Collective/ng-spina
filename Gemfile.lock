@@ -1,9 +1,3 @@
-PATH
-  remote: ~/Sites/dcollective/spina-reviews
-  specs:
-    spina-reviews (0.0.3)
-      rails (~> 4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -362,7 +356,6 @@ DEPENDENCIES
   ruby-prof
   sdoc (~> 0.4.0)
   spina
-  spina-reviews!
   spina-template
   spring
   spring-commands-rspec
