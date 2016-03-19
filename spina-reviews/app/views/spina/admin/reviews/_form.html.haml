@@ -1,0 +1,35 @@
+= form_for [spina, :admin, @review], html: {autocomplete: "off"} do |f|
+  - content_for :notification_alert do
+    = error_explanation!(@review)
+
+  #page_content.tab-content.active
+    .table-container
+      %table.table.table-form
+        %tr
+          %td
+            Name
+          %td
+            = f.text_field :name, placeholder: "Author name"
+        %tr
+          %td
+            Review
+          %td
+            .select-dropdown= f.select :rating, [["1 star", 1], ["2 stars", 2], ["3 stars", 3], ["4 stars", 4], ["5 stars", 5]]
+        %tr
+          %td
+            Date
+          %td
+            = f.text_field :created_at, value: (@review.created_at.strftime("%d-%m-%Y") unless @review.new_record?), placeholder: "Date of review", class: 'datepicker'
+        %tr
+          %td
+            Toelichting
+          %td
+            = f.text_area :explanation, placeholder: "Review Details"
+
+  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+    Save Review
+
+  = link_to "Cancel", spina.admin_reviews_path, class: 'button button-link'
+
+  - unless @review.new_record?
+    .pull-right= link_to "Delete", spina.admin_review_path(@review), method: :delete, confirm: "Are you sure you want to delete <strong>#{@review.name}</strong>?", class: 'button button-link button-danger'
