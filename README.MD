@@ -30,7 +30,7 @@ We've updated the migrations for this project, starting from scratch. You can es
 # Configuration & Setup
 
 ## Run the App 
-- `$ gulp serve:full-stack`
+- `$ gulp serve:fullstack`
 
 This should run your rails app and the front end app together and open the browser sync instance proxied so that the back end application data can be retrieved with the same urls. 
 
