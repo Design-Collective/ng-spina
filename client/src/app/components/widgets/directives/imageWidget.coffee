@@ -1,7 +1,7 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:iconsWidget
+# @name dcollective.directive:imageWidget
 # @description
 # # loader
 ###
