@@ -13,7 +13,9 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
     text: 'Some long small text for the special container'
     buttonLink: 'http://collective.dev:3619/'
     buttonText: 'This a button'
-    widget: 'directiveName'
-    smallWidget: 'directiveName'
+    widget: {}
+    smallWidget: {}
+    sideWidget: {}
   }
+  
   @
