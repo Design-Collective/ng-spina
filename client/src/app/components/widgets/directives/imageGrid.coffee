@@ -14,7 +14,7 @@ angular.module('dcollective').directive('imageGrid', ->
   bindToController: true
   controller: ->
     @getBackground = (person)->
-      'background-image' : 'url("'+ person.imageSrc +'")'
+      'background-image' : 'url("'+ person.photoSrc +'")'
     
     @
     
