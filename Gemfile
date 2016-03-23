@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby "2.2.2"
 
-gem 'rails', '4.1.9'
+gem 'rails', '4.2'
 
 gem 'rails-api'
 
@@ -16,11 +16,15 @@ gem 'paranoia', '~> 2.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.4', '>= 2.4.1'
 
-# Image Processing 
+# Image Processing
 gem "paperclip", "~> 4.3"
 
 # Assets and logging for heroku
 gem 'rails_12factor', group: :staging
+
+# CMS
+gem 'spina-template'
+gem 'spina'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -59,7 +63,6 @@ end
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
