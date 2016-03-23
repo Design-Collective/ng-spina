@@ -6,7 +6,7 @@
 # # loader
 ###
 angular.module('dcollective').directive('iconsWidget', ->
-  templateApp: 'app/components/widgets/iconsWidget.html'
+  templateUrl: 'app/components/widgets/partials/iconsWidget.html'
   restrict: 'E'
   scope:
     iconsData:'='

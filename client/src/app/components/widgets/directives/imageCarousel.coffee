@@ -6,7 +6,7 @@
 # # loader
 ###
 angular.module('dcollective').directive('imageCarousel', ->
-  templateApp: 'app/components/widgets/imageCarousel.html'
+  templateUrl: 'app/components/widgets/partials/imageCarousel.html'
   restrict: 'E'
   scope:
     carouselData: '='

@@ -6,7 +6,7 @@
 # # loader
 ###
 angular.module('dcollective').directive('imageGrid', ->
-  templateApp: 'app/components/widgets/imageCarousel.html'
+  templateUrl: 'app/components/widgets/partials/imageCarousel.html'
   restrict: 'E'
   scope:
     gridData: '='

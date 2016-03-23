@@ -6,7 +6,7 @@
 # # loader
 ###
 angular.module('dcollective').directive('imageWidget', ->
-  templateApp: 'app/components/widgets/imageWidget.html'
+  templateUrl: 'app/components/widgets/partials/imageWidget.html'
   restrict: 'E'
   scope:
     image: '='
