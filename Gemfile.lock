@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/Design-Collective/spina-team-members.git
+  revision: d8c5126d3984b36418a7d83ec4de204c924b6ac9
+  specs:
+    spina-reviews (0.0.3)
+      rails (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -357,6 +364,7 @@ DEPENDENCIES
   ruby-prof
   sdoc (~> 0.4.0)
   spina
+  spina-reviews!
   spina-template
   spring
   spring-commands-rspec

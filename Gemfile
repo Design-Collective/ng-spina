@@ -26,6 +26,8 @@ gem 'rails_12factor', group: :staging
 gem 'spina-template'
 gem 'spina'
 
+gem 'spina-reviews', :git => 'git://github.com/Design-Collective/spina-team-members.git'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.0.1'
