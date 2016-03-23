@@ -15,15 +15,15 @@ module Spina
 
       { name: 'primary_color', title: 'Primary color', page_partable_type: 'Spina::Color' },
 
-      { name: 'include_title', title: 'Include large title', page_partable_type: 'Spina::Line' },
-      { name: 'include_subtitle', title: 'Include subtitle', page_partable_type: 'Spina::Line' },
-      { name: 'include_background_image', title: 'Include section background', page_partable_type: 'Spina::Photo' },
-      { name: 'include_image', title: 'Include section inner image', page_partable_type: 'Spina::Photo' },
-      { name: 'include_text', title: 'Include content', page_partable_type: 'Spina::Line' },
-      { name: 'include_classes', title: 'Include CSS classes', page_partable_type: 'Spina::Line' },
-      { name: 'include_button_label', title: 'Include button label', page_partable_type: 'Spina::Line' },
+      # { name: 'include_title', title: 'Include large title', page_partable_type: 'Spina::Line' },
+      # { name: 'include_subtitle', title: 'Include subtitle', page_partable_type: 'Spina::Line' },
+      # { name: 'include_background_image', title: 'Include section background', page_partable_type: 'Spina::Photo' },
+      # { name: 'include_image', title: 'Include section inner image', page_partable_type: 'Spina::Photo' },
+      # { name: 'include_text', title: 'Include content', page_partable_type: 'Spina::Line' },
+      # { name: 'include_classes', title: 'Include CSS classes', page_partable_type: 'Spina::Line' },
+      # { name: 'include_button_label', title: 'Include button label', page_partable_type: 'Spina::Line' },
 
-      { name: 'sections', title: 'Page sections', page_partable_type: "Spina::Structure"},
+      { name: 'sections', title: 'Sections', page_partable_type: "Spina::Structure"},
 
       { name: 'featured_work_stats', title: 'Featured work stats', page_partable_type: "Spina::Structure"},
       { name: 'slider', title: 'Photo slider', page_partable_type: "Spina::PhotoCollection"}
@@ -36,26 +36,51 @@ module Spina
           name: 'large_title',
           title: 'Large title',
           structure_partable_type: "Spina::Line"
-        },{
+        },
+        {
           name: 'small_title',
           title: 'Small title',
           structure_partable_type: "Spina::Line"
-        },{
-          name: 'section_background_image',
+        },
+        {
+          name: 'text',
+          title: 'Text content',
+          structure_partable_type: "Spina::Text"
+        },
+        {
+          name: 'background_image',
           title: 'Section background image',
           structure_partable_type: "Spina::Photo"
-        },{
-          name: 'text',
-          title: 'Text',
-          structure_partable_type: "Spina::Text"
-        },{
+        },
+        {
           name: 'section_image',
           title: 'Section image',
           structure_partable_type: "Spina::Photo"
-        },{
-          name: 'section_links',
-          title: 'Section links',
-          structure_partable_type: "Spina::Text"
+        },
+        {
+          name: 'button_label',
+          title: 'Button label',
+          structure_partable_type: "Spina::Line"
+        },
+        {
+          name: 'button_link',
+          title: 'Button link',
+          structure_partable_type: "Spina::Line"
+        },
+        {
+          name: 'widget_template',
+          title: 'Widget template',
+          structure_partable_type: "Spina::Line"
+        },
+        {
+          name: 'widget_api_feed',
+          title: 'Widget API feed',
+          structure_partable_type: "Spina::Line"
+        },
+        {
+          name: 'css_classes',
+          title: 'CSS Classes',
+          structure_partable_type: "Spina::Line"
         }
       ],
       'budget_ranges' => [
