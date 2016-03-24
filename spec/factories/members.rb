@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :page do
+  factory :member do
+    name "MyString"
     title "MyString"
   end
 end

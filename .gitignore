@@ -15,5 +15,10 @@
 /log/*.log
 /tmp
 
+/public/uploads
+public/uploads/spina/*
+
 #IDE
 .idea/
+
+.ruby-version

@@ -29,8 +29,8 @@ function browserSyncInit(baseDir, browser) {
   };
 
   var middlewareSettings = {
-    target: 'http://localhost:3000', 
-    changeOrigin: true 
+    target: 'http://localhost:3000',
+    changeOrigin: true
   }
 
   /*
@@ -74,7 +74,7 @@ gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
 });
 
-gulp.task('serve:full-stack', ['rails', 'serve']);
+gulp.task('serve:fullstack', ['rails', 'serve']);
 
 gulp.task('rails', function() {
   exec('cd .. && rails s -b 0.0.0.0 -p 3000');
