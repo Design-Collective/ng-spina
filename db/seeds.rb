@@ -6,11 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Page.create([
-  { title: 'Home' },
-  { title: 'About Us' },
-  { title: 'Clients' },
-  { title: 'Process' },
-  { title: 'Portfolio' },
-  { title: 'Contact' },
-])
+# Spina Pages can be seeded from /config/initializers/themes/default.rb
