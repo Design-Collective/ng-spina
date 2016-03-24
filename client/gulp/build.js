@@ -10,7 +10,6 @@ var $ = require('gulp-load-plugins')({
 });
 
 gulp.task('production-partials',['inject'], function () {
-  console.log('production-partials task ----------------------------------------------------------------');
   var appPathTemp = conf.paths.tmp+'/serve/';
   var appPathSrc = conf.paths.src;
 
