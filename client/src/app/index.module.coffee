@@ -1,1 +1,5 @@
-angular.module 'dcollective', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ngMaterial', 'toastr']
+angular.module 'dcollective', [
+  'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router',
+  'ngMaterial', 'toastr', 'rails'
+]
+
