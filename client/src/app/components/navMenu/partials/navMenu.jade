@@ -1,0 +1,11 @@
+div(layout='row')
+    .left-nav(flex='50', layout='row', layout-align='start center')
+        // Logo might be here
+    .right-nav(flex='50', layout='row', layout-align='end center')
+        a.material-icons(href='#',ng-click='navMenu.toggleMenu()') menu
+
+.nav-menu-opened(ng-show='navMenu.isOpen')
+    ul
+        li.menu-item(ng-repeat='item in navMenu.menuItems')
+            a(ng-href='item.slug') {{ item.title }}
+                small {{ item.subTitle }}
