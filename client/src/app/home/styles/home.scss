@@ -1,0 +1,11 @@
+$logo-width: 165px;
+
+.hero {
+  height: 100vh;
+  .dc-logo {
+    width: $logo-width;
+  }
+  .dc-logo-text {
+    width: $logo-width * 1.65;
+  }
+}

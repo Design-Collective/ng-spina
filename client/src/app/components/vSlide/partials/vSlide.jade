@@ -1,7 +1,7 @@
-section.v-slide(ng-class='slideData.customClass' ng-style='slideData.slideImage')
-    h3.main-title {{ slideData.title }}
-    h4.sub-title {{ slideData.subTitle }}
-    p.slide-text {{ slideData.text }}
-    .small-widget-container
-    a(ng-href='slideData.buttonLink') {{slideData.buttonText}}
-    .widget-container
+section.v-slide(layout="column" layout-align="center start" ng-class='slideData.customClass' ng-style='slideData.backgroundImage')
+  h3.main-title {{ slideData.title }}
+  h4.sub-title {{ slideData.subTitle }}
+  p.slide-text {{ slideData.text }}
+  .small-widget-container
+  md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='slideData.buttonLink') {{slideData.buttonText}}
+  .widget-container
