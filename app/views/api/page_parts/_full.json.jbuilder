@@ -12,7 +12,7 @@ if part.page_partable_type=="Spina::Structure" && part.page_partable
           json.field_attributes field
           # TODO: How to get only field.structure_partable.content?
           # >> json.field_content field.structure_partable.content
-          json.field_content field.structure_partable
+          # json.field_content field.structure_partable
           # NOTE: For debug
           # json.field_key_names field.attribute_names
           if field.structure_partable
