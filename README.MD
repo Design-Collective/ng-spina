@@ -11,6 +11,16 @@ We've updated the migrations for this project, starting from scratch. You can es
 `$ bundle exec rake db:reset`
 `$ bundle exec rake db:migrate
 
+## Plugin Configuration
+
+For every Spina plugin installed, we'll need to make sure that the migrations are properly generated. Each may have a separate installation procedure. Please review the docs.
+
+### Test Reviews Plugin
+
+Run `rails g spina_reviews:install`
+
+Then `rake db:migrate` or `bundle exec rake db:migrate`
+
 # To-do
 
 ## Back-end
