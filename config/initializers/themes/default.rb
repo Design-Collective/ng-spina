@@ -123,7 +123,7 @@ module Spina
     self.view_templates = {
       'homepage' => {
         title:      'Homepage',
-        page_parts: ['hero_title', 'hero_subtitle', 'text']
+        page_parts: ['hero_title', 'hero_subtitle', 'text', 'sections']
       },
       'default' => {
         title:      'Default Page',
