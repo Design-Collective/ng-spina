@@ -4,8 +4,8 @@ json.attributes part.page_partable
 if part.page_partable_type=="Spina::Structure" && part.page_partable
   # Check if structure has structure_items
   if part.page_partable.structure_items
-    json.structure part.page_partable.structure_items do |structure|
-      json.structure_data structure
+    json.slides part.page_partable.structure_items do |structure|
+      json.slide_data structure
       if structure.structure_parts
         json.fields structure.structure_parts do |field|
 
