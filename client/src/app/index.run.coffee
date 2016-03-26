@@ -1,4 +1,5 @@
 angular.module 'dcollective'
-  .run ($log) ->
+  .run ($log, Constants) ->
     'ngInject'
+    Constants.init()
     $log.debug 'runBlock end'
