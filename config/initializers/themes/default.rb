@@ -25,6 +25,8 @@ module Spina
 
       { name: 'sections', title: 'Sections', page_partable_type: "Spina::Structure"},
 
+      { name: 'budget_ranges', title: 'Budget Ranges', page_partable_type: "Spina::Structure"},
+
       { name: 'featured_work_stats', title: 'Featured work stats', page_partable_type: "Spina::Structure"},
       { name: 'slider', title: 'Photo slider', page_partable_type: "Spina::PhotoCollection"}
     ]
@@ -83,6 +85,7 @@ module Spina
           structure_partable_type: "Spina::Line"
         }
       ],
+
       'budget_ranges' => [
         {
           name: 'value',
@@ -123,7 +126,7 @@ module Spina
     self.view_templates = {
       'homepage' => {
         title:      'Homepage',
-        page_parts: ['hero_title', 'hero_subtitle', 'text', 'sections']
+        page_parts: ['hero_title', 'hero_subtitle', 'text', 'sections', 'budget_ranges']
       },
       'default' => {
         title:      'Default Page',
