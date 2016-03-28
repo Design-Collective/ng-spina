@@ -15,17 +15,19 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   bindToController: true
   controller: [()->
     @slideData.widget =
-      widgetName: 'icons-widget',
-      widgetData: [
+      widgetName: 'image-carousel'
+      widgetData:[
         {
-          title:"my icon",
-          class: "icom-cool",
-          link: "/about-us"
-        },
+          src: "http://lorempixel.com/250/55/fashion/",
+          class: "additional-style-class"
+        }
         {
-          title:"my icon",
-          class:"icom-cool",
-          link: "/about-us"
+          src: "http://lorempixel.com/250/55/fashion/",
+          class: "additional-style-class"
+        }
+        {
+          src: "http://lorempixel.com/250/55/fashion/",
+          class: "additional-style-class"
         }
       ]
 

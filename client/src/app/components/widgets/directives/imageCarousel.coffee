@@ -9,7 +9,7 @@ angular.module('dcollective').directive('imageCarousel', ->
   templateUrl: 'app/components/widgets/partials/imageCarousel.html'
   restrict: 'E'
   scope:
-    carouselData: '='
+    widgetData: '='
   link:(scope, eleme, attr)->
     #carousel init
     
