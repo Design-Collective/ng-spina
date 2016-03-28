@@ -14,70 +14,42 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   controllerAs: 'vslide'
   bindToController: true
   controller: [()->
-    @slideData.widget =
-      widgetName: 'image-grid'
-      widgetData:[
-        {
-          title: "Ruben Mosesian",
-          position: "javascript developer",
-          photoSrc: "http://lorempixel.com/540/645/fashion/"
-          socials: [
-            {
-              link: "some/link",
-              iconClass: "some-icon-class"
-            }
-          ]
-        }
-        {
-          title: "Ruben Mosesian",
-          position: "javascript developer",
-          photoSrc: "http://lorempixel.com/540/645/fashion/"
-          socials: [
-            {
-              link: "some/link",
-              iconClass: "some-icon-class"
-            }
-          ]
-        }
-        {
-          title: "Ruben Mosesian",
-          position: "javascript developer",
-          photoSrc: "http://lorempixel.com/540/645/fashion/"
-          socials: [
-            {
-              link: "some/link",
-              iconClass: "some-icon-class"
-            }
-          ]
-        }
-      ]
-
     @getBackgroundImage = ()->
       if @slideData.backgroundImage
         'background-image': 'url("'+@slideData.backgroundImage+'")'
     @
   ]
   link: (scope, element, attrs)->
-    getDirective = (widget)->
-      '<' + widget.widgetName + ' widget-data="vslide.slideData.widget.widgetData" >'
 
     #Compile defined widget directive and append to view
     if typeof scope.vslide.slideData.widget != 'undefined'
-
-      linkFn = $compile getDirective scope.vslide.slideData.widget
+      directive = ''
+      
+      if scope.vslide.slideData.widget.widgetData
+        directive = '<' + scope.vslide.slideData.widget.widgetName + ' widget-data="vslide.slideData.widget.widgetData" >'
+      else
+        directive = '<' + scope.vslide.slideData.widget.widgetName + '>'
+      
+      linkFn = $compile directive
       widget = linkFn scope
 
       widgetContainer = element.find '.widget-container'
       widgetContainer.append widget
 
     #Compile defined small widget directive and append to view
-#    if typeof scope.vslide.slideData.smallWidget != 'undefined'
-#
-#      linkFn = $compile scope.vslide.slideData.smallWidget
-#      smallWidget = linkFn scope
-#
-#      widgetContainer = element.find '.small-widget-container'
-#      widgetContainer.append smallWidget
+    if typeof scope.vslide.slideData.extraWidget != 'undefined'
+      directive = ''
+      
+      if scope.vslide.slideData.extraWidget.widgetData
+        directive = '<' + scope.vslide.slideData.extraWidget.widgetName + ' widget-data="vslide.slideData.extraWidget.widgetData" >'
+      else
+        directive = '<' + scope.vslide.slideData.extraWidget.widgetName + '>'
+      
+      linkFn = $compile directive
+      extraWidget = linkFn scope
+
+      widgetContainer = element.find '.small-widget-container'
+      widgetContainer.append extraWidget
 
 
 ])

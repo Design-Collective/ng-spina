@@ -24,9 +24,7 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
         buttonLink: 'http://collective.dev:3619/about'
         buttonText: 'More about us',
         customClass: "sky"
-        # widget: {}
-        # smallWidget: {}
-        # sideWidget: {},
+
       },
       {
         title: 'We work with'
@@ -35,10 +33,27 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
         buttonLink: 'http://collective.dev:3619/work'
         buttonText: 'More About Who We Work With'
         backgroundImage: 'http://lorempixel.com/1280/800/people',
-        # widget: "/widgets/partials/iconsWidget.jade",
+        widget:
+          widgetName: 'icons-widget'
+          widgetData: [
+            {
+              title: 'Helllo '
+              class: 'icom-cool'
+              link: '/about-us'
+            }
+            {
+              title: 'Helllo'
+              class: 'icom-cool'
+              link: '/about-us'
+            }
+            {
+              title: 'Helllo'
+              class: 'icom-cool'
+              link: '/about-us'
+            }
+          ]
         customClass: "overlay pink"
-        # smallWidget: {}
-        # sideWidget: {},
+
       },
       {
         title: 'Our Process is'
@@ -47,10 +62,12 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
         buttonLink: 'http://collective.dev:3619/work'
         buttonText: 'More About Who We Work With'
         backgroundImage: 'http://lorempixel.com/1280/800/city',
-        # widget: "/widgets/partials/iconsWidget.jade",
+        widget:
+          widgetName: 'image-widget',
+          widgetData:
+            src: "http://lorempixel.com/400/400/city",
+            class: "additional-style-class"
         customClass: "overlay yellow"
-        # smallWidget: {}
-        # sideWidget: {},
       },
       {
         title: 'We Build'
@@ -60,9 +77,28 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
         buttonText: 'More About Who We Work With'
         backgroundImage: 'http://lorempixel.com/1280/800/city',
         customClass: "overlay pink-inverted"
-        # smallWidget: {}
-          # TODO: logo Widget here
-        # sideWidget: {},
+        widget:
+          widgetName: 'image-carousel'
+          widgetData: [
+            {
+              src: 'http://lorempixel.com/80/80/people'
+              class: 'icom-cool'
+              link: '/about-us'
+             }
+            {
+              src: 'http://lorempixel.com/80/80/people'
+              class: 'icom-cool'
+              link: '/about-us'
+            }
+            {
+              src: 'http://lorempixel.com/80/80/people'
+              class: 'icom-cool'
+              link: '/about-us'
+            }
+          ]
+          extraWidget:
+            widgetName: 'budget-slider',
+            widgetData: null
       }
     ]
   }
