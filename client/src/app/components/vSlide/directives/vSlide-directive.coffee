@@ -38,6 +38,7 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
 
     #Compile defined small widget directive and append to view
     if typeof scope.vslide.slideData.extraWidget != 'undefined'
+      console.log 'rendering extraWidget'
       directive = ''
       
       if scope.vslide.slideData.extraWidget.widgetData

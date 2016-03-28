@@ -96,9 +96,9 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
               link: '/about-us'
             }
           ]
-          extraWidget:
-            widgetName: 'budget-slider',
-            widgetData: null
+        extraWidget:
+          widgetName: 'budget-slider',
+          widgetData: null
       }
     ]
   }
