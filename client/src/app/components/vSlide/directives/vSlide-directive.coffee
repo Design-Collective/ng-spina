@@ -15,10 +15,19 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   bindToController: true
   controller: [()->
     @slideData.widget =
-      widgetName: 'image-widget',
-      widgetData:
-        src: "http://lorempixel.com/1280/800/people",
-        class: "additional-style-class"
+      widgetName: 'icons-widget',
+      widgetData: [
+        {
+          title:"my icon",
+          class: "icom-cool",
+          link: "/about-us"
+        },
+        {
+          title:"my icon",
+          class:"icom-cool",
+          link: "/about-us"
+        }
+      ]
 
     @getBackgroundImage = ()->
       if @slideData.backgroundImage
