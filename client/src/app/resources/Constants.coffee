@@ -19,7 +19,7 @@ angular.module('dcollective').factory 'Constants', ['RailsResource','$q','$timeo
           { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }
         ]
 
-    @getConstants: =>  
+    @getConstants: ->
       $timeout ()->
         @constants
       , 1000

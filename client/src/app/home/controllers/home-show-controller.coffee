@@ -16,6 +16,9 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
     widget: {}
     smallWidget: {}
     sideWidget: {},
+    upNext:
+      title: 'About us'
+      backgroundImage: 'http://lorempixel.com/1280/800/people'
     slides: [
       {
         title: 'We are'
