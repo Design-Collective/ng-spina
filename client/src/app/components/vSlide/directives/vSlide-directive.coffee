@@ -11,32 +11,31 @@ angular.module('dcollective').directive('vSlide',['$compile',($compile)->
   restrict: 'E'
   scope:
     slideData: '='
+  controllerAs: 'vslide'
+  bindToController: true
+  controller: [()->
+    @getBackgroundImage = ()->
+      if @slideData.backgroundImage
+        'background-image': 'url("'+@slideData.backgroundImage+'")'
+    @
+  ]
   link: (scope, element, attrs)->
 
-    console.log(scope.slideData)
-
     #Compile defined widget directive and append to view
-    if typeof scope.slideData.widget != 'undefined'
+    if typeof scope.vslide.slideData.widget != 'undefined'
 
-      linkFn = $compile scope.slideData.widget
+      linkFn = $compile scope.vslide.slideData.widget
       widget = linkFn scope
 
       widgetContainer = element.find '.widget-container'
       widgetContainer.append widget
 
     #Compile defined small widget directive and append to view
-    if typeof scope.slideData.smallWidget != 'undefined'
+    if typeof scope.vslide.slideData.smallWidget != 'undefined'
 
-      linkFn = $compile scope.slideData.smallWidget
+      linkFn = $compile scope.vslide.slideData.smallWidget
       smallWidget = linkFn scope
 
       widgetContainer = element.find '.small-widget-container'
       widgetContainer.append smallWidget
-
-    if typeof scope.slideData.backgroundImage != 'undefined'
-
-      element.find("section").css({
-        'background-image': "url(http://lorempixel.com/1280/800/fashion/4)"
-      })
-
 ])
