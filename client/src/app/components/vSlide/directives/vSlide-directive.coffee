@@ -15,19 +15,40 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   bindToController: true
   controller: [()->
     @slideData.widget =
-      widgetName: 'image-carousel'
+      widgetName: 'image-grid'
       widgetData:[
         {
-          src: "http://lorempixel.com/250/55/fashion/",
-          class: "additional-style-class"
+          title: "Ruben Mosesian",
+          position: "javascript developer",
+          photoSrc: "http://lorempixel.com/540/645/fashion/"
+          socials: [
+            {
+              link: "some/link",
+              iconClass: "some-icon-class"
+            }
+          ]
         }
         {
-          src: "http://lorempixel.com/250/55/fashion/",
-          class: "additional-style-class"
+          title: "Ruben Mosesian",
+          position: "javascript developer",
+          photoSrc: "http://lorempixel.com/540/645/fashion/"
+          socials: [
+            {
+              link: "some/link",
+              iconClass: "some-icon-class"
+            }
+          ]
         }
         {
-          src: "http://lorempixel.com/250/55/fashion/",
-          class: "additional-style-class"
+          title: "Ruben Mosesian",
+          position: "javascript developer",
+          photoSrc: "http://lorempixel.com/540/645/fashion/"
+          socials: [
+            {
+              link: "some/link",
+              iconClass: "some-icon-class"
+            }
+          ]
         }
       ]
 
