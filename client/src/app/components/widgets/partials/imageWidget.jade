@@ -1,2 +1,3 @@
 .image-widget
-    img(ng-src='image.src',ng-class='image.class')
+    h3 {{ widgetData }}
+    img(ng-src='{{widgetData.src}}', ng-class='widgetData.class')
