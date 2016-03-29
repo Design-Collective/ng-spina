@@ -1,3 +1,4 @@
 ul.image-carousel
-    li(ng-repeat='image in carouselData')
-        img(ng-src='image', ng-class='image.class')
+    li(ng-repeat='image in widgetData')
+        a(ng-href='{{image.link}}')
+            img(ng-src='{{image.src}}', ng-class='image.class')

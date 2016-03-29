@@ -1,7 +1,7 @@
-section.v-slide(layout="column" layout-align="center start" ng-class='slideData.customClass' ng-style='slideData.backgroundImage')
-  h3.main-title {{ slideData.title }}
-  h4.sub-title {{ slideData.subTitle }}
-  p.slide-text {{ slideData.text }}
+section.v-slide(layout="column" layout-align="center start" ng-class='vslide.slideData.customClass' ng-style='vslide.getBackgroundImage()')
+  h3.main-title {{ vslide.slideData.title }}
+  h4.sub-title {{ vslide.slideData.subTitle }}
+  p.slide-text {{ vslide.slideData.text }}
   .small-widget-container
-  md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='slideData.buttonLink') {{slideData.buttonText}}
+  md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='vslide.slideData.buttonLink') {{vslide.slideData.buttonText}}
   .widget-container

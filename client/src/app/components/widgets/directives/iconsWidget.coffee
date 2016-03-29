@@ -9,6 +9,6 @@ angular.module('dcollective').directive('iconsWidget', ->
   templateUrl: 'app/components/widgets/partials/iconsWidget.html'
   restrict: 'E'
   scope:
-    iconsData:'='
+    widgetData:'='
     
 )

@@ -6,16 +6,14 @@
 # # loader
 ###
 angular.module('dcollective').directive('imageGrid', ->
-  templateUrl: 'app/components/widgets/partials/imageCarousel.html'
+  templateUrl: 'app/components/widgets/partials/imageGrid.html'
   restrict: 'E'
   scope:
-    gridData: '='
+    widgetData: '='
   controllerAs: 'iGrid'
   bindToController: true
   controller: ->
-    @getBackground = (person)->
-      'background-image' : 'url("'+ person.photoSrc +'")'
-    
+
     @
     
 )
