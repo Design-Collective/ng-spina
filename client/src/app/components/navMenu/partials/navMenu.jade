@@ -1,6 +1,6 @@
 div.toolbar(layout='row')
     .left-nav(flex='50', layout='row', layout-align='start center')
-        // Logo might be here
+        img.logo-small(src="assets/images/dc_icon.svg", ng-hide='navMenu.isOpen')
     .right-nav(flex='50', layout='row', layout-align='end center')
         a(href='#',ng-click='navMenu.toggleMenu()')
             i(ng-class='navMenu.menuClass') menu
