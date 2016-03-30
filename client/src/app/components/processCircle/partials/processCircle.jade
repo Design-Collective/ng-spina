@@ -1,1 +1,5 @@
-h1 HELLO , im the WIDGET
+.process-step(ng-repeat='step in process.steps', ng-show="process.showStep($index)", ng-class='"step_index_" + ($index+1)')
+    h3.title {{($index+1) +"."+ step.title}}
+    small(ng-hide='process.progress > 0') {{ step.subTitle }}
+
+.process-circle(ng-class='"circle_" + process.progress')
