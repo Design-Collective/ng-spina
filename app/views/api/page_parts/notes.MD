@@ -64,20 +64,22 @@ BUDGET RANGES ARE ADDED IN CONFIG TO PAGES: [See screenshot] (https://www.dropbo
 
 It's still a structure, just a different type. Look at `/config/initializers/themes/default.rb`
 
-Different page types will have different fields, AND different 
+Different page types will have different fields, AND different structures added to them. As per spec, some pages can have all the structures added, some pages only 1 or two, so it's really up to us to define page types and which fields&structures you can manage. For now, you can see the homepage, has the hero unit fields + slides + budget_ranges added. We will surely do updates on it as we find more things to add. The API needs to reflect it.
+
+So for budget_ranges, the output follows the principle set with slides, so:
 
 ```
 ...
 "budget_ranges" : [
   {
-    // fields for each budget range on every page
+    // all fields for budget range #1 on the page
   },
   {
-    // fields for each budget range on every page
+    // all fields each budget range #2 on the page
   },
   ...
   {
-    // fields for each budget range on every page
+    // fields for budget range #N on the page
   }
 ]
 ...
@@ -85,8 +87,9 @@ Different page types will have different fields, AND different
 
 
 ## We need to pull ANY structure added to a page
-... if we configure more Structures on a page, the API needs to add them automatically, so hardcoding field titles & structure names absolutely doesn't work.
+... if we configure more Structures on a page, the API needs to add them automatically, so hardcoding field titles & structure names like you started, doesn't work.
 
+E.g.
 
 ```
 ...
