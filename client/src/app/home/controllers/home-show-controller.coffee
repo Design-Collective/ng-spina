@@ -42,7 +42,7 @@ angular.module('dcollective').controller 'showHomeCtrl', () ->
           widgetData: [
             {
               title: 'Helllo '
-              class: 'icom-cool'
+              class: 'fa fa-cog'
               link: '/about-us'
             }
             {
