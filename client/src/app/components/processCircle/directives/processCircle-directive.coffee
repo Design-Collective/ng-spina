@@ -21,9 +21,12 @@ angular.module('dcollective')
       { title: 'Deploy', subTitle: 'Deploy the goods.' }
       { title: 'Iterate', subTitle: 'Test, adapt, iterate.' }
     ]
-
+    @getClass = ->
+      if @progress != undefined
+        'circle_' + @progress
+        
     @showStep = ($index)->
-      if !@progress && $index != @progress
+      if @progress == undefined
         true
       else
         $index == @progress

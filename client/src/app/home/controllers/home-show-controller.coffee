@@ -8,7 +8,11 @@
 ###
 angular.module('dcollective').controller 'showHomeCtrl', () ->
   @inViewHandler = ($index, $inview, $inviewpart)->
-    @circleProgress = $index
+    if $inviewpart == 'top'
+      @circleProgress = $index
+
+    if $inviewpart == undefined 
+      @circleProgress = undefined
 
   @data = {
     title: 'Main title'
