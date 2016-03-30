@@ -5,14 +5,18 @@ class Api::PagesController < Api::ApiController
   before_action :set_page, only: [:show, :update, :destroy]
 
   def index
-    @pages = Spina::Page.where({ :draft => false })
+    @pages = Spina::Page.where(draft: false)
     render :index
   end
 
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page
+    slides_ids = @page.page_parts.where(page_partable_type: 'Spina::Structure')
+                   .joins('INNER JOIN spina_structures ON spina_page_parts.page_partable_id = spina_structures.id')
+                   .pluck('spina_structures.id')
+    @slides = Spina::StructureItem.where(structure_id: slides_ids)
+
     render :show
   end
 
@@ -31,8 +35,6 @@ class Api::PagesController < Api::ApiController
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
   def update
-    @page = Spina::Page.find(params[:id])
-
     if @page.update(page_params)
       head :no_content
     else
@@ -44,17 +46,16 @@ class Api::PagesController < Api::ApiController
   # DELETE /pages/1.json
   def destroy
     @page.destroy
-
     head :no_content
   end
 
   private
 
-    def set_page
-      @page = Spina::Page.find(params[:id])
-    end
+  def set_page
+    @page = Spina::Page.find(params[:id])
+  end
 
-    def page_params
-      params.require(:page).permit(:title)
-    end
+  def page_params
+    params.require(:page).permit(:title)
+  end
 end
