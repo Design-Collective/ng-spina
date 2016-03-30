@@ -9,7 +9,7 @@ angular.module('dcollective').directive('postsGrid', ->
   templateUrl: 'app/components/widgets/partials/postsGrid.html'
   restrict: 'E'
   scope:
-    route: '='
+    widgetData: '='
   controllerAs: 'postsGrid'
   controller: ['Post',(Post)->
     @posts = []
