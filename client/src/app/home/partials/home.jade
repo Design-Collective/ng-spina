@@ -6,5 +6,8 @@ section.v-slide.hero.overlay.p-50(layout="column" layout-align="center center" l
     h3.sub-title.text-center.white Sexy and Scalable Multi-Platform Digital Products
 
 md-content
-    v-slide(ng-repeat="slideData in home.data.slides" slide-data="slideData")
+    v-slide(ng-repeat="slideData in home.data.slides" slide-data="slideData" in-view='home.inViewHandler($index, $inview, $inviewpart)')
     up-next.up-next(next-page='home.data.upNext')
+
+
+process-circle(progress='home.circleProgress')

@@ -7,6 +7,13 @@
 # Controller of the dcollective
 ###
 angular.module('dcollective').controller 'showHomeCtrl', () ->
+  @inViewHandler = ($index, $inview, $inviewpart)->
+    if $inviewpart == 'top'
+      @circleProgress = $index
+
+    if $inviewpart == undefined 
+      @circleProgress = undefined
+
   @data = {
     title: 'Main title'
     subTitle: 'Small sub title'
