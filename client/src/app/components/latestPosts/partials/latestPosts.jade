@@ -1,0 +1,6 @@
+.posts-grid
+    .grid-box(ng-repeat='post in lposts.posts track by $index | limitTo: lposts.limit')
+        a(ng-href='#')
+            p.category {{ post.category.replace(',',' / ') }}
+            h3 {{ post.title }}
+            p.author {{ post.author }} | {{ post.created }}
