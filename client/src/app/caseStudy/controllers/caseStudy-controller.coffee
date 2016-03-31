@@ -6,6 +6,12 @@
 # # homeShowCtrl
 # Controller of the dcollective
 ###
-angular.module('dcollective').controller 'caseStudyCtrl', () ->
-  console.log 'im the case'
+angular.module('dcollective').controller 'caseStudyCtrl', ($stateParams,TemplateCompiler, $scope)->
+  @client = $stateParams.client
+  @injectorContainer = '.case-injector'
+
+  if @client
+    @template = '<' + @client + '-case></'+ @client + '-case>'
+    directive = TemplateCompiler.getCompiledDirective @template, $scope
+    TemplateCompiler.inject @injectorContainer , directive
   @

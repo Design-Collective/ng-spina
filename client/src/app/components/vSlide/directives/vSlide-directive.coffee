@@ -29,10 +29,10 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
         directive = '<' + scope.vslide.slideData.widget.widgetName + ' widget-data="vslide.slideData.widget.widgetData" >'
       else
         directive = '<' + scope.vslide.slideData.widget.widgetName + '>'
-      
+
       linkFn = $compile directive
       widget = linkFn scope
-
+      console.log linkFn
       widgetContainer = element.find '.widget-container'
       widgetContainer.append widget
 
