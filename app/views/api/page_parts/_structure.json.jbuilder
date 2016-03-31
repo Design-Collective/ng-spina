@@ -1,6 +1,7 @@
-json.array! structure.structure_parts do |structure_field|
-  json.set! structure
-  json.type structure_field.structure_partable_type
-  json.content structure.structure_parts
+structure.page_partable.structure_items do |item|
+  item.structure_parts do |field|
+    json.set! field.name do
+      json.content json.field_partable
+    end
+  end
 end
-
