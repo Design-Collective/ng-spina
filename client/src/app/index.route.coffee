@@ -17,6 +17,11 @@ angular.module 'dcollective'
         templateUrl: 'app/process/partials/process.html'
         controller: 'showProcessCtrl'
         controllerAs: 'process'
+      .state 'caseStudy',
+        url: '/case/{client}'
+        templateUrl: 'app/caseStudy/partials/caseStudy.html'
+        controller: 'caseStudyCtrl'
+        controllerAs: 'case'
       .state 'work',
         url: '/work'
         templateUrl: 'app/work/partials/work.html'
@@ -27,4 +32,3 @@ angular.module 'dcollective'
 
     $locationProvider.html5Mode
       enabled: true
-      requireBase: false
