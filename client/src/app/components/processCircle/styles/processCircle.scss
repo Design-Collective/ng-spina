@@ -1,0 +1,50 @@
+process-circle {
+  //TODO: Replace with real parameters
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  color: #000000;
+  width: 100%;
+
+  //The circles is a sprite which shows different states
+  //Each circle_$index shows the corresponding sprite
+  .process-circle {
+    //Here the main sprite ( standBy state )
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    //TODO: Replace background-color with sprite coordinates
+    background-color: white;
+
+    &.circle_0 {
+      background-color: red;
+    }
+    &.circle_1 {
+      background-color: green;
+    }
+    &.circle_2 {
+      background-color: blue;
+    }
+    &.circle_3 {
+      background-color: yellow;
+    }
+    &.circle_4 {
+      background-color: pink;
+    }
+  }
+
+  .ng-hide:not(.ng-hide-animate){
+    display: block !important;
+  }
+  .ng-hide {
+    opacity: 0.3;
+  }
+  .ng-animate {
+    transition:0.5s linear all;
+  }
+}

@@ -15,32 +15,24 @@ module Spina
 
       { name: 'primary_color', title: 'Primary color', page_partable_type: 'Spina::Color' },
 
-      # { name: 'include_title', title: 'Include large title', page_partable_type: 'Spina::Line' },
-      # { name: 'include_subtitle', title: 'Include subtitle', page_partable_type: 'Spina::Line' },
-      # { name: 'include_background_image', title: 'Include section background', page_partable_type: 'Spina::Photo' },
-      # { name: 'include_image', title: 'Include section inner image', page_partable_type: 'Spina::Photo' },
-      # { name: 'include_text', title: 'Include content', page_partable_type: 'Spina::Line' },
-      # { name: 'include_classes', title: 'Include CSS classes', page_partable_type: 'Spina::Line' },
-      # { name: 'include_button_label', title: 'Include button label', page_partable_type: 'Spina::Line' },
-
-      { name: 'sections', title: 'Sections', page_partable_type: "Spina::Structure"},
+      { name: 'slides', title: 'Slides', page_partable_type: "Spina::Structure"},
 
       { name: 'budget_ranges', title: 'Budget Ranges', page_partable_type: "Spina::Structure"},
-
       { name: 'featured_work_stats', title: 'Featured work stats', page_partable_type: "Spina::Structure"},
+
       { name: 'slider', title: 'Photo slider', page_partable_type: "Spina::PhotoCollection"}
     ]
 
     self.structures = {
 
-      'sections' => [
+      'slides' => [
         {
-          name: 'large_title',
+          name: 'title',
           title: 'Large title',
           structure_partable_type: "Spina::Line"
         },
         {
-          name: 'small_title',
+          name: 'sub_title',
           title: 'Small title',
           structure_partable_type: "Spina::Line"
         },
@@ -126,7 +118,7 @@ module Spina
     self.view_templates = {
       'homepage' => {
         title:      'Homepage',
-        page_parts: ['hero_title', 'hero_subtitle', 'text', 'sections', 'budget_ranges']
+        page_parts: ['hero_title', 'hero_subtitle', 'hero_background_image', 'hero_background_video', 'text', 'slides', 'budget_ranges']
       },
       'default' => {
         title:      'Default Page',
