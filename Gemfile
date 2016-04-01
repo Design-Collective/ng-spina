@@ -26,7 +26,7 @@ gem 'spina-template'
 gem 'spina'
 
 # gem 'spina-team-members', :git => 'git://github.com/Design-Collective/spina-team-members.git'
-gem 'spina_team_members', :path => '/Users/Klemen/Sites/spina/spina-team-members'
+#gem 'spina_team_members', :path => '/Users/Klemen/Sites/spina/spina-team-members'
 
 group :development, :test do
   gem 'dotenv-rails'
