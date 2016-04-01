@@ -19,6 +19,7 @@
   padding: 50px;
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   min-height: 105vh;
 
   * {
@@ -96,6 +97,18 @@
     }
     .sub-title {
       color: $yellow;
+    }
+  }
+
+  //
+  // Specific slide styles
+  //
+
+  &.about {
+    background-size: 100% auto !important;
+    background-position: center bottom !important;
+    .sub-title {
+      margin-bottom: 22%;
     }
   }
 

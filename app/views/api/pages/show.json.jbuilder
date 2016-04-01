@@ -5,7 +5,6 @@ json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description, :
     json.child! do
       item.structure_parts.each do |part|
         json.set! part.name do
-          # json.(part, :id, :structure_item_id, :structure_partable_id, :structure_partable_type, :name, :title, :content)
           json.(part, :id, :structure_partable_type)
           json.content part.content
         end
@@ -20,12 +19,4 @@ end
     json.id field.page_partable_id
     json.content field.content
   end
-end
-
-json.poop do
-  json.test "Billy"
-end
-
-json.poop do
-  json.test "Johnny"
 end
