@@ -12,11 +12,16 @@ angular.module('dcollective').directive('navMenu', ->
   controller:['Constants',(Constants) ->
     @isOpen = false
     @menuItems = null
+    @menuClass = 'icon-menu'
 
     Constants.getConstants().then (res)=>
       @menuItems = res.menu
 
     @toggleMenu = ->
+      if @menuClass == 'icon-menu'
+        @menuClass = 'icon-close'
+      else
+        @menuClass = 'icon-menu'
       @isOpen = !@isOpen
     
     @
