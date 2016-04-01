@@ -15,7 +15,7 @@ class Api::PagesController < Api::ApiController
     structure_ids = @page.page_parts.where(page_partable_type: 'Spina::Structure')
                    .joins('INNER JOIN spina_structures ON spina_page_parts.page_partable_id = spina_structures.id')
                    .pluck('spina_structures.id')
-    @structure_fields = Spina::StructureItem.where(structure_id: structure_ids)
+    @structure_fields = Spina::StructureItem.order(:position).where(structure_id: structure_ids)
 
     @fields = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
     render :show
