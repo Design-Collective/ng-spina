@@ -5,6 +5,9 @@ section.v-slide.hero.overlay.p-50(layout="column" layout-align="center center" l
     h2.main-title.text-center.white {{home.data.heroTitle.content}}
     h3.sub-title.text-center.white {{home.data.heroSubtitle.content}}
 
+h1 Icon Test
+  i.btl.bt-times
+
 md-content
     v-slide(ng-repeat="slideData in home.data.slides" slide-data="slideData" in-view='home.inViewHandler($index, $inview, $inviewpart)')
     up-next.up-next(next-page='home.data.upNext')
