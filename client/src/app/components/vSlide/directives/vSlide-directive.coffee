@@ -15,16 +15,18 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   bindToController: true
   controller: [()->
     @getBackgroundImage = ()->
-      if @slideData.backgroundImage
-        'background-image': 'url("'+@slideData.backgroundImage+'")'
+      if @slideData.backgroundImage.content && @slideData.backgroundImage.content.file
+        'background-image': 'url("'+@slideData.backgroundImage.content.file.image.url+'")'
     @
   ]
   link: (scope, element, attrs)->
 
+    scope.section = scope.vslide.slideData
+
     #Compile defined widget directive and append to view
     if typeof scope.vslide.slideData.widget != 'undefined'
       directive = ''
-      
+
       if scope.vslide.slideData.widget.widgetData
         directive = '<' + scope.vslide.slideData.widget.widgetName + ' widget-data="vslide.slideData.widget.widgetData" >'
       else
@@ -39,12 +41,12 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
     #Compile defined small widget directive and append to view
     if typeof scope.vslide.slideData.extraWidget != 'undefined'
       directive = ''
-      
+
       if scope.vslide.slideData.extraWidget.widgetData
         directive = '<' + scope.vslide.slideData.extraWidget.widgetName + ' widget-data="vslide.slideData.extraWidget.widgetData" >'
       else
         directive = '<' + scope.vslide.slideData.extraWidget.widgetName + '>'
-      
+
       linkFn = $compile directive
       extraWidget = linkFn scope
 

@@ -9,13 +9,14 @@ angular.module('dcollective').directive('navMenu', ->
   templateUrl: 'app/components/navMenu/partials/navMenu.html'
   restrict: 'E'
   controllerAs: 'navMenu'
-  controller:['Constants',(Constants) ->
+  controller: ['Constants', (Constants) ->
     @isOpen = false
     @menuItems = null
     @menuClass = 'icon-menu'
 
     Constants.getConstants().then (res)=>
-      @menuItems = res.menu
+      if res && res.menu
+        @menuItems = res.menu
 
     @toggleMenu = ->
       if @menuClass == 'icon-menu'
@@ -23,7 +24,7 @@ angular.module('dcollective').directive('navMenu', ->
       else
         @menuClass = 'icon-menu'
       @isOpen = !@isOpen
-    
+
     @
   ]
 )

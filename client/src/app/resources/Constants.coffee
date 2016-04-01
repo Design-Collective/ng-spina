@@ -12,12 +12,14 @@ angular.module('dcollective').factory 'Constants', ['RailsResource','$q','$timeo
     @init: ()=>
 
       #TODO: Change data !!!
-      @get().then (res)->
-        @constants =  menu: [
-          { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }
-          { title:"Case colab", slug: "case/colab", subTitle: "Sub title here goes it and its longer"  }
-          { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }
-        ]
+      @getConstants().then (res)->
+        @constants = 
+          menu: [
+            { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }
+            { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }
+            { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }
+          ]
+        
 
     @getConstants: ->
       $timeout ()->
