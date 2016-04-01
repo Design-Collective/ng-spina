@@ -1,5 +1,5 @@
-json.name part.name
-json.type part.page_partable_type
-if part.page_partable
-  json.attributes part.page_partable
+json.name field.name
+json.type field.page_partable_type
+if field.page_partable
+  json.attributes field.page_partable
 end

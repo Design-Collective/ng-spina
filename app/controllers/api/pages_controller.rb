@@ -12,11 +12,12 @@ class Api::PagesController < Api::ApiController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    slides_ids = @page.page_parts.where(page_partable_type: 'Spina::Structure')
+    structure_ids = @page.page_parts.where(page_partable_type: 'Spina::Structure')
                    .joins('INNER JOIN spina_structures ON spina_page_parts.page_partable_id = spina_structures.id')
                    .pluck('spina_structures.id')
-    @slides = Spina::StructureItem.where(structure_id: slides_ids)
+    @structure_fields = Spina::StructureItem.where(structure_id: structure_ids)
 
+    @fields = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
     render :show
   end
 
