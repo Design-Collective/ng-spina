@@ -20,6 +20,10 @@ angular.module('dcollective').controller 'showHomeCtrl', [ 'Page', (Page) ->
   Page.get(1).then (data)->
     home.data = data
 
+  @getBackgroundImage = ()->
+    if @data && @data.heroBackgroundImage.content && @data.heroBackgroundImage.content.file
+      'background-image': 'url("' + @data.heroBackgroundImage.content.file.url + '")'
+
   # @data = {
   #   title: 'Main title'
   #   subTitle: 'Small sub title'
