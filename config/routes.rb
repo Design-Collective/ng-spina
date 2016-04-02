@@ -1,6 +1,8 @@
 Dcollective::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
+    resources :menu, execpt: [:new, :edit]
+
     resources :pages, except: [:new, :edit]
   end
 
