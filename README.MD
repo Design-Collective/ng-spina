@@ -21,9 +21,9 @@ Run `rails g spina_reviews:install`
 
 Then `rake db:migrate` or `bundle exec rake db:migrate`
 
-# To-do
+### To-do
 
-## Back-end
+#### Back-end
 - [ ] Spina basic page types & building blocks setup (still WIP / needs a 2nd look)
 - [x] Spina endpoints isolated under /admin
 - [x] Custom API Controller for all api views with jBuilder. See folder `/app/controllers/api`. For more info, look at [implementing-rails-apis-like-a-professional](http://blog.joshsoftware.com/2014/05/08/implementing-rails-apis-like-a-professional/) and [how-to-expose-a-rails-api](https://seecristicode.wordpress.com/2014/05/24/how-to-expose-a-rails-api/)).
@@ -33,12 +33,26 @@ Then `rake db:migrate` or `bundle exec rake db:migrate`
 - [ ] *Portfolio Module (TBD) - custom built up to spec
 - [ ] *Blog Module (TBD) - custom built up to spec
 
+
 ## Client
 - [ ] Setup NG Rails Resource to load in page endpoints
 - [ ] Comet Haley
 
 # Configuration & Setup
 
+
+## Rails Console
+
+Spit out all pages in the console
+
+```> pages = Spina::Page.all```
+
+Homepage Page Parts
+```> homepage = Spina::Page.find(1).page_parts```
+
+
+
+https://www.dropbox.com/s/g8qqhh00ea44f4j/Screenshot%202016-04-01%2022.10.06.png?dl=0
 ## Run the App 
 - `$ gulp serve:fullstack`
 
