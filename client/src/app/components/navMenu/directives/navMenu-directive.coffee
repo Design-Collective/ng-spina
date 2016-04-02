@@ -9,14 +9,16 @@ angular.module('dcollective').directive('navMenu', ->
   templateUrl: 'app/components/navMenu/partials/navMenu.html'
   restrict: 'E'
   controllerAs: 'navMenu'
-  controller: ['Constants', (Constants) ->
+  controller: ['Menu', (Menu) ->
     @isOpen = false
     @menuItems = null
     @menuClass = 'btl bt-bars'
 
-    Constants.getConstants().then (res)=>
-      if res && res.menu
-        @menuItems = res.menu
+    Menu.get().then (res)=>
+      #console.log res
+      if res
+        console.log res
+        @menuItems = res
 
     @toggleMenu = ->
       @isOpen = !@isOpen
