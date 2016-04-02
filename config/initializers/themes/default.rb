@@ -7,6 +7,7 @@ module Spina
     self.title = 'Default theme'
 
     self.page_parts = [
+      { name: 'sub_title', title: 'Subtitle', page_partable_type: 'Spina::Line' },
       { name: 'hero_title', title: 'Hero title', page_partable_type: 'Spina::Line' },
       { name: 'hero_subtitle', title: 'Hero subtitle', page_partable_type: 'Spina::Line' },
       { name: 'hero_background_image', title: 'Hero image', page_partable_type: "Spina::Photo" },
