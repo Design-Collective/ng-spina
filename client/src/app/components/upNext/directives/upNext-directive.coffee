@@ -5,10 +5,9 @@
 # @description
 # # upNext
 ###
-angular.module('dcollective')
-.directive('upNext', ->
+angular.module('dcollective').directive('upNext', ->
   templateUrl: 'app/components/upNext/partials/upNext.html'
   restrict: 'E'
-  link: (scope, element, attrs) ->
-    element.text 'this is the upNext directive'
+  scope:
+    nextPage: '='
 )

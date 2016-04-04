@@ -1,0 +1,16 @@
+div.toolbar(layout='row')
+    .left-nav(flex='50', layout='row', layout-align='start center')
+        img.logo-small(src="assets/images/dc_icon.svg", ng-hide='navMenu.isOpen')
+    .right-nav(flex='50', layout='row', layout-align='end center')
+        a.menu-toggle(href='#',ng-click='navMenu.toggleMenu()')
+            i(ng-class='navMenu.menuClass')
+
+.menu-overlay(ng-show='navMenu.isOpen')
+    .wrapper
+        ul.menu
+            li.menu-item(ng-repeat='item in navMenu.menuItems')
+                a(ng-href='item.slug')
+                    p.title {{ item.title }}
+                    p.small-title {{ item.subTitle }}
+
+    .menu-footer

@@ -5,10 +5,28 @@
 # @description
 # # navMenu
 ###
-angular.module('dcollective')
-.directive('navMenu', ->
+angular.module('dcollective').directive('navMenu', ->
   templateUrl: 'app/components/navMenu/partials/navMenu.html'
   restrict: 'E'
-  link: (scope, element, attrs) ->
-    element.text 'this is the navMenu directive'
+  controllerAs: 'navMenu'
+  controller: ['Menu', (Menu) ->
+    @isOpen = false
+    @menuItems = null
+    @menuClass = 'btl bt-bars'
+
+    Menu.get().then (res)=>
+      #console.log res
+      if res
+        console.log res
+        @menuItems = res
+
+    @toggleMenu = ->
+      @isOpen = !@isOpen
+      if @isOpen
+        @menuClass = 'btl bt-times'
+      else
+        @menuClass = 'btl bt-bars'
+
+    @
+  ]
 )

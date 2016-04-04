@@ -12,33 +12,23 @@ module Spina
       { name: 'hero_background_image', title: 'Hero image', page_partable_type: "Spina::Photo" },
       { name: 'hero_background_video', title: 'Hero background video', page_partable_type: "Spina::Line" },
       { name: 'text', title: 'Text content', page_partable_type: 'Spina::Text' },
-
       { name: 'primary_color', title: 'Primary color', page_partable_type: 'Spina::Color' },
-
-      # { name: 'include_title', title: 'Include large title', page_partable_type: 'Spina::Line' },
-      # { name: 'include_subtitle', title: 'Include subtitle', page_partable_type: 'Spina::Line' },
-      # { name: 'include_background_image', title: 'Include section background', page_partable_type: 'Spina::Photo' },
-      # { name: 'include_image', title: 'Include section inner image', page_partable_type: 'Spina::Photo' },
-      # { name: 'include_text', title: 'Include content', page_partable_type: 'Spina::Line' },
-      # { name: 'include_classes', title: 'Include CSS classes', page_partable_type: 'Spina::Line' },
-      # { name: 'include_button_label', title: 'Include button label', page_partable_type: 'Spina::Line' },
-
-      { name: 'sections', title: 'Sections', page_partable_type: "Spina::Structure"},
-
+      { name: 'slides', title: 'Slides', page_partable_type: "Spina::Structure"},
+      { name: 'budget_ranges', title: 'Budget Ranges', page_partable_type: "Spina::Structure"},
       { name: 'featured_work_stats', title: 'Featured work stats', page_partable_type: "Spina::Structure"},
       { name: 'slider', title: 'Photo slider', page_partable_type: "Spina::PhotoCollection"}
     ]
 
     self.structures = {
 
-      'sections' => [
+      'slides' => [
         {
-          name: 'large_title',
+          name: 'title',
           title: 'Large title',
           structure_partable_type: "Spina::Line"
         },
         {
-          name: 'small_title',
+          name: 'sub_title',
           title: 'Small title',
           structure_partable_type: "Spina::Line"
         },
@@ -83,6 +73,7 @@ module Spina
           structure_partable_type: "Spina::Line"
         }
       ],
+
       'budget_ranges' => [
         {
           name: 'value',
@@ -121,23 +112,90 @@ module Spina
     self.layout_parts = []
 
     self.view_templates = {
-      'homepage' => {
-        title:      'Homepage',
-        page_parts: ['hero_title', 'hero_subtitle', 'text']
-      },
-      'default' => {
+      # Defaults 
+      'default' => { # Default / Edit
         title:      'Default Page',
         usage:      'Default page type',
-        page_parts: ['hero_title', 'hero_subtitle', 'hero_background_image', 'hero_background_video', 'text', 'include_title', 'include_subtitle', 'include_background_image', 'include_image', 'include_text', 'include_classes', 'include_button_label', 'include_classes', 'include_background_image', 'sections', 'primary_color']
+        page_parts: [
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'primary_color',
+          'slides',
+          'include_title',
+          'include_subtitle',
+          'include_background_image',
+          'include_image',
+          'include_text',
+          'include_classes',
+          'include_button_label',
+          'include_classes',
+          'include_background_image'
+        ]
+      },
+      'show' => { # Default / New
+        title:      'Default Page',
+        usage:      'Default page type',
+        page_parts: [
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'primary_color',
+          'slides',
+          'include_title',
+          'include_subtitle',
+          'include_background_image',
+          'include_image',
+          'include_text',
+          'include_classes',
+          'include_button_label',
+          'include_classes',
+          'include_background_image'
+        ]
+      },
+      # Custom
+      'homepage' => {
+        title:      'Homepage',
+        usage:      'Home page type',
+        page_parts: [
+          'hero_title', 
+          'hero_subtitle', 
+          'hero_background_image', 
+          'hero_background_video', 
+          'text', 
+          'slides', 
+          'budget_ranges'
+        ]
       },
       'work' => {
         title:      'Work Page',
         usage:      'Work page type',
-        page_parts: ['featured_works_stats', 'hero_title', 'hero_subtitle', 'hero_background_image', 'hero_background_video', 'text', 'include_title', 'include_subtitle', 'include_background_image', 'include_image', 'include_text', 'include_classes', 'include_button_label', 'include_classes', 'include_background_image', 'sections', 'primary_color']
+        page_parts: [
+          'featured_works_stats',
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'primary_color',
+          'slides',
+          'include_title',
+          'include_subtitle',
+          'include_background_image',
+          'include_image',
+          'include_text',
+          'include_classes',
+          'include_button_label',
+          'include_classes',
+          'include_background_image'
+        ]
       },
       'contact' => {
         title:        'Contact',
-        description:  'Contact page',
         usage:        'Contact page',
         page_parts:   ['text']
       }
@@ -189,7 +247,8 @@ module Spina
     ]
 
     # TODO: @andrii Rename/add the module name(s) here once they are reworked.
-    self.plugins = ['reviews'];
+    #self.plugins = ['team_members'];
+    self.plugins = [];
 
   end
 end
