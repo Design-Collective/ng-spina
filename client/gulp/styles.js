@@ -17,8 +17,15 @@ gulp.task('styles-reload', ['styles'], function() {
 });
 
 gulp.task('styles', function() {
+  buildFonts();
   return buildStyles();
 });
+
+// Fonts
+var buildFonts = function () {
+  return gulp.src([conf.paths.src+'/assets/fonts/**/*'])
+    .pipe(gulp.dest(conf.paths.tmp+'/serve/assets/fonts/'));
+};
 
 var buildStyles = function() {
   var sassOptions = {
@@ -26,7 +33,7 @@ var buildStyles = function() {
   };
 
   var injectFiles = gulp.src([
-    path.join(conf.paths.src, '/app/**/*.scss'),
+    path.join(conf.paths.src, '/app/**/[^_]*.scss'),
     path.join('!' + conf.paths.src, '/app/index.scss')
   ], { read: false });
 

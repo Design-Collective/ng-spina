@@ -1,0 +1,84 @@
+$start: 0;
+$limit: 125;
+$interval: 5;
+
+$real: $limit / $interval;
+
+// Margins
+
+@for $i from 0 through $real {
+  @if(($i * $interval) + $start <= $limit) {
+    .m-#{($i * $interval) + $start} {
+      margin: #{($i * $interval) + $start}px;
+    }
+    .m-t-#{($i * $interval) + $start} {
+      margin-top: #{($i * $interval) + $start}px !important;
+    }
+    .m-b-#{($i * $interval) + $start} {
+      margin-bottom: #{($i * $interval) + $start}px !important;
+    }
+    .m-r-#{($i * $interval) + $start} {
+      margin-right: #{($i * $interval) + $start}px !important;
+    }
+    .m-l-#{($i * $interval) + $start} {
+      margin-left: #{($i * $interval) + $start}px !important;
+    }
+
+    .p-#{($i * $interval) + $start} {
+      padding: #{($i * $interval) + $start}px;
+    }
+    .p-t-#{($i * $interval) + $start} {
+      padding-top: #{($i * $interval) + $start}px !important;
+    }
+    .p-b-#{($i * $interval) + $start} {
+      padding-bottom: #{($i * $interval) + $start}px !important;
+    }
+    .p-r-#{($i * $interval) + $start} {
+      padding-right: #{($i * $interval) + $start}px !important;
+    }
+    .p-l-#{($i * $interval) + $start} {
+      padding-left: #{($i * $interval) + $start}px !important;
+    }
+    .m-t--#{($i * $interval) + $start} {
+      margin-top: -#{($i * $interval) + $start}px !important;
+    }
+  }
+}
+
+.img-round {
+  border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  -webkit-border-radius: 1000px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+//
+// Color Classes
+//
+
+.white {
+  color: #FFFFFF;
+}
+
+@mixin transition($trans) {
+  transition: $trans;
+  -moz-transition: $trans;
+  -webkit-transition: $trans;
+}
+
+.grayscale {
+  -webkit-filter: grayscale(0.8);
+  -webkit-filter: grayscale(80%);
+  filter: gray;
+  filter: grayscale(80%);
+  -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+}

@@ -18,7 +18,18 @@ nav-menu {
     padding: 60px;
 
     .logo-small{
+      position: absolute;
       width: 60px;
+      display: inline-block;
+    }
+  }
+
+  .menu-toggle {
+    color: rgba(255,255,255,0.9);
+    font-size: 30px;
+    @include transition(all 0.3s);
+    &:hover {
+      color: rgba(255,255,255,1);
     }
   }
 
