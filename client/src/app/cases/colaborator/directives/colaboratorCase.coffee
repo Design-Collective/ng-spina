@@ -6,6 +6,6 @@
 # # loader
 ###
 angular.module('dcollective').directive('colaboratorCase', ->
-  templateUrl: 'app/caseStudy/partials/colaboratorCase.html'
+  templateUrl: 'app/cases/colaborator/partials/colaboratorCase.html'
   restrict: 'E'
 )

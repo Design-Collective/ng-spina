@@ -18,7 +18,7 @@ angular.module 'dcollective'
         controller: 'showProcessCtrl'
         controllerAs: 'process'
       .state 'caseStudy',
-        url: '/case/{client}'
+        url: '/case/:client'
         templateUrl: 'app/caseStudy/partials/caseStudy.html'
         controller: 'caseStudyCtrl'
         controllerAs: 'case'
