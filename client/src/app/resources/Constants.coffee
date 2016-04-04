@@ -13,7 +13,7 @@ angular.module('dcollective').factory 'Constants', ['RailsResource','$q','$timeo
 
       #TODO: Change data !!!
       @getConstants().then (res)->
-        @constants = 
+        @constants =
           menu: [
             { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }
             { title:"Test title", slug: "slug", subTitle: "Sub title here goes it and its longer"  }

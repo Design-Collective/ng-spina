@@ -1,0 +1,7 @@
+h3.section-title {{ $ctrl.title }}
+h5.section-subtitle {{ $ctrl.subTitle }}
+
+.nav-menu
+    ul
+        li(ng-repeat='item in $ctrl.menu track by $index', ng-click='$ctrl.slideTo(item.target)') {{ item.title }}
+.slides-injector
