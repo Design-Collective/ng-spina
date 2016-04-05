@@ -7,6 +7,7 @@ module Spina
     self.title = 'Default theme'
 
     self.page_parts = [
+      { name: 'sub_title', title: 'Sub title', page_partable_type: 'Spina::Line' },
       { name: 'hero_title', title: 'Hero title', page_partable_type: 'Spina::Line' },
       { name: 'hero_subtitle', title: 'Hero subtitle', page_partable_type: 'Spina::Line' },
       { name: 'hero_background_image', title: 'Hero image', page_partable_type: "Spina::Photo" },
@@ -117,6 +118,7 @@ module Spina
         title:      'Default Page',
         usage:      'Default page type',
         page_parts: [
+          'sub_title',
           'hero_title',
           'hero_subtitle',
           'hero_background_image',
@@ -139,6 +141,7 @@ module Spina
         title:      'Default Page',
         usage:      'Default page type',
         page_parts: [
+          'sub_title',
           'hero_title',
           'hero_subtitle',
           'hero_background_image',
@@ -162,6 +165,7 @@ module Spina
         title:      'Homepage',
         usage:      'Home page type',
         page_parts: [
+          'sub_title',
           'hero_title', 
           'hero_subtitle', 
           'hero_background_image', 
@@ -175,6 +179,7 @@ module Spina
         title:      'Work Page',
         usage:      'Work page type',
         page_parts: [
+          'sub_title',
           'featured_works_stats',
           'hero_title',
           'hero_subtitle',
@@ -205,42 +210,49 @@ module Spina
       {
         name:           'homepage',
         title:          'Homepage',
+        sub_title:      'Homepage Subtitle',
         deletable:      false,
         view_template:  'homepage'
       },
       {
         name:           'about',
         title:          'About',
+        sub_title:      'About Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'clients',
         title:          'Clients',
+        sub_title:      'Clients Subtitle',
         deletable:      true,
         view_template:  'work'
       },
       {
         name:           'process',
         title:          'Process',
+        sub_title:      'Process Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'portfolio',
         title:          'Portfolio',
+        sub_title:      'Portfolio Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'blog',
         title:          'Blog',
+        sub_title:      'Blog Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'contact',
         title:          'Contact',
+        sub_title:      'Contact Subtitle',
         deletable:      true,
         view_template:  'default'
       }
