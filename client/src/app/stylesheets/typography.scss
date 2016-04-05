@@ -2,11 +2,13 @@
 
 @import "blacktie/black-tie";
 
+// Title Text Properties
+// ------------------------------
 .main-title {
   font-size: 8.5rem;
   margin-bottom: 0;
   margin-top: 0;
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.6rem;
   font-weight: 700;
 }
 .sub-title {
@@ -16,13 +18,104 @@
   font-weight: 700;
 }
 
+// Heading Text Properties
+// ------------------------------
 
-.text-center {
-  text-align: center;
+@mixin headline-properties {
+  //color: $headings-color;
+  line-height: $headings-line-height;
+  letter-spacing: -1px;
 }
+
+h1, .h1 {
+  //font-size: 2.3rem;
+ font-family: $font-family-headings-bold;
+ @include headline-properties;
+}
+
+h2, .h2 {
+  font-family: $font-family-headings-bold;
+  @include headline-properties;
+}
+
+h3, .h3  {
+  font-family: $font-family-headings-bold;
+  @include headline-properties;
+}
+
+h4, .h4, h5, .h5 {
+  font-family: $font-family-headings-bold;
+  @include headline-properties;
+}
+
+.lead {
+  font-family: $font-family-headings-thin !important;
+  @include headline-properties;
+}
+
+// Button Text
+// ------------------------------
 
 .md-button {
   font-family: $font-family-condensed;
   font-size: 1.6rem;
   letter-spacing: -0.03rem;
 }
+
+// Imports 
+// ------------------------------
+
+// Thin
+@font-face {
+  font-family: 'Gotham-Thin';
+  src: url('#{$gotham-font-path}/Gotham-Thin.eot');
+  src: url('#{$gotham-font-path}/Gotham-Thin.eot?#iefix') format('embedded-opentype'),
+    url('#{$gotham-font-path}/Gotham-Thin.woff') format('woff'),
+    url('#{$gotham-font-path}/Gotham-Thin.ttf')  format('truetype');
+  font-style: normal;
+}
+
+// Light
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('#{$gotham-font-path}/Gotham-Light.eot');
+  src: url('#{$gotham-font-path}/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+    url('#{$gotham-font-path}/Gotham-Light.woff') format('woff'),
+    url('#{$gotham-font-path}/Gotham-Light.ttf')  format('truetype');
+  font-style: normal;
+}
+
+// Medium
+@font-face {
+  font-family: 'Gotham';
+  src: url('#{$gotham-font-path}/Gotham-Medium.eot');
+  src: url('#{$gotham-font-path}/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+    url('#{$gotham-font-path}/Gotham-Medium.woff') format('woff'),
+    url('#{$gotham-font-path}/Gotham-Medium.ttf')  format('truetype');
+  font-style: normal;
+}
+
+// Book
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('#{$gotham-font-path}/Gotham-Book.eot');
+  src: url('#{$gotham-font-path}/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+    url('#{$gotham-font-path}/Gotham-Book.woff') format('woff'),
+    url('#{$gotham-font-path}/Gotham-Book.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// Bold
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('#{$gotham-font-path}/Gotham-Bold.eot');
+  src: url('#{$gotham-font-path}/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+    url('#{$gotham-font-path}/Gotham-Bold.woff') format('woff'),
+    url('#{$gotham-font-path}/Gotham-Bold.ttf')  format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
