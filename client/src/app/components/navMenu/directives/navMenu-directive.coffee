@@ -17,7 +17,6 @@ angular.module('dcollective').directive('navMenu', ->
     Menu.get().then (res)=>
       #console.log res
       if res
-        console.log res
         @menuItems = res
 
     @toggleMenu = ->
