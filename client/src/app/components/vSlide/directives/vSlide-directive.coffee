@@ -34,7 +34,7 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
 
       linkFn = $compile directive
       widget = linkFn scope
-
+      console.log linkFn
       widgetContainer = element.find '.widget-container'
       widgetContainer.append widget
 
