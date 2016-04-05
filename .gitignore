@@ -11,14 +11,54 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-# Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+/.idea
+.ruby-version
+.ruby-gemset
+dump.rdb
 
-/public/uploads
-public/uploads/spina/*
+database.yml
+/vendor/assets/bower_components
+# Ignore all logfiles and tempfiles.
+/log/*
+/solr
+/tmp
+/deploy_backups/*.gz
+/deploy_backups/*.sql
+
+# Ignore MacOS X stuff
+.DS_Store
+
+#Ignore carrierwave uploads
+/public/uploads/*
+/public/assets/
+
+#Ignore paperclip files
+/public/system/*
+
+#Ignore ctags files
+tags
+
+.env
+
+# heroku
+heroku_rsa
+heroku_rsa.pub
+
+*.sql
+.env-PROD
+sftp-config.json
+
+# Ignore Bower Dependency folder
+/vendor/assets/bower_components
+
+#ingnore Public Wistia Media Items
+/public/wistia_media_items/
+
+startserver
+screenshot.png
 
 #IDE
 .idea/
 
+# Ruby Version
 .ruby-version
