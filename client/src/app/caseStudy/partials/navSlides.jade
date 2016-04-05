@@ -1,7 +1,11 @@
-h3.section-title {{ $ctrl.title }}
-h5.section-subtitle {{ $ctrl.subTitle }}
+section(ng-class='$ctrl.sectionName')
+    h3.section-title(ng-if='$ctrl.title') {{ $ctrl.title }}
+    h5.section-subtitle(ng-if='$ctrl.subTitle') {{ $ctrl.subTitle }}
 
-.nav-menu
-    ul
-        li(ng-repeat='item in $ctrl.menu track by $index', ng-click='$ctrl.slideTo(item.target)') {{ item.title }}
-.slides-injector
+    .nav-menu
+        ul
+            li(ng-repeat='item in $ctrl.menu track by $index', ng-click='$ctrl.slideTo(item.target)') {{ item.title }}
+    .description(ng-if='$ctrl.description')
+        p {{ $ctrl.description }}
+    div(ng-class='$ctrl.injector.replace(".","")')
+

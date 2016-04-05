@@ -14,20 +14,29 @@ angular.module('dcollective').component('navSlides',
     title: '@'
     subTitle: '@'
     caseName: '@'
+    sectionName: '@'
+    description: '@'
     
-  controller:($templateRequest,TemplateCompiler, $scope)->
-    @injector = '.slides-injector'
-    @templateUrl = 'app/cases/'+@caseName+'/partials/navSlidesSection.html'
+  controller:($templateRequest,TemplateCompiler, $scope, $log)->
+    #required
+    if !@menu || !@caseName || !@sectionName
+      $log.error 'navSlides required parameter is missing, component stopped'
+      return @
+
+    @injector = '.slides-injector-'+@sectionName
+    @templateUrl = 'app/cases/'+@caseName+'/partials/'+@sectionName+'_section.html'
     @visibleSlide = @menu[0].target
 
-    $templateRequest(@templateUrl).then (html)=>
+    $templateRequest(@templateUrl, true).then (html)=>
       template = angular.element html
-      
+
       #prepare scope ctrl
       $scope.$ctrl = @
-      
+    
       template = TemplateCompiler.getCompiledDirective template, $scope
       TemplateCompiler.inject @injector , template
+    , (error)->
+      $log.error error.data
 
     @slideTo = (target)->
       @visibleSlide = target
