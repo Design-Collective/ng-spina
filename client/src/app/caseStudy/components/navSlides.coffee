@@ -9,13 +9,14 @@
 ###
 angular.module('dcollective').component('navSlides',
   templateUrl: 'app/caseStudy/partials/navSlides.html'
-  bindings: 
+  bindings:
     menu: '='
     caseName: '@'
     
   controller:($templateRequest,TemplateCompiler, $scope)->
     @injector = '.slides-injector'
     @templateUrl = 'app/cases/'+@caseName+'/partials/navSlidesSection.html'
+    @visibleSlide = false
 
     $templateRequest(@templateUrl).then (html)=>
       template = angular.element html
@@ -27,6 +28,9 @@ angular.module('dcollective').component('navSlides',
       TemplateCompiler.inject @injector , template
 
     @slideTo = (target)->
-      console.log target
+      @visibleSlide = target
+
+    @isVisible = (target)->
+      @visibleSlide == target
     @
 )

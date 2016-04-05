@@ -11,11 +11,6 @@ angular.module('dcollective').controller 'caseStudyCtrl', ($stateParams, Templat
   @injectorContainer = '.case-injector'
   @featured = false
 
-  @navSlideMenu = [
-    { title: 'Homepage', target:'home' }
-    { title: 'Profiles', target:'profiles' }
-  ]
-
   # if we have client by slug , the its a featured client otherwise use common template
   if isNaN(@client)
     @featured = true
