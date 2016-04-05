@@ -11,12 +11,14 @@ angular.module('dcollective').component('navSlides',
   templateUrl: 'app/caseStudy/partials/navSlides.html'
   bindings:
     menu: '='
+    title: '@'
+    subTitle: '@'
     caseName: '@'
     
   controller:($templateRequest,TemplateCompiler, $scope)->
     @injector = '.slides-injector'
     @templateUrl = 'app/cases/'+@caseName+'/partials/navSlidesSection.html'
-    @visibleSlide = false
+    @visibleSlide = @menu[0].target
 
     $templateRequest(@templateUrl).then (html)=>
       template = angular.element html
