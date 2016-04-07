@@ -19,9 +19,7 @@ angular.module('dcollective').controller 'caseStudyCtrl', ($stateParams, Templat
 
   #inview used to trigger menu change
   @inViewHandler = ($index, $inview, $inviewpart)->
-    console.log $inviewpart
-    console.log $inview
-    
+
     if $inviewpart == 'top' && $inview
       @menuFixed = true
     else
