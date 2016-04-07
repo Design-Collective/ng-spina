@@ -31,7 +31,7 @@ function browserSyncInit(baseDir, browser) {
   var middlewareSettings = {
     target: 'http://localhost:3000',
     changeOrigin: true
-  }
+  };
 
   /*
    * You can add a proxy to your backend by uncommenting the line below.
