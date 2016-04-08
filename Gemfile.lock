@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/jetthoughts/yaml_db.git
+  revision: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
+  ref: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
+  specs:
+    yaml_db (0.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,7 +82,7 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-    capybara (2.6.2)
+    capybara (2.7.0)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -180,7 +187,7 @@ GEM
     neat (1.6.0)
       bourbon (>= 3.1)
       sass (>= 3.3)
-    negative_captcha (0.4)
+    negative_captcha (0.5)
       actionpack
       activesupport
     net-scp (1.2.1)
@@ -303,7 +310,7 @@ GEM
     spring (1.6.4)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sprockets (3.5.2)
+    sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.0.4)
@@ -362,6 +369,7 @@ DEPENDENCIES
   spina-template
   spring
   spring-commands-rspec
+  yaml_db!
 
 BUNDLED WITH
    1.11.2

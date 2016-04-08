@@ -25,6 +25,9 @@ gem 'rails_12factor', group: :staging
 gem 'spina-template'
 gem 'spina'
 
+# DB Dump task
+gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
+
 # gem 'spina-team-members', :git => 'git://github.com/Design-Collective/spina-team-members.git'
 #gem 'spina_team_members', :path => '/Users/Klemen/Sites/spina/spina-team-members'
 
