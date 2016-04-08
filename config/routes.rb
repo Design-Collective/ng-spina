@@ -1,10 +1,11 @@
 Dcollective::Application.routes.draw do
 
+  mount Spina::Engine => '/admin', as: 'spina'
+
   namespace :api, defaults: { format: :json } do
+    resources :menu, execpt: [:new, :edit]
     resources :pages, except: [:new, :edit]
   end
-
-  mount Spina::Engine => '/admin'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

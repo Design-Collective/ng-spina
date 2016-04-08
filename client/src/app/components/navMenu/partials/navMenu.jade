@@ -9,8 +9,8 @@ div.toolbar(layout='row')
     .wrapper
         ul.menu
             li.menu-item(ng-repeat='item in navMenu.menuItems')
-                a(ng-href='item.slug')
+                a(ng-href='{{ item.slug }}')
                     p.title {{ item.title }}
-                    p.small-title {{ item.subTitle }}
+                    p.small-title {{ item.subTitle.attributes.content }}
 
     .menu-footer

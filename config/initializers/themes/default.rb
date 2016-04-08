@@ -7,19 +7,16 @@ module Spina
     self.title = 'Default theme'
 
     self.page_parts = [
+      { name: 'sub_title', title: 'Sub title', page_partable_type: 'Spina::Line' },
       { name: 'hero_title', title: 'Hero title', page_partable_type: 'Spina::Line' },
       { name: 'hero_subtitle', title: 'Hero subtitle', page_partable_type: 'Spina::Line' },
       { name: 'hero_background_image', title: 'Hero image', page_partable_type: "Spina::Photo" },
       { name: 'hero_background_video', title: 'Hero background video', page_partable_type: "Spina::Line" },
       { name: 'text', title: 'Text content', page_partable_type: 'Spina::Text' },
-
       { name: 'primary_color', title: 'Primary color', page_partable_type: 'Spina::Color' },
-
       { name: 'slides', title: 'Slides', page_partable_type: "Spina::Structure"},
-
       { name: 'budget_ranges', title: 'Budget Ranges', page_partable_type: "Spina::Structure"},
       { name: 'featured_work_stats', title: 'Featured work stats', page_partable_type: "Spina::Structure"},
-
       { name: 'slider', title: 'Photo slider', page_partable_type: "Spina::PhotoCollection"}
     ]
 
@@ -116,23 +113,94 @@ module Spina
     self.layout_parts = []
 
     self.view_templates = {
-      'homepage' => {
-        title:      'Homepage',
-        page_parts: ['hero_title', 'hero_subtitle', 'hero_background_image', 'hero_background_video', 'text', 'slides', 'budget_ranges']
-      },
-      'default' => {
+      # Defaults 
+      'default' => { # Default / Edit
         title:      'Default Page',
         usage:      'Default page type',
-        page_parts: ['hero_title', 'hero_subtitle', 'hero_background_image', 'hero_background_video', 'text', 'include_title', 'include_subtitle', 'include_background_image', 'include_image', 'include_text', 'include_classes', 'include_button_label', 'include_classes', 'include_background_image', 'sections', 'primary_color']
+        page_parts: [
+          'sub_title',
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'primary_color',
+          'slides',
+          'include_title',
+          'include_subtitle',
+          'include_background_image',
+          'include_image',
+          'include_text',
+          'include_classes',
+          'include_button_label',
+          'include_classes',
+          'include_background_image'
+        ]
+      },
+      'show' => { # Default / New
+        title:      'Default Page',
+        usage:      'Default page type',
+        page_parts: [
+          'sub_title',
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'primary_color',
+          'slides',
+          'include_title',
+          'include_subtitle',
+          'include_background_image',
+          'include_image',
+          'include_text',
+          'include_classes',
+          'include_button_label',
+          'include_classes',
+          'include_background_image'
+        ]
+      },
+      # Custom
+      'homepage' => {
+        title:      'Homepage',
+        usage:      'Home page type',
+        page_parts: [
+          'sub_title',
+          'hero_title', 
+          'hero_subtitle', 
+          'hero_background_image', 
+          'hero_background_video', 
+          'text', 
+          'slides', 
+          'budget_ranges'
+        ]
       },
       'work' => {
         title:      'Work Page',
         usage:      'Work page type',
-        page_parts: ['featured_works_stats', 'hero_title', 'hero_subtitle', 'hero_background_image', 'hero_background_video', 'text', 'include_title', 'include_subtitle', 'include_background_image', 'include_image', 'include_text', 'include_classes', 'include_button_label', 'include_classes', 'include_background_image', 'sections', 'primary_color']
+        page_parts: [
+          'sub_title',
+          'featured_works_stats',
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'primary_color',
+          'slides',
+          'include_title',
+          'include_subtitle',
+          'include_background_image',
+          'include_image',
+          'include_text',
+          'include_classes',
+          'include_button_label',
+          'include_classes',
+          'include_background_image'
+        ]
       },
       'contact' => {
         title:        'Contact',
-        description:  'Contact page',
         usage:        'Contact page',
         page_parts:   ['text']
       }
@@ -142,49 +210,57 @@ module Spina
       {
         name:           'homepage',
         title:          'Homepage',
+        sub_title:      'Homepage Subtitle',
         deletable:      false,
         view_template:  'homepage'
       },
       {
         name:           'about',
         title:          'About',
+        sub_title:      'About Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'clients',
         title:          'Clients',
+        sub_title:      'Clients Subtitle',
         deletable:      true,
         view_template:  'work'
       },
       {
         name:           'process',
         title:          'Process',
+        sub_title:      'Process Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'portfolio',
         title:          'Portfolio',
+        sub_title:      'Portfolio Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'blog',
         title:          'Blog',
+        sub_title:      'Blog Subtitle',
         deletable:      true,
         view_template:  'default'
       },
       {
         name:           'contact',
         title:          'Contact',
+        sub_title:      'Contact Subtitle',
         deletable:      true,
         view_template:  'default'
       }
     ]
 
     # TODO: @andrii Rename/add the module name(s) here once they are reworked.
-    self.plugins = ['team_members'];
+    #self.plugins = ['team_members'];
+    self.plugins = [];
 
   end
 end
