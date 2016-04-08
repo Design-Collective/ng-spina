@@ -1,0 +1,4 @@
+.menu(ng-class='$ctrl.getMenuClass()')
+    ul
+        li(ng-repeat='item in $ctrl.menu track by $index')
+            a(ng-href='{{item.link}}', du-smooth-scroll) {{ item.title }}

@@ -1,3 +1,5 @@
 h4 case study
-
-.case-injector
+case-menu(menu='case.demoMenu', menu-fixed='case.menuFixed')
+.case-content(in-view='case.inViewHandler($index, $inview, $inviewpart)')
+    .common-case(ng-if='!case.featured')
+    .case-injector
