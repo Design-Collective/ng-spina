@@ -1,7 +1,7 @@
 section.v-slide(layout="column" layout-align="center start" ng-class='section.cssClasses.content' ng-style='vslide.getBackgroundImage()')
   h3.main-title {{ section.title.content }}
   h4.sub-title {{ section.subTitle.content }}
-  p.slide-text(ng-bind-html="vslide.slideData.text.content")
+  p.slide-text(ng-bind-html="section.text.content")
   .small-widget-container
-  md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='vslide.slideData.buttonLink.content' ng-if="section.buttonLink.content") {{section.buttonLabel.content}}
+  md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='{{section.buttonLink.content}}' ng-if="section.buttonLink.content") {{section.buttonLabel.content}}
   .widget-container
