@@ -163,6 +163,15 @@ ActiveRecord::Schema.define(version: 20160408030516) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "spina_reviews", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "rating",       null: false
+    t.text     "explanation"
+    t.date     "confirmed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spina_rewrite_rules", force: :cascade do |t|
     t.string   "old_path"
     t.string   "new_path"
@@ -211,6 +220,18 @@ ActiveRecord::Schema.define(version: 20160408030516) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.datetime "last_logged_in"
+  end
+
+  create_table "team_members", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "description"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "instagram_url"
+    t.string   "dribble_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
