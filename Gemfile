@@ -24,6 +24,8 @@ gem 'rails_12factor', group: :staging
 # CMS
 gem 'spina-template'
 gem 'spina'
+gem 'spina-articles', github: 'Design-Collective/spina-blog'
+gem 'spina-members', github: 'Design-Collective/spina-team-members'
 
 # DB Dump task
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'

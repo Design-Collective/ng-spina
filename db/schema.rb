@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319053353) do
+ActiveRecord::Schema.define(version: 20160408030516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20160319053353) do
     t.boolean  "robots_allowed", default: false
   end
 
+  create_table "spina_articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "content"
+    t.date     "publish_date"
+    t.boolean  "draft",             default: true
+    t.integer  "spina_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spina_attachment_collections", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,6 +57,13 @@ ActiveRecord::Schema.define(version: 20160319053353) do
     t.string   "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spina_categories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "spina_colors", force: :cascade do |t|
@@ -77,6 +95,21 @@ ActiveRecord::Schema.define(version: 20160319053353) do
 
   create_table "spina_lines", force: :cascade do |t|
     t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spina_members", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "role"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "instagram_url"
+    t.string   "linkedin_url"
+    t.boolean  "enabled",       default: false
+    t.integer  "spina_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

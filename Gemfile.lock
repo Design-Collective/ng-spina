@@ -1,4 +1,18 @@
 GIT
+  remote: git://github.com/Design-Collective/spina-blog.git
+  revision: 94eb2b4c61cdc7ec4ca7036685564e207b31b076
+  specs:
+    spina-articles (0.0.1)
+      rails (~> 4.0)
+
+GIT
+  remote: git://github.com/Design-Collective/spina-team-members.git
+  revision: 1434a56dc314b8a426a49cb43e3e87fe9e6d115e
+  specs:
+    spina-members (0.0.2)
+      rails (~> 4.0)
+
+GIT
   remote: git://github.com/jetthoughts/yaml_db.git
   revision: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
   ref: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
@@ -366,6 +380,8 @@ DEPENDENCIES
   ruby-prof
   sdoc (~> 0.4.0)
   spina
+  spina-articles!
+  spina-members!
   spina-template
   spring
   spring-commands-rspec

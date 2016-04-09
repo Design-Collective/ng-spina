@@ -259,8 +259,8 @@ module Spina
     ]
 
     # TODO: @andrii Rename/add the module name(s) here once they are reworked.
-    #self.plugins = ['team_members'];
-    self.plugins = [];
+    #self.plugins = ['members'];
+    self.plugins = ['articles', 'members'];
 
   end
 end
