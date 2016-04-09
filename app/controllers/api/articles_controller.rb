@@ -1,5 +1,6 @@
-# NOTE: This is a first pass, and uses basic endpoints with copy-pasted class-names. May not be perfect.
-# TODO: menu (nav) endpoint, sitemap endpoint etc.
+#
+# Simple API for Spina Articles
+#
 
 class Api::ArticlesController < Api::ApiController
   before_action :set_article, only: [:show, :update, :destroy]
@@ -12,12 +13,6 @@ class Api::ArticlesController < Api::ApiController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    # structure_ids = @article.article_parts.where(article_partable_type: 'Spina::Structure')
-    #                .joins('INNER JOIN spina_structures ON spina_article_parts.article_partable_id = spina_structures.id')
-    #                .pluck('spina_structures.id')
-    # @structure_fields = Spina::StructureItem.order(:position).where(structure_id: structure_ids)
-
-    # @fields = @article.article_parts.where.not(article_partable_type: 'Spina::Structure')
     render :show
   end
 

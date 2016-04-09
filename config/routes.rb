@@ -6,6 +6,7 @@ Dcollective::Application.routes.draw do
     resources :menu, execpt: [:new, :edit]
     resources :pages, except: [:new, :edit]
     resources :articles, except: [:new, :edit]
+    resources :members, except: [:new, :edit]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
