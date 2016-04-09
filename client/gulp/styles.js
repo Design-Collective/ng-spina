@@ -18,6 +18,7 @@ gulp.task('styles-reload', ['styles'], function() {
 
 gulp.task('styles', function() {
   buildFonts();
+  buildFavicons();
   return buildStyles();
 });
 
@@ -25,6 +26,12 @@ gulp.task('styles', function() {
 var buildFonts = function () {
   return gulp.src([conf.paths.src+'/assets/fonts/**/*'])
     .pipe(gulp.dest(conf.paths.tmp+'/serve/assets/fonts/'));
+};
+
+var buildFavicons = function () {
+  return  gulp.src([path.join(conf.paths.src, '/assets/favicon/**/*')])
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/')))
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 };
 
 var buildStyles = function() {
