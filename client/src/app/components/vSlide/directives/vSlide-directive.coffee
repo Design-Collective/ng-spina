@@ -16,7 +16,7 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   controller: [()->
     @getBackgroundImage = ()->
       if @slideData.backgroundImage.content && @slideData.backgroundImage.content.file
-        'background-image': 'url("'+@slideData.backgroundImage.content.file.image.url+'")'
+        'background-image': 'url("'+@slideData.backgroundImage.content.file.background.url+'")'
     @
   ]
   link: (scope, element, attrs)->
