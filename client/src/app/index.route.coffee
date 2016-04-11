@@ -7,6 +7,10 @@ angular.module 'dcollective'
         templateUrl: 'app/home/partials/home.html'
         controller: 'showHomeCtrl'
         controllerAs: 'home'
+        meta:
+          title: 'DesignCollective',
+          titleSuffix: ' | Solutions you want',
+          description: 'DesignCollectives home page'
       .state 'about',
         url: '/about'
         templateUrl: 'app/about/partials/about.html'
