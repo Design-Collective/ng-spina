@@ -1,5 +1,6 @@
-# NOTE: This is a first pass, and uses basic endpoints with copy-pasted class-names. May not be perfect.
-# TODO: menu (nav) endpoint, sitemap endpoint etc.
+#
+# Spina Pages Controller
+#
 
 class Api::PagesController < Api::ApiController
   before_action :set_page, only: [:show, :update, :destroy]

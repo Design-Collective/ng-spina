@@ -1,5 +1,6 @@
-# NOTE: This is a first pass, and uses basic endpoints with copy-pasted class-names. May not be perfect.
-# TODO: menu (nav) endpoint, sitemap endpoint etc.
+#
+# Menu API Controller
+#
 
 class Api::MenuController < Api::ApiController
   #before_action :set_sitemap, only: [:show, :update, :destroy]
