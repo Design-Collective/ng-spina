@@ -1,21 +1,19 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:postsGrid
+# @name dcollective.component:postsGrid
 # @description
 # # loader
 ###
-angular.module('dcollective').directive('postsGrid', ->
+angular.module('dcollective').component('postsGrid', ->
   templateUrl: 'app/components/widgets/partials/postsGrid.html'
-  restrict: 'E'
-  scope:
+  bindings:
     widgetData: '='
-  controllerAs: 'postsGrid'
-  controller: ['Post',(Post)->
+  controller: (Post)->
     @posts = []
+    
     Post.get( name: "me" ).then (res)->
       console.log res
     # TODO: Add resource
     @
-  ]
 )
