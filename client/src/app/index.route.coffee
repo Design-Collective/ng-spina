@@ -33,6 +33,12 @@ angular.module 'dcollective'
       .state 'blogIndex',
         url: '/blog'
         template: '<blog></blog>'
+      .state 'memberShow',
+        url: '/team-members/:id'
+        template: '<team-members single="true"></team-members>'
+      .state 'memberIndex',
+        url: '/team-members'
+        template: '<team-members></team-members>'
     $urlRouterProvider.otherwise '/'
 
     $locationProvider.html5Mode
