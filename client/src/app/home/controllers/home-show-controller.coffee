@@ -15,7 +15,7 @@ angular.module('dcollective').controller 'showHomeCtrl', [ 'Page', (Page) ->
     if $inviewpart == undefined
       @circleProgress = undefined
 
-  Page.get(1).then (data)=>
+  Page.get( id:'homepage' ).then (data)=>
     @data = data
 
   @getBackgroundImage = ()->

@@ -6,4 +6,10 @@
 # # showProcessCtrl
 # Controller of the dcollective
 ###
-angular.module('dcollective').controller 'showProcessCtrl', () ->
+angular.module('dcollective').controller 'showProcessCtrl', (Page) ->
+  @data =  {}
+
+  Page.get( id:'process' ).then (data)=>
+    @data = data
+
+  @
