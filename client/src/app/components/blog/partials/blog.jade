@@ -1,7 +1,7 @@
 //TODO: Head
 
 .articles(ng-if='!$ctrl.single')
-    .article-index(ng-repeat='article in data track by $index')
+    .article-index(ng-repeat='article in $ctrl.data track by $index')
         h3 {{ article.title }}
         h5 {{ article.subtitle }}
         .article-content(ng-bind='article.content')
