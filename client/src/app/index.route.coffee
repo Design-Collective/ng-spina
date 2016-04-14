@@ -27,7 +27,12 @@ angular.module 'dcollective'
         templateUrl: 'app/work/partials/work.html'
         controller: 'showWorkCtrl'
         controllerAs: 'work'
-
+      .state 'blogShow',
+        url: '/blog/:id'
+        template: '<blog single="true"></blog>'
+      .state 'blogIndex',
+        url: '/blog'
+        template: '<blog></blog>'
     $urlRouterProvider.otherwise '/'
 
     $locationProvider.html5Mode
