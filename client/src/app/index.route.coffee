@@ -27,7 +27,6 @@ angular.module 'dcollective'
         templateUrl: 'app/work/partials/work.html'
         controller: 'showWorkCtrl'
         controllerAs: 'work'
-
     $urlRouterProvider.otherwise '/'
 
     $locationProvider.html5Mode
