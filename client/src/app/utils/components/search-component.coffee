@@ -1,9 +1,12 @@
 angular.module('dcollective').component 'search',
   templateUrl: 'app/utils/partials/searchResults.html'
+  bindings:
+    query: '@'
   controller: (Search, $stateParams,$state)->
-
     @data = {}
-    @query = $stateParams.query || $stateParams.q
+    console.log @query
+    if !@query
+      @query = $stateParams.query || $stateParams.q
 
     Search.query( query: @query).then (res)=>
       @data = res
