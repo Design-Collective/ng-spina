@@ -1,5 +1,6 @@
 'use strict'
 ###*
+# TODO: DEPRECATED Controller should be removed
 # @ngdoc function
 # @name dcollective.controller:сaseStudy
 # @description
