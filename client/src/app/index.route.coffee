@@ -9,24 +9,17 @@ angular.module 'dcollective'
         controllerAs: 'home'
       .state 'about',
         url: '/about'
-        templateUrl: 'app/about/partials/about.html'
-        controller: 'showAboutCtrl'
-        controllerAs: 'about'
+        template: '<show-about></show-about>'
       .state 'process',
         url: '/process'
-        templateUrl: 'app/process/partials/process.html'
-        controller: 'showProcessCtrl'
-        controllerAs: 'process'
+        template: '<show-process></show-process>'
       .state 'caseStudy',
         url: '/case/:client'
-        templateUrl: 'app/caseStudy/partials/caseStudy.html'
-        controller: 'caseStudyCtrl'
-        controllerAs: 'case'
+        template: '<case-study></case-study>'
       .state 'work',
         url: '/work'
-        templateUrl: 'app/work/partials/work.html'
-        controller: 'showWorkCtrl'
-        controllerAs: 'work'
+        template: '<show-work></show-work>'
+
     $urlRouterProvider.otherwise '/'
 
     $locationProvider.html5Mode
