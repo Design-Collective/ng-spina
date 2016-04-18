@@ -1,5 +1,6 @@
 'use strict'
 ###*
+# TODO: DEPRECATED
 # @ngdoc function
 # @name dcollective.controller:showAboutCtrl
 # @description
