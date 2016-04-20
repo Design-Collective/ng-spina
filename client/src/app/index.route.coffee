@@ -4,33 +4,29 @@ angular.module 'dcollective'
     $stateProvider
       .state 'home',
         url: '/'
-        templateUrl: 'app/home/partials/home.html'
-        controller: 'showHomeCtrl'
-        controllerAs: 'home'
+        template: '<show-home></show-home>'
         meta:
           title: 'DesignCollective',
           titleSuffix: ' | Solutions you want',
           description: 'DesignCollectives home page'
       .state 'about',
         url: '/about'
-        templateUrl: 'app/about/partials/about.html'
-        controller: 'showAboutCtrl'
-        controllerAs: 'about'
+        template: '<show-about></show-about>'
       .state 'process',
         url: '/process'
-        templateUrl: 'app/process/partials/process.html'
-        controller: 'showProcessCtrl'
-        controllerAs: 'process'
+        template: '<show-process></show-process>'
       .state 'caseStudy',
         url: '/case/:client'
-        templateUrl: 'app/caseStudy/partials/caseStudy.html'
-        controller: 'caseStudyCtrl'
-        controllerAs: 'case'
+        template: '<case-study></case-study>'
       .state 'work',
         url: '/work'
-        templateUrl: 'app/work/partials/work.html'
-        controller: 'showWorkCtrl'
-        controllerAs: 'work'
+        template: '<show-work></show-work>'
+      .state 'page',
+        url: '/page/:id'
+        template: '<show-page></show-page>'
+      .state 'pages',
+        url: '/pages'
+        template: '<index-page></index-page>'
       .state 'blogShow',
         url: '/blog/:id'
         template: '<blog single="true"></blog>'
@@ -43,6 +39,7 @@ angular.module 'dcollective'
       .state 'memberIndex',
         url: '/team-members'
         template: '<team-members></team-members>'
+
     $urlRouterProvider.otherwise '/'
 
     $locationProvider.html5Mode

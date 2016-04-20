@@ -1,15 +1,16 @@
 'use strict'
 ###*
+# TODO: DEPRECATED
 # @ngdoc function
-# @name dcollective.controller:showAboutCtrl
+# @name dcollective.controller:showWorkCtrl
 # @description
-# # showAboutCtrl
+# # showWorkCtrl
 # Controller of the dcollective
 ###
-angular.module('dcollective').controller 'showAboutCtrl', (Page) ->
+angular.module('dcollective').controller 'showWorkCtrl', (Page) ->
   @data =  {}
-  
+
   Page.get( id:'about' ).then (data)=>
     @data = data
-  
+
   @

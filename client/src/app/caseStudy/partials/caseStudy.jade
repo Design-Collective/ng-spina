@@ -1,5 +1,5 @@
 h4 case study
-nav-menu
-.case-content(in-view='case.inViewHandler($index, $inview, $inviewpart)')
-    .common-case(ng-if='!case.featured')
+case-menu(menu='$ctrl.demoMenu', menu-fixed='$ctrl.menuFixed')
+.case-content(in-view='$ctrl.inViewHandler($index, $inview, $inviewpart)')
+    .common-case(ng-if='!$ctrl.featured')
     .case-injector
