@@ -2,13 +2,14 @@
 <html ng-app="dcollective">
   <head>
     <meta charset="utf-8">
-    <title>dcollective</title>
+    <title ng-bind="ngMeta.title"></title>
 
     <!--google-->
-    <!-- TO DO : Dynamic Keywords and Description -->
-    <meta name="keywords" content="" />
-    <meta itemprop="description" content="" />
-    <meta name="description" content="">
+    <!-- Arbitrary tags -->
+    <meta property="og:type" content="{{ngMeta['og:type']}}" />
+    <meta property="og:locale" content="{{ngMeta['og:locale']}}" />
+    <meta name="author" content="{{ngMeta['author']}}" />
+    <meta name="description" content="{{ngMeta.description}}" />
 
     <!-- Conical -->
     <base href="/">

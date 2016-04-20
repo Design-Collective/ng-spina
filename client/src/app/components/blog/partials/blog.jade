@@ -1,0 +1,18 @@
+//TODO: Head
+
+.articles(ng-if='!$ctrl.single')
+    .article-index(ng-repeat='article in $ctrl.data track by $index')
+        h3 {{ article.title }}
+        h5 {{ article.subtitle }}
+        .article-content(ng-bind='article.content')
+            span.date {{ article.publishDate }}
+            span.category {{ article.category }}
+
+.article-show(ng-if='$ctrl.single')
+    h3 {{ $ctrl.data.title }}
+    h5 {{ $ctrl.data.subtitle }}
+    .article-content(ng-bind='$ctrl.data.content')
+        span.date {{ $ctrl.data.publishDate }}
+        span.category {{ $ctrl.data.category }}
+
+//TODO: Footer

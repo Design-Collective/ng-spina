@@ -1,5 +1,5 @@
 angular.module 'dcollective'
-  .config ($logProvider, toastrConfig) ->
+  .config ($logProvider, toastrConfig, ngMetaProvider) ->
     'ngInject'
     # Enable log
     $logProvider.debugEnabled true
@@ -9,3 +9,5 @@ angular.module 'dcollective'
     toastrConfig.positionClass = 'toast-top-right'
     toastrConfig.preventDuplicates = true
     toastrConfig.progressBar = true
+
+    ngMetaProvider.useTitleSuffix true
