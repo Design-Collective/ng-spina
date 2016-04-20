@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
-    resources :menu, execpt: [:new, :edit]
+    resources :menu, except: [:new, :edit]
     resources :pages, except: [:new, :edit]
     resources :articles, except: [:new, :edit]
     resources :members, except: [:new, :edit]
