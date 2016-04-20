@@ -7,6 +7,10 @@ angular.module 'dcollective'
         templateUrl: 'app/home/partials/home.html'
         controller: 'showHomeCtrl'
         controllerAs: 'home'
+        meta:
+          title: 'DesignCollective',
+          titleSuffix: ' | Solutions you want',
+          description: 'DesignCollectives home page'
       .state 'about',
         url: '/about'
         templateUrl: 'app/about/partials/about.html'
@@ -27,7 +31,18 @@ angular.module 'dcollective'
         templateUrl: 'app/work/partials/work.html'
         controller: 'showWorkCtrl'
         controllerAs: 'work'
-
+      .state 'blogShow',
+        url: '/blog/:id'
+        template: '<blog single="true"></blog>'
+      .state 'blogIndex',
+        url: '/blog'
+        template: '<blog></blog>'
+      .state 'memberShow',
+        url: '/team-members/:id'
+        template: '<team-members single="true"></team-members>'
+      .state 'memberIndex',
+        url: '/team-members'
+        template: '<team-members></team-members>'
     $urlRouterProvider.otherwise '/'
 
     $locationProvider.html5Mode

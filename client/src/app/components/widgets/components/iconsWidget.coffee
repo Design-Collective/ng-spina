@@ -1,14 +1,12 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:iconsWidget
+# @name dcollective.component:iconsWidget
 # @description
 # # loader
 ###
-angular.module('dcollective').directive('iconsWidget', ->
+angular.module('dcollective').component('iconsWidget', ->
   templateUrl: 'app/components/widgets/partials/iconsWidget.html'
-  restrict: 'E'
-  scope:
+  bindings:
     widgetData:'='
-    
 )

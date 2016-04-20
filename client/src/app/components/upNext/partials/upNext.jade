@@ -1,4 +1,4 @@
-a(ng-href="/{{nextPage.link}}")
-  section.v-slide.overlay.p-50(layout="column", layout-align="center center",  layout-padding, ng-style='{"background-image" : "url({{nextPage.backgroundImage}})"}' ng-class="nextPage.customClass")
+a(ng-href="/{{$ctrl.nextPage.link}}")
+  section.v-slide.overlay.p-50(layout="column", layout-align="center center",  layout-padding, ng-style='{"background-image" : "url({{nextPage.backgroundImage}})"}' ng-class="$ctrl.nextPage.customClass")
     h3.sub-title.text-center.white.m-b-0 Up next
-    h2.main-title.text-center.white {{ nextPage.title }}
+    h2.main-title.text-center.white {{ $ctrl.nextPage.title }}

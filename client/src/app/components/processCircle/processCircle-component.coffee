@@ -1,17 +1,13 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:processCircle
+# @name dcollective.component:processCircle
 # @description
 # # processCircle
 ###
-angular.module('dcollective')
-.directive('processCircle', ->
+angular.module('dcollective').component('processCircle', ->
   templateUrl: 'app/components/processCircle/partials/processCircle.html'
-  restrict: 'E'
-  controllerAs: 'process'
-  bindToController: true
-  scope:
+  bindings:
     progress: '='
   controller:->
     @steps = [
@@ -30,6 +26,5 @@ angular.module('dcollective')
         true
       else
         $index == @progress
-
     @
 )
