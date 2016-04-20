@@ -1,21 +1,18 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:navMenu
+# @name dcollective.component:navMenu
 # @description
 # # navMenu
 ###
-angular.module('dcollective').directive('navMenu', ->
+angular.module('dcollective').component('navMenu',
   templateUrl: 'app/components/navMenu/partials/navMenu.html'
-  restrict: 'E'
-  controllerAs: 'navMenu'
-  controller: ['Menu', (Menu) ->
+  controller: (Menu, $mdSidenav) ->
     @isOpen = false
     @menuItems = null
     @menuClass = 'btl bt-bars'
 
     Menu.get().then (res)=>
-      #console.log res
       if res
         @menuItems = res
 
@@ -26,6 +23,8 @@ angular.module('dcollective').directive('navMenu', ->
       else
         @menuClass = 'btl bt-bars'
 
+    @openMenu = ()->
+      $mdSidenav('menu').toggle()
+      @toggleMenu()
     @
-  ]
 )

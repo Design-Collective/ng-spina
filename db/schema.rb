@@ -16,16 +16,13 @@ ActiveRecord::Schema.define(version: 20160408030516) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "members", force: :cascade do |t|
-    t.string   "name"
-    t.string   "title"
+  create_table "pages", force: :cascade do |t|
+    t.string   "title",      limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
   end
+
+  add_index "pages", ["title"], name: "index_pages_on_title", unique: true, using: :btree
 
   create_table "spina_accounts", force: :cascade do |t|
     t.string   "name"
@@ -174,15 +171,6 @@ ActiveRecord::Schema.define(version: 20160408030516) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spina_reviews", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "rating",       null: false
-    t.text     "explanation"
-    t.date     "confirmed_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "spina_rewrite_rules", force: :cascade do |t|
     t.string   "old_path"
     t.string   "new_path"
@@ -231,18 +219,6 @@ ActiveRecord::Schema.define(version: 20160408030516) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.datetime "last_logged_in"
-  end
-
-  create_table "team_members", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "description"
-    t.string   "facebook_url"
-    t.string   "twitter_url"
-    t.string   "instagram_url"
-    t.string   "dribble_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

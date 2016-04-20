@@ -5,6 +5,10 @@ angular.module 'dcollective'
       .state 'home',
         url: '/'
         template: '<show-home></show-home>'
+        meta:
+          title: 'DesignCollective',
+          titleSuffix: ' | Solutions you want',
+          description: 'DesignCollectives home page'
       .state 'about',
         url: '/about'
         template: '<show-about></show-about>'
@@ -23,7 +27,18 @@ angular.module 'dcollective'
       .state 'pages',
         url: '/pages'
         template: '<index-page></index-page>'
-
+      .state 'blogShow',
+        url: '/blog/:id'
+        template: '<blog single="true"></blog>'
+      .state 'blogIndex',
+        url: '/blog'
+        template: '<blog></blog>'
+      .state 'memberShow',
+        url: '/team-members/:id'
+        template: '<team-members single="true"></team-members>'
+      .state 'memberIndex',
+        url: '/team-members'
+        template: '<team-members></team-members>'
 
     $urlRouterProvider.otherwise '/'
 

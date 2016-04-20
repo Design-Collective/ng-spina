@@ -12,9 +12,9 @@ angular.module('dcollective').component('caseMenu',
     menuFixed: '='
   controller:()->
     @getMenuClass = ->
-      if @menuFixed 
+      if @menuFixed
         'menu-fixed'
-      else 
+      else
         'menu-hero'
     @
 )

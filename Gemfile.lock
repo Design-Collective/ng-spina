@@ -145,6 +145,8 @@ GEM
       json (~> 1.4)
       listen (>= 1.0, < 3.0)
       thor (~> 0.14)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     git-version-bump (0.15.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -190,6 +192,7 @@ GEM
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.1.0)
+    method_source (0.8.2)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
@@ -218,6 +221,10 @@ GEM
     paranoia (2.1.5)
       activerecord (~> 4.0)
     pg (0.18.4)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -297,6 +304,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.7.0)
+    slop (3.6.0)
     spina (0.8.3)
       ancestry
       bcrypt
@@ -365,11 +373,13 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails (~> 4.0)
   faker
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.4, >= 2.4.1)
   meta_request
   paperclip (~> 4.3)
   paranoia (~> 2.0)
   pg
+  pry
   quiet_assets
   rails (= 4.2)
   rails-api

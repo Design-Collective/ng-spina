@@ -7,11 +7,10 @@
 # # showWorkCtrl
 # Controller of the dcollective
 ###
-angular.module('dcollective')
-.controller 'showWorkCtrl', ($scope) ->
-  $scope.awesomeThings = [
-    'HTML5 Boilerplate'
-    'AngularJS'
-    'Karma'
-  ]
-  $scope
+angular.module('dcollective').controller 'showWorkCtrl', (Page) ->
+  @data =  {}
+
+  Page.get( id:'about' ).then (data)=>
+    @data = data
+
+  @
