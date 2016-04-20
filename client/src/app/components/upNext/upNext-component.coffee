@@ -1,13 +1,12 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:upNext
+# @name dcollective.component:upNext
 # @description
 # # upNext
 ###
-angular.module('dcollective').directive('upNext', ->
+angular.module('dcollective').component('upNext', ->
   templateUrl: 'app/components/upNext/partials/upNext.html'
-  restrict: 'E'
-  scope:
+  bindings:
     nextPage: '='
 )

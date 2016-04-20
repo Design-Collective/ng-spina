@@ -1,13 +1,12 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:imageWidget
+# @name dcollective.component:imageWidget
 # @description
 # # loader
 ###
-angular.module('dcollective').directive('imageWidget', ->
+angular.module('dcollective').component('imageWidget', ->
   templateUrl: 'app/components/widgets/partials/imageWidget.html'
-  restrict: 'E'
-  scope:
+  bindings:
     widgetData: '='
 )

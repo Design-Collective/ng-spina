@@ -1,14 +1,12 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:budgetSlider
+# @name dcollective.component:budgetSlider
 # @description
 # # loader
 ###
-angular.module('dcollective').directive('budgetSlider', ->
+angular.module('dcollective').component('budgetSlider', ->
   templateUrl: 'app/components/widgets/partials/budgetSlider.html'
-  restrict: 'E'
-  controllerAs: 'bslider'
   controller: ->
     @budgetValue = 0
     @budgets = [
