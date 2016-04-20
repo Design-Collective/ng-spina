@@ -72,6 +72,11 @@ module Spina
           name: 'css_classes',
           title: 'CSS Classes',
           structure_partable_type: "Spina::Line"
+        },
+        {
+          name: 'primary_color',
+          title: 'Primary Color',
+          structure_partable_type: "Spina::Color"
         }
       ],
 
@@ -113,7 +118,7 @@ module Spina
     self.layout_parts = []
 
     self.view_templates = {
-      # Defaults 
+      # Defaults
       'default' => { # Default / Edit
         title:      'Default Page',
         usage:      'Default page type',
@@ -166,12 +171,12 @@ module Spina
         usage:      'Home page type',
         page_parts: [
           'sub_title',
-          'hero_title', 
-          'hero_subtitle', 
-          'hero_background_image', 
-          'hero_background_video', 
-          'text', 
-          'slides', 
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'slides',
           'budget_ranges'
         ]
       },
