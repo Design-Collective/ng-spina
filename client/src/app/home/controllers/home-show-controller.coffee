@@ -7,7 +7,7 @@
 # Controller of the dcollective
 ###
 
-angular.module('dcollective').controller 'showHomeCtrl', [ 'Page', (Page) ->
+angular.module('dcollective').controller 'showHomeCtrl', [ 'Page','InstagramApi', (Page,InstagramApi) ->
   @inViewHandler = ($index, $inview, $inviewpart)->
     if $inviewpart == 'top'
       @circleProgress = $index
