@@ -1,0 +1,6 @@
+h3 {{ $ctrl.title }}
+md-grid-list(md-cols="4", md-gutter="12px", md-row-height="2:2")
+    md-grid-tile(md-rowspan="1", md-colspan="1", ng-repeat='photo in $ctrl.photos | limitTo: $ctrl.limit')
+        img(src='{{photo.images.standard_resolution.url}}')
+        md-grid-tile-footer
+            i.bts.bt-heart  {{photo.likes.count}}
