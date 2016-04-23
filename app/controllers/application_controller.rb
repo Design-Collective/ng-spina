@@ -7,5 +7,6 @@ class ApplicationController < ActionController::API
   include ::ActionController::MimeResponds
   include ::ActionController::RequestForgeryProtection
   # CanCan https://github.com/ryanb/cancan/wiki/authorizing-controller-actions
+  include CanCan::ControllerAdditions
   #include ::ActionController::Base
 end
