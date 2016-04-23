@@ -4,7 +4,7 @@ angular.module('dcollective').factory 'InstagramApi', ['$http','instaAccessToken
     @callback = '&callback=JSON_CALLBACK'
 
     @getUsersRecentMedia : (userId)->
-      userId = userId || '1430684600'
+      userId = userId || '2931636711'
       url = @base + '/v1/users/'+ userId + '/media/recent/?access_token=' + instaAccessToken + @callback
       
       $http.jsonp(url)
