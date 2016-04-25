@@ -20,8 +20,6 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
     @
   link: (scope, element, attrs)->
 
-    scope.section = scope.vslide.slideData
-
     #Compile defined widget directive and append to view
     if typeof scope.vslide.slideData.widget != 'undefined'
       directive = ''
