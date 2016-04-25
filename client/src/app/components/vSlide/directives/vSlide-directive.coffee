@@ -13,12 +13,11 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
     slideData: '='
   controllerAs: 'vslide'
   bindToController: true
-  controller: [()->
+  controller: ->
     @getBackgroundImage = ()->
       if @slideData.backgroundImage.content && @slideData.backgroundImage.content.file
         'background-image': 'url("'+@slideData.backgroundImage.content.file.background.url+'")'
     @
-  ]
   link: (scope, element, attrs)->
 
     scope.section = scope.vslide.slideData

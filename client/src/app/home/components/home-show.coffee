@@ -9,7 +9,7 @@
 
 angular.module('dcollective').component 'showHome',
   templateUrl: 'app/home/partials/home.html'
-  controller: (Page) ->
+  controller: ['Page', (Page) ->
     @inViewHandler = ($index, $inview, $inviewpart)->
       if $inviewpart == 'top'
         @circleProgress = $index
@@ -21,7 +21,8 @@ angular.module('dcollective').component 'showHome',
       @data = data
 
     @getBackgroundImage = ()->
-      if @data && @data.heroBackgroundImage.content && @data.heroBackgroundImage.content.file
+      if @data.heroBackgroundImage && @data.heroBackgroundImage.content.file
         'background-image': 'url("' + @data.heroBackgroundImage.content.file.url + '")'
 
     @
+  ]

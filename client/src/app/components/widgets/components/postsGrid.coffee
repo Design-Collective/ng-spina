@@ -9,11 +9,12 @@ angular.module('dcollective').component('postsGrid', ->
   templateUrl: 'app/components/widgets/partials/postsGrid.html'
   bindings:
     widgetData: '='
-  controller: (Post)->
+  controller: ['Post',(Post)->
     @posts = []
     
     Post.get( name: "me" ).then (res)->
       console.log res
     # TODO: Add resource
     @
+  ]
 )

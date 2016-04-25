@@ -3,7 +3,7 @@ angular.module('dcollective').component 'instaPhotos',
   bindings:
     limit: '@'
     title: '@'
-  controller: (InstagramApi)->
+  controller: ['InstagramApi', (InstagramApi)->
     @limit = @limit || 10
     @photos = []
 
@@ -11,3 +11,4 @@ angular.module('dcollective').component 'instaPhotos',
     InstagramApi.getUsersRecentMedia(false).then (res)=>
       @photos = res.data.data
     @
+  ]
