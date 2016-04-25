@@ -7,7 +7,7 @@
 ###
 angular.module('dcollective').component('navMenu',
   templateUrl: 'app/components/navMenu/partials/navMenu.html'
-  controller: (Menu, $mdSidenav) ->
+  controller: ['Menu', '$mdSidenav', (Menu, $mdSidenav) ->
     @isOpen = false
     @menuItems = null
     @menuClass = 'btl bt-bars'
@@ -27,4 +27,5 @@ angular.module('dcollective').component('navMenu',
       $mdSidenav('menu').toggle()
       @toggleMenu()
     @
+  ]
 )

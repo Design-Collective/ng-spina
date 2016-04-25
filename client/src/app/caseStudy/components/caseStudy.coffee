@@ -8,7 +8,8 @@
 ###
 angular.module('dcollective').component 'caseStudyCtrl',
   templateUrl: 'app/caseStudy/partials/caseStudy.html'
-  controller: ($stateParams, TemplateCompiler, $scope)->
+  controller: ['$stateParams', 'TemplateCompiler', '$scope', ($stateParams, TemplateCompiler, $scope)->
+
     @client = $stateParams.client
     @injectorContainer = '.case-injector'
     @featured = false
@@ -35,3 +36,4 @@ angular.module('dcollective').component 'caseStudyCtrl',
       directive = TemplateCompiler.getCompiledDirective @template, $scope
       TemplateCompiler.inject @injectorContainer , directive
     @
+  ]

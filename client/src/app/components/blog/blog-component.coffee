@@ -3,7 +3,7 @@ angular.module('dcollective').component('blog',
   templateUrl: 'app/components/blog/partials/blog.html'
   bindings:
     single: '@'
-  controller:(Article, $stateParams)->
+  controller: ['Article', '$stateParams', (Article, $stateParams)->
     @data = {}
 
     if @single
@@ -14,4 +14,5 @@ angular.module('dcollective').component('blog',
         @data = res
 
     @
+  ]
 )
