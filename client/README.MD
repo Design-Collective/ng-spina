@@ -60,6 +60,11 @@ Those are called  in `template:'<my-component></my-component>'` , simply as elem
 
 ##### The folder structure has a couple of major notes to take in to account.
 
+##### Themes
+
+Now you can create themes and use them in your components.
+Theme folder is located in `app/` it should have a folder named by the name of the theme  the is a default theme, which will have default templates for components.
+
 1. `app/components` - Now whenever you are create small components or components that will be reusable , put them inside here
 with the corresponding component named folder.
 Inside that folder (example: `app/component/myComponent`) you can have a similar structure as all over the app.
@@ -134,3 +139,4 @@ app
 This directive is used to inject templates.
 use it in your components to inject required template.
 its scope is not incapsulated so it will see your $ctrl and its data
+
