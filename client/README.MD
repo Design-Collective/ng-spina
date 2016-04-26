@@ -98,7 +98,7 @@ slideData =
 > Note the `widgetData` this where you store data for widgets and widgetName should  be the name of the component
 
 
-#### case-study
+##### case-study
 Also a view-component , its general purpose is to track the route , when ever it sees that you have a client handled by slug like case/colaborator
 It will use a custom template for the corresponding client you can turn off this feature (on by default) by providing featured-case='false' as attribute:
 
@@ -109,7 +109,7 @@ It will use a custom template for the corresponding client you can turn off this
         template: '<case-study featured-case='false'></case-study>'
 ```
 
-##### Featured case
+###### Featured case
 The featured case will fire only when you have in the route a slug instead of the id.
 Then you have to provide a folder inside the `src/app/cases/` called by the name of the client (case).
 
@@ -127,3 +127,10 @@ app
 
 > Notice the partial colaboratorCase.jade it is important to have this partials for Featured case to work , the format is simple `clientCase`
 
+#### Directives
+
+##### page-injector directive
+
+This directive is used to inject templates.
+use it in your components to inject required template.
+its scope is not incapsulated so it will see your $ctrl and its data
