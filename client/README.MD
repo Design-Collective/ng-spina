@@ -142,5 +142,4 @@ It uses a `templateUrl` attr in order to determine what template will be loaded 
 
 This directive is used to inject templates.
 use it in your components to inject required template.
-its scope is not incapsulated so it will see your $ctrl and its data
 
