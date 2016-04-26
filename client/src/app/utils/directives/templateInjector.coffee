@@ -3,9 +3,13 @@
 angular.module('dcollective').directive('templateInjector',['TemplateCompiler','$log',(TemplateCompiler,$log)->
   template: '<div class="template-injector"></div>'
   restrict: 'E'
+  scope:
+    templateUrl: '@'
+    templateData: '<'
   link: (scope)->
+
     injectorContainer = '.template-injector'
-    templateUrl = scope.$ctrl.templateUrl || false
+    templateUrl = scope.templateUrl || false
 
     if templateUrl
       TemplateCompiler.getTemplate(templateUrl).then (template)->
