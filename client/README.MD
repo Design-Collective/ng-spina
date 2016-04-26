@@ -132,6 +132,10 @@ app
 
 > Notice the partial colaboratorCase.jade it is important to have this partials for Featured case to work , the format is simple `clientCase`
 
+###### Page component
+Will utilize `theme-injector` and will work as a general page component.
+It uses a `templateUrl` attr in order to determine what template will be loaded for the page , by default it will uses the default page template from default theme
+
 #### Directives
 
 ##### page-injector directive
