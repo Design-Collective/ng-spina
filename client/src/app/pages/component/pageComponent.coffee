@@ -4,15 +4,16 @@ angular.module('dcollective').component 'page',
   bindings:
     templateUrl: '@'
     pageSlug: '@'
+    templateName: '@'
   controller: (theme,Page, $stateParams)->
     @pageData = {}
-    @pageSlug = @pageSlug || 'default'
-    @templateUrl = @templateUrl || theme.path+'page/partials/page-'+@pageSlug+'.html'
+    @templateName= @templateName|| 'default'
+    @templateUrl = @templateUrl || theme.path+'page/partials/page-'+@templateName+'.html'
 
     if $stateParams.hasOwnProperty 'slug' && !@pageSlug
       Page.get($stateParams.slug).then (res)=>
         @pageData = res
-    else if @pageSlug != 'default'
+    else if @pageSlug
       Page.get(@pageSlug).then (res)=>
         @pageData = res
     @
