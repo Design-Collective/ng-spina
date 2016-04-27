@@ -16,4 +16,7 @@ angular.module('dcollective').component 'page',
     else if @pageSlug
       Page.get(@pageSlug).then (res)=>
         @pageData = res
+        
+    @pageData.demoMethod = ()->
+      'hi im a demo method i will be visible in the template where ill be injected'
     @
