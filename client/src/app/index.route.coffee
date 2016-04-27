@@ -9,6 +9,10 @@ angular.module 'dcollective'
           title: 'DesignCollective',
           titleSuffix: ' | Solutions you want',
           description: 'DesignCollectives home page'
+          'og:title': 'Some og title'
+          'og:description': 'some og description'
+          'og:url': 'some og url'
+          'og:image': 'https://s3.amazonaws.com/theshow-production/default/sho_share.png'
       .state 'caseStudy',
         url: '/case/:client'
         template: '<case-study></case-study>'
