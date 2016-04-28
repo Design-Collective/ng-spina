@@ -3,8 +3,7 @@ angular.module('dcollective').component('teamMembers',
   templateUrl: 'app/components/team/partials/teamMembers.html'
   bindings:
     single: '@'
-  controller:(TeamMembers, $stateParams)->
-    @data = {}
+  controller: ['TeamMembers','$stateParams', (TeamMembers, $stateParams)->
 
     if @single
       TeamMembers.get( id: $stateParams.id ).then (res)=>
@@ -14,4 +13,5 @@ angular.module('dcollective').component('teamMembers',
         @data = res
 
     @
+  ]
 )

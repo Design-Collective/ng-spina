@@ -10,19 +10,13 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   templateUrl: 'app/components/vSlide/partials/vSlide.html'
   restrict: 'E'
   scope:
-    slideData: '='
+    slideData: '&'
   controllerAs: 'vslide'
   bindToController: true
-  controller: [()->
-    @getBackgroundImage = ()->
-      if @slideData.backgroundImage.content && @slideData.backgroundImage.content.file
-        'background-image': 'url("'+@slideData.backgroundImage.content.file.background.url+'")'
-    @
-  ]
   link: (scope, element, attrs)->
-
-    scope.section = scope.vslide.slideData
-
+    scope.getBg = ()->
+      if scope.slideData
+        {'background-image': 'url('+scope.slideData.backgroundImage.content.file.background.url+')'}
     #Compile defined widget directive and append to view
     if typeof scope.vslide.slideData.widget != 'undefined'
       directive = ''

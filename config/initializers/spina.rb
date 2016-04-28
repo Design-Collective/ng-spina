@@ -8,7 +8,7 @@ Spina.configure do |config|
   # will take effect.
 
   # Specify a backend path. Defaults to /admin.
-  config.backend_path = ''
+  # config.backend_path = 'admin'
 
   # Pages Options
   # ===============

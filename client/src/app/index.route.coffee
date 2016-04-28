@@ -4,29 +4,34 @@ angular.module 'dcollective'
     $stateProvider
       .state 'home',
         url: '/'
-        template: '<show-home></show-home>'
+        template: '<page template-name="home"></page>'
         meta:
           title: 'DesignCollective',
           titleSuffix: ' | Solutions you want',
           description: 'DesignCollectives home page'
-      .state 'about',
-        url: '/about'
-        template: '<show-about></show-about>'
-      .state 'process',
-        url: '/process'
-        template: '<show-process></show-process>'
+          'og:title': 'Some og title'
+          'og:description': 'some og description'
+          'og:url': 'some og url'
+          'og:image': 'https://s3.amazonaws.com/theshow-production/default/sho_share.png'
+        resolve:
+          pageData: (Page, $state)->
+            Page.get('home').then (res)->
+              res
+            , ->
+              $state.go '404'
+
+      .state 'page',
+        url: '/page/:slug'
+        template: '<page></page>'
+        resolve:
+          pageData: (Page, $stateParams, $state)->
+            Page.get($stateParams.slug).then (res)->
+              res
+            , ->
+              $state.go '404'
       .state 'caseStudy',
         url: '/case/:client'
         template: '<case-study></case-study>'
-      .state 'work',
-        url: '/work'
-        template: '<show-work></show-work>'
-      .state 'page',
-        url: '/page/:id'
-        template: '<show-page></show-page>'
-      .state 'pages',
-        url: '/pages'
-        template: '<index-page></index-page>'
       .state 'blogShow',
         url: '/blog/:id'
         template: '<blog single="true"></blog>'

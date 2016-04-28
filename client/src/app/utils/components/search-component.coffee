@@ -4,7 +4,7 @@ angular.module('dcollective').component 'search',
     query: '@'
   controller: (Search, $stateParams,$state)->
     @data = {}
-    console.log @query
+
     if !@query
       @query = $stateParams.query || $stateParams.q
 

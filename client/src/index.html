@@ -10,7 +10,7 @@
     <meta property="og:locale" content="{{ngMeta['og:locale']}}" />
     <meta name="author" content="{{ngMeta['author']}}" />
     <meta name="description" content="{{ngMeta.description}}" />
-
+    <meta name="fragment" content="!">
     <!-- Conical -->
     <base href="/">
     
@@ -20,9 +20,9 @@
     <!--facebook-->
 
      <!-- TO DO : Dynamic Keywords and Description -->
-    <meta property="og:title" content="" />
-    <meta property="og:description" content=""/>
-    <meta property="og:image" content="https://s3.amazonaws.com/theshow-production/default/sho_share.png" />
+    <meta property="og:title" content="{{ngMeta['og:title']}}" />
+    <meta property="og:description" content="{{ngMeta['og:description']}}"/>
+    <meta property="og:image" content="{{ngMeta['og:image']}}" />
 
     <!--favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
