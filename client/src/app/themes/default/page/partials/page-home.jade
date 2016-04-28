@@ -3,14 +3,14 @@ section.v-slide.hero.overlay.p-50(
     layout="column",
     layout-align="center center",
     layout-padding,
-    ng-style="{ 'background-image': 'url(http://lorempixel.com/540/645/fashion/)' }"
+    ng-style="{'background-image': 'url("+templateData.backgroundImage.content.file.background.url+")'}"
 )
     img.m-b-25.dc-logo(src="assets/images/dc_icon.svg")
     img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
-    h2.main-title.text-center.white {{templateData.heroTitle.content}}
-    h3.sub-title.text-center.white {{templateData.heroSubtitle.content}}
+    h2.main-title.text-center.white {{::templateData.heroTitle.content}}
+    h3.sub-title.text-center.white {{::templateData.heroSubtitle.content}}
 
 md-content
-    v-slide(ng-repeat="slideData in templateData.slides" slide-data="slideData")
+    v-slide(ng-repeat="slideData in ::templateData.slides" slide-data="slideData")
     insta-photos(limit='4', title='We in instagram')
-    up-next.up-next(next-page='templateData.upNext')
+    up-next.up-next(next-page='::templateData.upNext')

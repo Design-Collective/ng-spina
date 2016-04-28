@@ -3,7 +3,7 @@ section.v-slide.hero.overlay.p-50(
     layout="column",
     layout-align="center center",
     layout-padding,
-    ng-style="{ 'background-image': 'url(http://lorempixel.com/540/645/fashion/)' }"
+    ng-style="{'background-image': 'url(" + templateData.backgroundImage.content.file.background.url + ")'}"
 )
     img.m-b-25.dc-logo(src="assets/images/dc_icon.svg")
     img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
