@@ -14,7 +14,9 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   controllerAs: 'vslide'
   bindToController: true
   link: (scope, element, attrs)->
-
+    scope.getBg = ()->
+      if scope.slideData
+        {'background-image': 'url('+scope.slideData.backgroundImage.content.file.background.url+')'}
     #Compile defined widget directive and append to view
     if typeof scope.vslide.slideData.widget != 'undefined'
       directive = ''
