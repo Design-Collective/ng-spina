@@ -8,7 +8,7 @@ div.toolbar(layout='row')
 
     md-sidenav.md-sidenav-right.md-whiteframe-4dp(md-component-id='menu')
         ul.menu
-            li.menu-item(ng-repeat='item in $ctrl.menuItems')
+            li.menu-item(ng-repeat='item in ::$ctrl.menuItems')
                 a(ng-href='{{ item.slug }}')
                     p.title {{ item.title }}
                     p.small-title {{ item.subTitle.attributes.content }}
