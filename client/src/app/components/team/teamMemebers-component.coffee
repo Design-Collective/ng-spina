@@ -4,7 +4,6 @@ angular.module('dcollective').component('teamMembers',
   bindings:
     single: '@'
   controller: ['TeamMembers','$stateParams', (TeamMembers, $stateParams)->
-    @data = {}
 
     if @single
       TeamMembers.get( id: $stateParams.id ).then (res)=>
