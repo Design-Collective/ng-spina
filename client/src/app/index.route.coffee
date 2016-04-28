@@ -4,7 +4,7 @@ angular.module 'dcollective'
     $stateProvider
       .state 'home',
         url: '/'
-        template: '<page page-name="home"></page>'
+        template: '<page template-name="home"></page>'
         meta:
           title: 'DesignCollective',
           titleSuffix: ' | Solutions you want',
