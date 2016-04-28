@@ -4,7 +4,6 @@ angular.module('dcollective').component('blog',
   bindings:
     single: '@'
   controller: ['Article', '$stateParams', (Article, $stateParams)->
-    @data = {}
 
     if @single
       Article.get( id: $stateParams.id ).then (res)=>
@@ -12,7 +11,6 @@ angular.module('dcollective').component('blog',
     else
       Article.get().then (res)=>
         @data = res
-
     @
   ]
 )
