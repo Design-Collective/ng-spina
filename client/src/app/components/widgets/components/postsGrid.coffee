@@ -10,7 +10,6 @@ angular.module('dcollective').component('postsGrid', ->
   bindings:
     widgetData: '='
   controller: ['Post',(Post)->
-    @posts = []
     
     Post.get( name: "me" ).then (res)->
       #console.log res
