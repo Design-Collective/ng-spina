@@ -1,30 +1,16 @@
 angular.module 'dcollective'
-  .config ($stateProvider, $urlRouterProvider,$locationProvider) ->
+  .config ($stateProvider, $urlRouterProvider, $locationProvider, PageLoaderProvider) ->
     'ngInject'
+
     $stateProvider
       .state 'home',
         url: '/'
-        template: '<page template-name="home"></page>'
-        resolve:
-          pageData: (Page, $state, MetaHelper)->
-            Page.get('home').then (res)->
-              # TODO: change res.meta to proper field
-              MetaHelper.setMeta res.meta
-              res
-            , ->
-              $state.go '404'
-
+        component: 'page'
+        resolve: PageLoaderProvider.preparePage('home')
       .state 'page',
         url: '/page/:slug'
-        template: '<page></page>'
-        resolve:
-          pageData: (Page, $stateParams, $state, MetaHelper)->
-            Page.get($stateParams.slug).then (res)->
-              # TODO: change res.meta to proper field
-              MetaHelper.setMeta res.meta
-              res
-            , ->
-              $state.go '404'
+        component: 'page'
+        resolve: PageLoaderProvider.preparePage()
       .state 'caseStudy',
         url: '/case/:client'
         template: '<case-study></case-study>'
