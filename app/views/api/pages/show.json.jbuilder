@@ -1,12 +1,14 @@
 
+
 # json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description,
 #              :show_in_menu, :ancestry, :view_template, :created_at, :updated_at,
-#              :layout_template)
-
+#              :layout_template, :position)
 
 json.merge! @page.attributes
 
 # json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description, :show_in_menu, :ancestry, :view_template, :created_at, :updated_at)
+
+json.next_page @page.next_sibling.slug if @page.next_sibling
 
 json.structures do
   @structure_page_parts.each do |structure_page_part|
@@ -22,6 +24,8 @@ json.structures do
               json.set! part.name do
                 json.merge! part.attributes
                 json.content part.try(:content)
+                json.id part.id
+                json.structure_partable_type part.try(:structure_partable_type)
               end
             end
           end
