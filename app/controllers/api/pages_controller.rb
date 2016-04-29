@@ -6,17 +6,14 @@ class Api::PagesController < Api::ApiController
   before_action :set_page, only: [:show, :update, :destroy]
 
   def index
-    @pages = Spina::Page.where(draft: false)
-    render :index
+    @pages = Spina::Page.live.sorted
   end
 
   # GET /pages/1
   # GET /pages/1.json
   def show
-
     @page_parts = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
     @structure_page_parts = @page.page_parts.where(page_partable_type: 'Spina::Structure')
-
     render :show
   end
 
