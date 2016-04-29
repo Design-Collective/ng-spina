@@ -1,0 +1,12 @@
+section.section-component(
+    layout="column",
+    layout-align="center start",
+    ng-class='$ctrl.slideData.cssClasses.content',
+    ng-style="$ctrl.getBg"
+)
+    h3.main-title {{::$ctrl.slideData.title.content }}
+    h4.sub-title {{::$ctrl.slideData.subTitle.content }}
+    p.slide-text(ng-bind-html="::$ctrl.slideData.text.content")
+    .small-widget-container
+    md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='{{::$ctrl.slideData.buttonLink.content}}' ng-if="::$ctrl.slideData.buttonLink.content") {{::$ctrl.slideData.buttonLabel.content}}
+    .widget-container
