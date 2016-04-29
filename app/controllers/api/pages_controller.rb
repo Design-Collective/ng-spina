@@ -6,8 +6,7 @@ class Api::PagesController < Api::ApiController
   before_action :set_page, only: [:show, :update, :destroy]
 
   def index
-    @pages = Spina::Page.where(draft: false)
-    render :index
+    @pages = Spina::Page.live.sorted
   end
 
   # GET /pages/1
@@ -17,9 +16,7 @@ class Api::PagesController < Api::ApiController
                    .joins('INNER JOIN spina_structures ON spina_page_parts.page_partable_id = spina_structures.id')
                    .pluck('spina_structures.id')
     @structure_fields = Spina::StructureItem.order(:position).where(structure_id: structure_ids)
-
     @fields = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
-    render :show
   end
 
   # POST /pages
