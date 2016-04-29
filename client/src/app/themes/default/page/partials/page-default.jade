@@ -11,5 +11,5 @@ section.v-slide.hero.overlay.p-50(
     h3.sub-title.text-center.white {{templateData.heroSubtitle.content}}
 
 md-content
-    v-slide(ng-repeat="slideData in templateData.slides" slide-data="slideData")
+    section-component(ng-repeat="slideData in templateData.slides" slide-data="slideData")
     up-next.up-next(next-page='templateData.upNext')

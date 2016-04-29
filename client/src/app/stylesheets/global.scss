@@ -5,7 +5,7 @@
   */
 
 .up-next {
-  .v-slide {
+  .section-component{
     min-height: 300px !important;
     &.sky {
       .main-title,
@@ -24,7 +24,7 @@
   a {
     text-decoration: none !important;
     &:hover {
-      .v-slide {
+      .section-component{
         &.overlay:before {
           background: RGBA(43, 192, 234, 0.4) !important;
         }
