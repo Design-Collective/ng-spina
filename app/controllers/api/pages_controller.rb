@@ -17,6 +17,7 @@ class Api::PagesController < Api::ApiController
                    .pluck('spina_structures.id')
     @structure_fields = Spina::StructureItem.order(:position).where(structure_id: structure_ids)
     @fields = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
+    @og_url = request.original_url
   end
 
   # POST /pages
