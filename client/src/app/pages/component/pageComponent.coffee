@@ -6,7 +6,7 @@ angular.module('dcollective').component 'page',
     templateName: '<' #Use if you want to override the template you get from api
     pageData: '<'
   controller: (theme, $log)->
-    console.log @pageData , @templateName
+
     @templateName= @templateName ||  @pageData.layoutTemplate || 'default'
     @templateUrl = @templateUrl || theme.path+'page/partials/page-'+@templateName+'.html'
 
