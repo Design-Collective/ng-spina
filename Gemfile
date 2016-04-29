@@ -70,5 +70,6 @@ end
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 gem 'friendly_id', '~> 5.1.0'
+gem 'puma'
+gem 'prerender_rails'
