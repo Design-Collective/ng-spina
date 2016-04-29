@@ -1,7 +1,7 @@
 json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description,
              :show_in_menu, :ancestry, :view_template, :created_at, :updated_at,
-             :layout_template)
-
+             :layout_template, :position)
+json.next_page @page.next_sibling.slug if @page.next_sibling
 @structure_fields.each do |item|
   json.set! item.structure.page_part do
     json.child! do
