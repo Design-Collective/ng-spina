@@ -5,17 +5,11 @@ angular.module 'dcollective'
       .state 'home',
         url: '/'
         template: '<page template-name="home"></page>'
-        meta:
-          title: 'DesignCollective',
-          titleSuffix: ' | Solutions you want',
-          description: 'DesignCollectives home page'
-          'og:title': 'Some og title'
-          'og:description': 'some og description'
-          'og:url': 'some og url'
-          'og:image': 'https://s3.amazonaws.com/theshow-production/default/sho_share.png'
         resolve:
-          pageData: (Page, $state)->
+          pageData: (Page, $state, MetaHelper)->
             Page.get('home').then (res)->
+              # TODO: change res.meta to proper field
+              MetaHelper.setMeta res.meta
               res
             , ->
               $state.go '404'
@@ -24,8 +18,10 @@ angular.module 'dcollective'
         url: '/page/:slug'
         template: '<page></page>'
         resolve:
-          pageData: (Page, $stateParams, $state)->
+          pageData: (Page, $stateParams, $state, MetaHelper)->
             Page.get($stateParams.slug).then (res)->
+              # TODO: change res.meta to proper field
+              MetaHelper.setMeta res.meta
               res
             , ->
               $state.go '404'
