@@ -13,7 +13,18 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
     slideData: '&'
   controllerAs: '$ctrl'
   bindToController: true
+  controller: ()->
+    # TODO: use inview for whatever you want
+    @inViewHandler = ($index, $inview, $inviewpart)->
+      if $inviewpart == 'top'
+        console.log $inview,$inviewpart
+
+      if $inviewpart == undefined
+        console.log $inview,$inviewpart
+    @
+
   link: (scope, element, attrs)->
+    console.log scope
     scope.getBg = ()->
       if scope.slideData
         {'background-image': 'url('+scope.slideData.backgroundImage.content.file.background.url+')'}
