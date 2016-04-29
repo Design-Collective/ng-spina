@@ -14,6 +14,7 @@ class Api::PagesController < Api::ApiController
   def show
     @page_parts = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
     @structure_page_parts = @page.page_parts.where(page_partable_type: 'Spina::Structure')
+    @og_url = request.original_url
     render :show
   end
 

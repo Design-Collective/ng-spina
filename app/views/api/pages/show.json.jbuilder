@@ -9,6 +9,7 @@ json.merge! @page.attributes
 # json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description, :show_in_menu, :ancestry, :view_template, :created_at, :updated_at)
 
 json.next_page @page.next_sibling.slug if @page.next_sibling
+json.og_url @og_url
 
 json.structures do
   @structure_page_parts.each do |structure_page_part|
