@@ -5,7 +5,7 @@
 # @description
 # # sectionComponent
 ###
-angular.module('dcollective').directive('sectionComponent',['$compile','$templateCache',($compile)->
+angular.module('dcollective').directive('sectionComponent',['$compile','TemplateCompiler',($compile,TemplateCompiler)->
 
   templateUrl: 'app/components/sectionComponent/partials/sectionComponent.html'
   restrict: 'E'
@@ -13,10 +13,22 @@ angular.module('dcollective').directive('sectionComponent',['$compile','$templat
     slideData: '&'
   controllerAs: '$ctrl'
   bindToController: true
+  controller: ()->
+    # TODO: use inview for whatever you want
+    @inViewHandler = ($index, $inview, $inviewpart)->
+      if $inviewpart == 'top'
+        console.log $inview,$inviewpart
+
+      if $inviewpart == undefined
+        console.log $inview,$inviewpart
+    @
+
   link: (scope, element, attrs)->
+    console.log scope
     scope.getBg = ()->
       if scope.slideData
         {'background-image': 'url('+scope.slideData.backgroundImage.content.file.background.url+')'}
+
     #Compile defined widget directive and append to view
     if typeof scope.$ctrl.slideData.widget != 'undefined'
       directive = ''
@@ -26,11 +38,8 @@ angular.module('dcollective').directive('sectionComponent',['$compile','$templat
       else
         directive = '<' + scope.$ctrl.slideData.widget.widgetName + '>'
 
-      linkFn = $compile directive
-      widget = linkFn scope
-      console.log linkFn
-      widgetContainer = element.find '.widget-container'
-      widgetContainer.append widget
+      widget = TemplateCompiler.getCompiledDirective directive, scope
+      TemplateCompiler.inject '.widget-container' , widget
 
     #Compile defined small widget directive and append to view
     if typeof scope.$ctrl.slideData.extraWidget != 'undefined'
@@ -41,11 +50,7 @@ angular.module('dcollective').directive('sectionComponent',['$compile','$templat
       else
         directive = '<' + scope.$ctrl.slideData.extraWidget.widgetName + '>'
 
-      linkFn = $compile directive
-      extraWidget = linkFn scope
-
-      widgetContainer = element.find '.small-widget-container'
-      widgetContainer.append extraWidget
-
+      widget = TemplateCompiler.getCompiledDirective directive, scope
+      TemplateCompiler.inject  '.small-widget-container' , widget
 
 ])

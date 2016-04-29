@@ -3,6 +3,7 @@ section.section-component(
     layout-align="center start",
     ng-class='$ctrl.slideData.cssClasses.content',
     ng-style="$ctrl.getBg"
+    in-view='$ctrl.inViewHandler()'
 )
     h3.main-title {{::$ctrl.slideData.title.content }}
     h4.sub-title {{::$ctrl.slideData.subTitle.content }}
