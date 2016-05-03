@@ -1,3 +1,4 @@
+<<<<<<< 2022d4b48fb558cfadc516b86029bfb38b4bce72
 
 
 # json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description,
@@ -8,7 +9,12 @@ json.merge! @page.attributes
 
 # json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description, :show_in_menu, :ancestry, :view_template, :created_at, :updated_at)
 
-json.next_page @page.next_sibling.slug if @page.next_sibling
+json.next_page do
+  json.(@page.next_sibling, :id, :slug, :title)
+  json.subtitle @page.page_parts.subtitle.first!
+  json.background_image @page.page_parts.background.first!
+end if @page.next_sibling
+
 json.og_url @og_url
 
 json.structures do
