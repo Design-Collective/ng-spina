@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503150745) do
+ActiveRecord::Schema.define(version: 20160505133308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,13 @@ ActiveRecord::Schema.define(version: 20160503150745) do
     t.integer  "spina_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "spina_numbers", force: :cascade do |t|
+    t.integer  "number",     default: 0, null: false
+    t.string   "subtitle"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "spina_page_parts", force: :cascade do |t|

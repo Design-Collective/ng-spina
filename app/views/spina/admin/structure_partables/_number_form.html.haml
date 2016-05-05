@@ -1,0 +1,5 @@
+%label
+  = number_form.object.title
+  = number_form.fields_for :structure_partable do |ff|
+    = ff.number_field :number, min: 1
+    = ff.text_field :subtitle, placeholder: 'Number subtitle'
