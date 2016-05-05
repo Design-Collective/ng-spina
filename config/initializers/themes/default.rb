@@ -205,6 +205,10 @@
         name: 'icon_class',
         title: 'Icon class',
         partable_type: "Spina::Icon"
+      },{
+        name: 'number',
+        title: 'Number',
+        partable_type: "Spina::Number"
       }]
     },
     {
