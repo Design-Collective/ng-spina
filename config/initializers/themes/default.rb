@@ -73,6 +73,11 @@ module Spina
           name: 'css_classes',
           title: 'CSS Classes',
           structure_partable_type: "Spina::Line"
+        },
+        {
+          name: 'icon_class',
+          title: 'Icon class',
+          structure_partable_type: "Spina::Icon"
         }
       ],
 

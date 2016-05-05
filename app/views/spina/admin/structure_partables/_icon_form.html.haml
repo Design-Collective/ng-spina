@@ -1,0 +1,4 @@
+%label
+  = icon_form.object.title
+  = icon_form.fields_for :structure_partable do |ff|
+    = ff.text_field :icon_class, placeholder: 'Icon class (e.i. bt-rocket)'
