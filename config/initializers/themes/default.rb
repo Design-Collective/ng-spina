@@ -200,6 +200,11 @@
         name: 'css_classes',
         title: 'CSS Classes',
         partable_type: "Spina::Line"
+      },
+      {
+        name: 'icon_class',
+        title: 'Icon class',
+        partable_type: "Spina::Icon"
       }]
     },
     {
