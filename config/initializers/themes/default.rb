@@ -78,6 +78,11 @@ module Spina
           name: 'icon_class',
           title: 'Icon class',
           structure_partable_type: "Spina::Icon"
+        },
+        {
+          name: 'number',
+          title: 'Number',
+          structure_partable_type: "Spina::Number"
         }
       ],
 
