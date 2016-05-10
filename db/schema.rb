@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505133308) do
+ActiveRecord::Schema.define(version: 20160509140633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,10 @@ ActiveRecord::Schema.define(version: 20160505133308) do
     t.integer  "spina_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "spina_articles", ["slug"], name: "index_spina_articles_on_slug", using: :btree
 
   create_table "spina_attachment_collections", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -71,6 +74,21 @@ ActiveRecord::Schema.define(version: 20160505133308) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "spina_case_studies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "description"
+    t.string   "client_name"
+    t.string   "employee_name"
+    t.string   "employee_title"
+    t.text     "testimonial"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "spina_case_studies", ["slug"], name: "index_spina_case_studies_on_slug", using: :btree
 
   create_table "spina_categories", force: :cascade do |t|
     t.string   "title"
@@ -131,7 +149,10 @@ ActiveRecord::Schema.define(version: 20160505133308) do
     t.integer  "spina_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "spina_members", ["slug"], name: "index_spina_members_on_slug", using: :btree
 
   create_table "spina_numbers", force: :cascade do |t|
     t.integer  "number",     default: 0, null: false

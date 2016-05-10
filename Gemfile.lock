@@ -6,6 +6,13 @@ GIT
       rails (~> 4.0)
 
 GIT
+  remote: git://github.com/Design-Collective/spina-portfolio.git
+  revision: f4987093375999298902a24cecf35665341c4110
+  specs:
+    spina-portfolio (0.0.2)
+      rails (~> 4.0)
+
+GIT
   remote: git://github.com/Design-Collective/spina-team-members.git
   revision: 1434a56dc314b8a426a49cb43e3e87fe9e6d115e
   specs:
@@ -526,10 +533,14 @@ DEPENDENCIES
   spina
   spina-articles!
   spina-members!
+  spina-portfolio!
   spina-template
   spring
   spring-commands-rspec
   yaml_db!
 
+RUBY VERSION
+   ruby 2.2.2p95
+
 BUNDLED WITH
-   1.11.2
+   1.12.1
