@@ -1,10 +1,11 @@
 angular.module('dcollective').provider 'PageLoader', ->
   @$get = ->
     {}
-  @preparePage = (pageName)->
+  @preparePage = (pageName,templateName)->
     {
       templateName:->
-        pageName
+        templateName || pageName
+
       pageData: (Page, $state, MetaHelper, $stateParams)->
         slug = null
 
@@ -15,6 +16,7 @@ angular.module('dcollective').provider 'PageLoader', ->
 
         Page.get(slug).then (res)->
           MetaHelper.setMeta res.meta
+          templateName = templateName || res.viewTemplate
           res
         , ->
           $state.go '404'
