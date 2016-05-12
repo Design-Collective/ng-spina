@@ -13,7 +13,8 @@ angular.module('dcollective').component 'page',
     if !@pageData
       $log.error('pageComponent: No pageData provided , please provide data in resolve')
       return
-    @pageData.getBg = ()->
-      if scope.slideData
-        {'background-image': 'url('+scope.slideData.backgroundImage.content.file.background.url+')'}
+
+    @pageData.getBg = ()=>
+      if @pageData.hasOwnProperty 'slideData'
+        {'background-image': 'url('+@pageData.slideData.backgroundImage.content.file.background.url+')'}
     @
