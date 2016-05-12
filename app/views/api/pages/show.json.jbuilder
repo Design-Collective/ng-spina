@@ -1,5 +1,3 @@
-<<<<<<< 2022d4b48fb558cfadc516b86029bfb38b4bce72
-
 
 # json.(@page, :id, :name, :slug, :title, :menu_title, :seo_title, :description,
 #              :show_in_menu, :ancestry, :view_template, :created_at, :updated_at,
@@ -33,6 +31,7 @@ json.structures do
                 json.content part.try(:content)
                 json.id part.id
                 json.structure_partable_type part.try(:structure_partable_type)
+                json.animations part.structure_partable.animations if part.name == 'widget_template'
               end
             end
           end

@@ -91,3 +91,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'prerender_rails'
 gem 'fog'
+gem 'attr_bitwise'

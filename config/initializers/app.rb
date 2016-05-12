@@ -22,3 +22,8 @@ Spina::CaseStudy.module_eval do
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
 end
+
+Spina::Line.module_eval do
+  include AttrBitwise
+  attr_bitwise :animations, mapping: [:fade_in, :fade_out, :slide_in, :slide_out]
+end

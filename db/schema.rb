@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< a6de5380b2c43a6c6210e015e3f99435335f4210
 ActiveRecord::Schema.define(version: 20161231052041) do
+=======
+ActiveRecord::Schema.define(version: 20160511131335) do
+>>>>>>> Add animations to widgets
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +80,7 @@ ActiveRecord::Schema.define(version: 20161231052041) do
   create_table "spina_lines", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "animations_value"
   end
 
   create_table "spina_navigation_items", force: :cascade do |t|
