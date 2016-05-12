@@ -12,11 +12,11 @@ angular.module('dcollective').factory 'MetaHelper', ['ngMeta',(ngMeta)->
         'og:url': 'some og url'
         'og:image': 'https://s3.amazonaws.com/theshow-production/default/sho_share.png'
       ngMeta.setTitle @meta.title
-      ngMeta.setTage 'description', @meta.description
-      ngMeta.setTage 'og:title', @meta.ogTitle
-      ngMeta.setTage 'og:description', @meta.ogDescription
-      ngMeta.setTage 'og:url', @meta.ogUrl
-      ngMeta.setTage 'og:image', @meta.ogImage
+      ngMeta.setTag 'description', @meta.description
+      ngMeta.setTag 'og:title', @meta.ogTitle
+      ngMeta.setTag 'og:description', @meta.ogDescription
+      ngMeta.setTag 'og:url', @meta.ogUrl
+      ngMeta.setTag 'og:image', @meta.ogImage
 
     @getMeta = ->
       @meta
