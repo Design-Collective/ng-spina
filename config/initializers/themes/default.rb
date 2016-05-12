@@ -209,6 +209,10 @@
         name: 'number',
         title: 'Number',
         partable_type: "Spina::Number"
+      },{
+        name: 'plugin_item',
+        title: 'Plugin Items',
+        partable_type: "Spina::PluginItem"
       }]
     },
     {

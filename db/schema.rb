@@ -161,6 +161,13 @@ ActiveRecord::Schema.define(version: 20160511131335) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "spina_plugin_items", force: :cascade do |t|
+    t.integer  "number",      default: 0, null: false
+    t.integer  "items_value"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "spina_rewrite_rules", force: :cascade do |t|
     t.string   "old_path"
     t.string   "new_path"
