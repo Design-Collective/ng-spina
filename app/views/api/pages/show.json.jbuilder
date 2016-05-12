@@ -15,6 +15,7 @@ json.og_url @og_url
       item.structure_parts.each do |part|
         json.set! part.name do
           json.(part, :id, :structure_partable_type)
+          json.animations part.structure_partable.animations if part.name == 'widget_template'
           json.content part.content
         end
       end
