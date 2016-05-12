@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/Design-Collective/spina-portfolio.git
-  revision: f4987093375999298902a24cecf35665341c4110
+  revision: d40c98ab152cfbc864bf30f4b5ba6751845235f9
   specs:
     spina-portfolio (0.0.2)
       rails (~> 4.0)

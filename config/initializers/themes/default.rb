@@ -83,6 +83,11 @@ module Spina
           name: 'number',
           title: 'Number',
           structure_partable_type: "Spina::Number"
+        },
+        {
+          name: 'plugin_item',
+          title: 'Plugin Items',
+          structure_partable_type: "Spina::PluginItem"
         }
       ],
 
