@@ -8,6 +8,7 @@ module Spina
 
     self.page_parts = [
       { name: 'sub_title', title: 'Sub title', page_partable_type: 'Spina::Line' },
+      { name: 'og_image', title: 'Open Graph Image', page_partable_type: "Spina::Photo" },
       { name: 'hero_title', title: 'Hero title', page_partable_type: 'Spina::Line' },
       { name: 'hero_subtitle', title: 'Hero subtitle', page_partable_type: 'Spina::Line' },
       { name: 'hero_background_image', title: 'Hero image', page_partable_type: "Spina::Photo" },
@@ -72,6 +73,21 @@ module Spina
           name: 'css_classes',
           title: 'CSS Classes',
           structure_partable_type: "Spina::Line"
+        },
+        {
+          name: 'icon_class',
+          title: 'Icon class',
+          structure_partable_type: "Spina::Icon"
+        },
+        {
+          name: 'number',
+          title: 'Number',
+          structure_partable_type: "Spina::Number"
+        },
+        {
+          name: 'plugin_item',
+          title: 'Plugin Items',
+          structure_partable_type: "Spina::PluginItem"
         }
       ],
 
@@ -113,7 +129,7 @@ module Spina
     self.layout_parts = []
 
     self.view_templates = {
-      # Defaults 
+      # Defaults
       'default' => { # Default / Edit
         title:      'Default Page',
         usage:      'Default page type',
@@ -166,12 +182,13 @@ module Spina
         usage:      'Home page type',
         page_parts: [
           'sub_title',
-          'hero_title', 
-          'hero_subtitle', 
-          'hero_background_image', 
-          'hero_background_video', 
-          'text', 
-          'slides', 
+          'og_image',
+          'hero_title',
+          'hero_subtitle',
+          'hero_background_image',
+          'hero_background_video',
+          'text',
+          'slides',
           'budget_ranges'
         ]
       },
@@ -259,8 +276,8 @@ module Spina
     ]
 
     # TODO: @andrii Rename/add the module name(s) here once they are reworked.
-    #self.plugins = ['members'];
-    self.plugins = ['articles', 'members'];
+    #self.plugins = ['team_members'];
+    self.plugins = ['articles', 'members', 'portfolio'];
 
   end
 end

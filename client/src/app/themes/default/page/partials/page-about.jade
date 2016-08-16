@@ -1,0 +1,15 @@
+nav-menu
+section.v-slide.hero.overlay.p-50(
+    layout="column",
+    layout-align="center center",
+    layout-padding,
+    ng-style="templateData.getBg()"
+)
+    img.m-b-25.dc-logo(src="assets/images/dc_icon.svg")
+    img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
+    h2.main-title.text-center.white {{templateData.heroTitle.content}}
+    h3.sub-title.text-center.white {{templateData.heroSubtitle.content}}
+
+md-content
+    section-component(ng-repeat="slideData in templateData.slides" slide-data="slideData")
+    up-next.up-next(next-page='templateData.upNext')

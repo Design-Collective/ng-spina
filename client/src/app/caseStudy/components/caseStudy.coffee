@@ -8,7 +8,10 @@
 ###
 angular.module('dcollective').component 'caseStudyCtrl',
   templateUrl: 'app/caseStudy/partials/caseStudy.html'
-  controller: ($stateParams, TemplateCompiler, $scope)->
+  bindings:
+    featuredCase: '='
+  controller: ['$stateParams', 'TemplateCompiler', '$scope', ($stateParams, TemplateCompiler, $scope)->
+    @featuredCase = @featuredCase || true
     @client = $stateParams.client
     @injectorContainer = '.case-injector'
     @featured = false
@@ -28,10 +31,11 @@ angular.module('dcollective').component 'caseStudyCtrl',
         @menuFixed = false
 
     # if we have client by slug , the its a featured client otherwise use common template
-    if isNaN(@client)
+    if( isNaN(@client) && @featuredCase)
       @featured = true
       @template = '<' + @client + '-case></'+ @client + '-case>'
 
       directive = TemplateCompiler.getCompiledDirective @template, $scope
       TemplateCompiler.inject @injectorContainer , directive
     @
+  ]

@@ -10,7 +10,7 @@ angular.module('dcollective').component('caseMenu',
   bindings:
     menu: '='
     menuFixed: '='
-  controller:()->
+  controller: ->
     @getMenuClass = ->
       if @menuFixed
         'menu-fixed'

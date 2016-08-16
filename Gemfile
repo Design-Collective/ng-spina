@@ -26,12 +26,10 @@ gem 'spina-template'
 gem 'spina'
 gem 'spina-articles', github: 'Design-Collective/spina-blog'
 gem 'spina-members', github: 'Design-Collective/spina-team-members'
+gem 'spina-portfolio', github: 'Design-Collective/spina-portfolio'
 
 # DB Dump task
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
-
-# gem 'spina-team-members', :git => 'git://github.com/Design-Collective/spina-team-members.git'
-#gem 'spina_team_members', :path => '/Users/Klemen/Sites/spina/spina-team-members'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -65,10 +63,13 @@ group :development do
   # https://github.com/ctran/annotate_models
   gem 'annotate', '>=2.6.0'
   gem "capistrano-db-tasks", require: false
-  gem 'pry'
+  gem 'pry-rails'
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 gem 'friendly_id', '~> 5.1.0'
+gem 'puma'
+gem 'prerender_rails'
+gem 'fog'
+gem 'attr_bitwise'

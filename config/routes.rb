@@ -3,7 +3,7 @@ Dcollective::Application.routes.draw do
   mount Spina::Engine => '/admin', as: 'spina'
 
   namespace :api, defaults: { format: :json } do
-    resources :menu, execpt: [:new, :edit]
+    resources :menu, except: [:new, :edit]
     resources :pages, except: [:new, :edit]
     resources :articles, except: [:new, :edit]
     resources :members, except: [:new, :edit]

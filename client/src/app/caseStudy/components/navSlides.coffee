@@ -17,7 +17,7 @@ angular.module('dcollective').component('navSlides',
     sectionName: '@'
     description: '@'
     
-  controller:($templateRequest,TemplateCompiler, $scope, $log)->
+  controller: ['$stateParams', 'TemplateCompiler', '$scope', '$log', ($templateRequest,TemplateCompiler, $scope, $log)->
     #required
     if !@menu || !@caseName || !@sectionName
       $log.error 'navSlides required parameter is missing, component stopped'
@@ -44,4 +44,5 @@ angular.module('dcollective').component('navSlides',
     @isVisible = (target)->
       @visibleSlide == target
     @
+  ]
 )

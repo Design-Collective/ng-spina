@@ -1,7 +1,7 @@
 //TODO: Head
 
 .articles(ng-if='!$ctrl.single')
-    .article-index(ng-repeat='member in $ctrl.data track by $index')
+    .article-index(ng-repeat='member in ::$ctrl.data track by $index')
         p {{ member.firstName }}
         p {{ member.lastName }}
         p {{ member.email }}
@@ -11,12 +11,12 @@
         p {{ member.instagramUrl }}
 
 .article-show(ng-if='$ctrl.single')
-    p {{ $ctrl.data.firstName }}
-    p {{ $ctrl.data.lastName }}
-    p {{ $ctrl.data.email }}
-    p {{ $ctrl.data.member.role }}
-    p {{ $ctrl.data.member.facebookUrl }}
-    p {{ $ctrl.data.member.twitterUrl }}
-    p {{ $ctrl.data.member.instagramUrl }}
+    p {{ ::$ctrl.data.firstName }}
+    p {{ ::$ctrl.data.lastName }}
+    p {{ ::$ctrl.data.email }}
+    p {{ ::$ctrl.data.member.role }}
+    p {{ ::$ctrl.data.member.facebookUrl }}
+    p {{ ::$ctrl.data.member.twitterUrl }}
+    p {{ ::$ctrl.data.member.instagramUrl }}
 
 //TODO: Footer
