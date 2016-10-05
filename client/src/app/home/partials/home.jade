@@ -4,8 +4,8 @@ section.v-slide.hero.overlay.p-50(layout="column" layout-align="center center" l
     img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
     h2.main-title.text-center.white {{$ctrl.data.heroTitle.content}}
     h3.sub-title.text-center.white {{$ctrl.data.heroSubtitle.content}}
-
+    
 md-content
     v-slide(ng-repeat="slideData in $ctrl.data.slides" slide-data="slideData" in-view='$ctrl.inViewHandler($index, $inview, $inviewpart)')
-    insta-photos(limit='4', title='We in instagram')
+    insta-photos(limit='4', title='Our Instagram')
     up-next.up-next(next-page='$ctrl.data.upNext')
