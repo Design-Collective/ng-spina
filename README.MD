@@ -9,7 +9,7 @@ We've updated the migrations for this project, starting from scratch. You can es
 `$ bundle install`
 
 `$ bundle exec rake db:reset`
-`$ bundle exec rake db:migrate
+`$ bundle exec rake db:migrate`
 
 ## Plugin Configuration
 
