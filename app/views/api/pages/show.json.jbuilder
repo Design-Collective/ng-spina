@@ -7,9 +7,9 @@ json.structures do
   @structure_page_parts.each do |structure_page_part|
     if structure_page_part.content
       json.set! structure_page_part.name do
-        json.array! structure_page_part.try(:content).structure_items do |item|
+        json.array! structure_page_part.try(:content).structure_items.order(:position) do |item|
           json.merge! item.attributes
-          json.name item.content(:title)
+          json.title item.content(:title)
           json.parameterized_name item.content(:title).parameterize if item.content(:title).present?
           json.structure_parts do
             item.structure_parts.each do | part|
