@@ -5,6 +5,7 @@ json.merge! @page.attributes
 
 json.structures do
   @structure_page_parts.each do |structure_page_part|
+    # TODO - Clean up by moving ordering and parameterization to methods
     if structure_page_part.content
       json.set! structure_page_part.name do
         json.array! structure_page_part.try(:content).structure_items.order(:position) do |item|
