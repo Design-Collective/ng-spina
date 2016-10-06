@@ -14,11 +14,8 @@ class Api::PagesController < Api::ApiController
   # GET /pages/1.json
   def show
 
-    @fields = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
-
-    @structures = @page.page_parts.where(page_partable_type: 'Spina::Structure')
-
- 
+    @page_parts = @page.page_parts.where.not(page_partable_type: 'Spina::Structure')
+    @structure_page_parts = @page.page_parts.where(page_partable_type: 'Spina::Structure')
 
     render :show
   end

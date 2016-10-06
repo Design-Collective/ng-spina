@@ -65,7 +65,7 @@ group :development do
   # https://github.com/ctran/annotate_models
   gem 'annotate', '>=2.6.0'
   gem "capistrano-db-tasks", require: false
-  gem 'pry'
+  gem 'jazz_hands', github: 'jkrmr/jazz_hands'
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
