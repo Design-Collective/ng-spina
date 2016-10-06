@@ -19,7 +19,10 @@ For every Spina plugin installed, we'll need to make sure that the migrations ar
 
 Run `rails g spina_reviews:install`
 
-Then `rake db:migrate` or `bundle exec rake db:migrate`
+Then 
+`rake db:migrate` 
+or 
+`bundle exec rake db:migrate`
 
 ### To-do
 
