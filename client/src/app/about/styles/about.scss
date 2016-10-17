@@ -12,4 +12,5 @@
 	.sub-title {
 		color: $sky;
 	}
+	a { @include ghost-button($sky); }
 }
