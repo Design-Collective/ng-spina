@@ -4,6 +4,7 @@ section.v-slide.hero.overlay.p-50(layout="column" layout-align="center center" l
     img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
     h2.main-title.text-center.white(data-fittext data-fittext-min="1" data-fittext-max="300"){{$ctrl.data.pageParts.heroTitle.content}}
     h3.sub-title.text-center.white {{$ctrl.data.pageParts.heroSubtitle.content}}
+    p(ng-bind-html='$ctrl.data.pageParts.text.content')
     
 md-content
     v-slide(ng-repeat="slideData in $ctrl.data.structures.slides" slide-data="slideData" in-view='$ctrl.inViewHandler($index, $inview, $inviewpart)')
