@@ -13,7 +13,7 @@ angular.module('dcollective').component('postsGrid', ->
     @posts = []
     
     Post.get( name: "me" ).then (res)->
-      console.log res
+      #console.log res
     # TODO: Add resource
     @
 )

@@ -20,7 +20,6 @@ angular.module('dcollective').component 'showAbout',
       @data = data
 
     @getBackgroundImage = ()->
-      console.log @data
       if @data && @data.pageParts.heroBackgroundImage.content && @data.pageParts.heroBackgroundImage.content.file
         'background-image': 'url("' + @data.pageParts.heroBackgroundImage.content.file.url + '")'
 

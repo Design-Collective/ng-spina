@@ -15,8 +15,9 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
   bindToController: true
   controller: [()->
     @getBackgroundImage = ()->
-      if @slideData.backgroundImage.content && @slideData.backgroundImage.content.file
-        'background-image': 'url("'+@slideData.backgroundImage.content.file.background.url+'")'
+      if @slideData
+        console.log @slideData.structureParts.backgroundImage.content.file.background.url
+        'background-image': "url('#{@slideData.structureParts.backgroundImage.content.file.background.url}')"
     @
   ]
   link: (scope, element, attrs)->
@@ -34,7 +35,6 @@ angular.module('dcollective').directive('vSlide',['$compile','$templateCache',($
 
       linkFn = $compile directive
       widget = linkFn scope
-      console.log linkFn
       widgetContainer = element.find '.widget-container'
       widgetContainer.append widget
 
