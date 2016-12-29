@@ -24,7 +24,7 @@ gem 'rails_12factor', group: :staging
 # CMS
 gem 'spina-template', '~> 0.3.3'
 gem 'spina', '~> 0.8.3'
-gem 'spina-articles', github: 'Design-Collective/spina-blog', '~> 0.0.1'
+gem 'spina-articles', '~> 0.0.1', github: 'Design-Collective/spina-blog'
 gem 'spina-members', github: 'Design-Collective/spina-team-members'
 
 # DB Dump task

@@ -446,7 +446,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-db-tasks
   capistrano-rails (~> 1.1)
-  capistrano-rvm
+  capistrano-rvm (~> 0.1.2)
   capybara
   database_cleaner
   dotenv-rails
@@ -470,10 +470,10 @@ DEPENDENCIES
   rspec-rails (~> 3.0.1)
   ruby-prof
   sdoc (~> 0.4.0)
-  spina
-  spina-articles!
+  spina (~> 0.8.3)
+  spina-articles (~> 0.0.1)!
   spina-members!
-  spina-template
+  spina-template (~> 0.3.3)
   spring
   spring-commands-rspec
   yaml_db!
