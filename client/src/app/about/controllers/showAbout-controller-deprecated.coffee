@@ -12,5 +12,5 @@ angular.module('dcollective').controller 'showAboutCtrl', (Page) ->
   
   Page.get( id:'about' ).then (data)=>
     @data = data
-  
+
   @

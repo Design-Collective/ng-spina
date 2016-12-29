@@ -1,10 +1,8 @@
 nav-menu
-section.v-slide.hero.overlay.p-50(layout="column" layout-align="center center" layout-padding style="background-image: url('http://lorempixel.com/1280/800/fashion/4')")
-    img.m-b-25(src="assets/images/dc_icon.svg" class="dc-logo")
-    img.m-b-20(src="assets/images/design_collective.svg" class="dc-logo-text")
-    h2.main-title.text-center.white We Design & Build
-    h3.sub-title.text-center.white Sexy and Scalable Multi-Platform Digital Products
+section.v-slide.hero.overlay.p-50(layout="column" layout-align="center center" layout-padding ng-style="$ctrl.getBackgroundImage()")
+    h2.main-title.text-center.white {{$ctrl.data.pageParts.heroTitle.content}}
+    h3.sub-title.text-center.white {{$ctrl.data.pageParts.heroSubtitle.content}}
 
 md-content
-    v-slide(ng-repeat="slideData in $ctrl.data.slides" slide-data="slideData")
+    v-slide(ng-repeat="slideData in $ctrl.data.structures.slides" slide-data="slideData" in-view='$ctrl.inViewHandler($index, $inview, $inviewpart)')
     up-next.up-next(next-page='$ctrl.data.upNext')

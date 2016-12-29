@@ -9,7 +9,7 @@ We've updated the migrations for this project, starting from scratch. You can es
 `$ bundle install`
 
 `$ bundle exec rake db:reset`
-`$ bundle exec rake db:migrate
+`$ bundle exec rake db:migrate`
 
 ## Plugin Configuration
 
@@ -19,7 +19,10 @@ For every Spina plugin installed, we'll need to make sure that the migrations ar
 
 Run `rails g spina_reviews:install`
 
-Then `rake db:migrate` or `bundle exec rake db:migrate`
+Then 
+`rake db:migrate` 
+or 
+`bundle exec rake db:migrate`
 
 ### To-do
 

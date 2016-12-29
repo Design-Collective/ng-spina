@@ -14,6 +14,19 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gray-darker', endColorstr='$gray-darkest',GradientType=0 ); /* IE6-8 */
 }
 
+// Buttons
+
+@mixin ghost-button($color) {
+  display: inline-block;
+  padding: 8px;
+  color: $color;
+  border: 1px solid $color;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+}
+
 // Transitions & Animations
 // ------------------------------
 
