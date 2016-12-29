@@ -22,16 +22,16 @@ gem "paperclip", "~> 4.3"
 gem 'rails_12factor', group: :staging
 
 # CMS
-gem 'spina-template'
-gem 'spina'
-gem 'spina-articles', github: 'Design-Collective/spina-blog'
+gem 'spina-template', '~> 0.3.3'
+gem 'spina', '~> 0.8.3'
+gem 'spina-articles', github: 'Design-Collective/spina-blog', '~> 0.0.1'
 gem 'spina-members', github: 'Design-Collective/spina-team-members'
 
 # DB Dump task
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 
 # gem 'spina-team-members', :git => 'git://github.com/Design-Collective/spina-team-members.git'
-#gem 'spina_team_members', :path => '/Users/Klemen/Sites/spina/spina-team-members'
+# gem 'spina_team_members', :path => '/Users/Klemen/Sites/spina/spina-team-members'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -61,7 +61,7 @@ group :development do
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-bundler'
-  gem 'capistrano-rvm'
+  gem 'capistrano-rvm', '~> 0.1.2'
   #gem 'capistrano3-puma', github: 'seuros/capistrano-puma'
   #gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
   # https://github.com/ctran/annotate_models
