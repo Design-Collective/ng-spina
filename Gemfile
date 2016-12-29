@@ -48,6 +48,8 @@ group :development, :test do
   gem 'rails-perftest'
   gem 'ruby-prof'
   gem 'bullet'
+  gem 'foreman'
+  gem 'mailcatcher'
 end
 
 group :development do
