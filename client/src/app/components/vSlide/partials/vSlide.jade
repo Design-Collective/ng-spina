@@ -9,5 +9,5 @@ section.v-slide(
   h4.sub-title {{ section.structureParts.subTitle.content }}
   p(ng-bind-html='section.structureParts.text.content')
   .small-widget-container
-  md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='{{section.structureParts.buttonLink.content}}' ng-if="section.structureParts.buttonLink.content") {{section.structureParts.buttonLabel.content}}
+  md-button.md-raised(ng-href='{{section.structureParts.buttonLink.content}}' ng-if="section.structureParts.buttonLink.content") {{section.structureParts.buttonLabel.content}}
   .widget-container
