@@ -1,0 +1,7 @@
+.budget-slider
+    h3.title BALLPARK BUDGETS
+    div(layout='row', layout-xs="column")
+        div.slider(flex)
+            md-slider(ng-model='$ctrl.budgetValue', min='0', max='3' )
+        div.description(flex)
+            p {{ $ctrl.getBudget() }}

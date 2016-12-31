@@ -1,0 +1,9 @@
+nav-menu
+section.sectional.hero.overlay.p-50(layout="column" layout-align="center center" layout-padding ng-style="$ctrl.getBackgroundImage()")
+    h2.main-title.text-center.white {{$ctrl.data.heroTitle.content}}
+    h3.sub-title.text-center.white {{$ctrl.data.heroSubtitle.content}}
+    p(ng-bind-html='$ctrl.data.pageParts.text.content')
+
+md-content
+    sectional(ng-repeat="sectionData in $ctrl.data.slides" section-data="sectionData" in-view='$ctrl.inViewHandler($index, $inview, $inviewpart)')
+    up-next.up-next(next-page='$ctrl.data.upNext')

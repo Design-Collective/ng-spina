@@ -1,0 +1,5 @@
+.process-step(ng-repeat='step in $ctrl.steps', ng-show="$ctrl.showStep($index)")
+    h3.title {{($index+1) +"."+ step.title}}
+    small(ng-hide='$ctrl.progress') {{ step.subTitle }}
+
+.process-circle(ng-class='$ctrl.getClass()')

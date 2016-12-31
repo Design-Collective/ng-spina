@@ -1,0 +1,12 @@
+@import "variables";
+
+// Button Properties
+// ------------------------------
+
+.md-button {
+  font-family: $font-family-condensed;
+  font-size: 1.4rem;
+  letter-spacing: -0.03rem;
+  padding: 0.5rem 2rem;
+  margin: 0.5rem 0;
+}

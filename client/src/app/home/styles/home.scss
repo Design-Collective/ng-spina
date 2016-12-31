@@ -1,0 +1,53 @@
+$logo-width: 165px;
+
+.hero {
+  height: 100vh;
+  .dc-logo {
+    width: $logo-width;
+  }
+  .dc-logo-text {
+    width: $logo-width * 1.65;
+  }
+}
+
+
+.we-are {
+	.sub-title {
+		color: $sky;
+	}
+}
+
+.we-work-with {
+	background-color: $pink;
+	.main-title, .sub-title {
+		color: $white;
+	}
+}
+
+.our-process-is {
+	background-color: $grey-dark;
+	.main-title {
+		color: $white;
+	}
+	.sub-title {
+		color: $yellow;
+	}
+}
+
+.we-build {
+	.sub-title {
+		color: $pink;
+	}
+}
+
+.learn-with-us {
+	.main-title {
+		text-align: center;
+		color: $sky;
+	}
+	.sub-title {
+		font-size: 1em;
+		text-align: center;
+		color: $grey-light;
+	}
+}

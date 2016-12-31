@@ -11,18 +11,18 @@ gem 'rails', '~> 5.0.0', '<= 5.0.0.1'
 # Use pg as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-# gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -46,7 +46,7 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 # https://github.com/radar/paranoia
 # gem 'paranoia', '~> 2.0'
 
-#gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id', '~> 5.1.0'
 
 
 group :development, :test do
@@ -76,12 +76,12 @@ group :development do
   gem 'binding_of_caller'
   gem "better_errors"
   # deploy
-  gem 'capistrano', '~> 3.2.1'
-  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano'
+  gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-rvm', '~> 0.1.2'
-  #gem 'capistrano3-puma', github: 'seuros/capistrano-puma'
-  #gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+  #gem 'capistrano-rvm'
+  gem 'capistrano3-puma', github: 'seuros/capistrano-puma'
+  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
   gem 'annotate', '>=2.6.0'
   gem "capistrano-db-tasks", require: false
   gem 'jazz_fingers'

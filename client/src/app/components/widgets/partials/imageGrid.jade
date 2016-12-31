@@ -1,0 +1,8 @@
+.image-box(ng-repeat='person in $ctrl.widgetData', ng-style='{"background-image" : "url({{person.photoSrc}})" }' )
+    .box-content
+        .description
+            p.socials
+                a(ng-repeat='social in person.socials', ng-href='social.link')
+                    i(ng-class='social.iconClass')
+            p.position {{ person.position }}
+            h3.title {{ person.title }}

@@ -1,0 +1,6 @@
+.posts-grid
+    .grid-box(ng-repeat='post in $ctrl.widgetData track by $index | limitTo: 4')
+        a(ng-href='post.link')
+            p.category {{ post.category }}
+            h3 {{ post.title }}
+            p.author {{ post.author }} | {{ post.date }}
