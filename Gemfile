@@ -34,7 +34,7 @@ gem 'spina', github: "denkGroot/Spina", branch: "master"
 gem 'globalize', github: 'globalize/globalize'
 gem 'breadcrumbs_on_rails', '2.3.1'
 gem 'draper', github: 'audionerd/draper', branch: 'rails5'
-
+gem 'dalli'
 
 # Assets
 gem 'sass-rails', '~> 5.0'
