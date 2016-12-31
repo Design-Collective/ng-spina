@@ -31,7 +31,7 @@ function browserSyncInit(baseDir, browser) {
   var middlewareSettings = {
     target: 'http://localhost:3000',
     changeOrigin: true
-  }
+  };
 
   /*
    * You can add a proxy to your backend by uncommenting the line below.
@@ -42,7 +42,7 @@ function browserSyncInit(baseDir, browser) {
    */
   // server.middleware = proxyMiddleware('/users', {target: 'http://jsonplaceholder.typicode.com', changeOrigin: true});
 
-  server.middleware = proxyMiddleware('/api', middlewareSettings );
+  server.middleware = proxyMiddleware( [ '/api', '/uploads', '/admin' ], middlewareSettings );
 
   browserSync.instance = browserSync.init({
     startPath: '/',

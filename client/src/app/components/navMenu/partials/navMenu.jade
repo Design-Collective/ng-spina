@@ -1,0 +1,15 @@
+div.toolbar(layout='row')
+    .left-nav(flex='50', layout='row', layout-align='start center')
+      a(ng-href='/')
+        img.logo-small(src="assets/images/dc_icon.svg", ng-hide='$ctrl.isOpen')
+
+    .right-nav(flex='50', layout='row', layout-align='end center')
+        a.menu-toggle(href='#', ng-click='$ctrl.openMenu()')
+            i(ng-class='$ctrl.menuClass')
+
+    md-sidenav.md-sidenav-right.md-whiteframe-4dp(md-component-id='menu')
+        ul.menu
+            li.menu-item(ng-repeat='item in $ctrl.menuItems')
+                a(ng-href='{{ item.slug }}')
+                    p.title {{ item.title }}
+                    p.small-title {{ item.subTitle.attributes.content }}

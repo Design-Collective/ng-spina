@@ -1,0 +1,16 @@
+.we-love-to {
+	.sub-title {
+		color: $sky;
+	}
+}
+
+.we-believe-in {
+	background-color: $grey-dark;
+	.main-title {
+		color: $white;
+	}
+	.sub-title {
+		color: $sky;
+	}
+	a { @include ghost-button($sky); }
+}

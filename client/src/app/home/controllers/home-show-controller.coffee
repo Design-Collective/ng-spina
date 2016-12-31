@@ -1,21 +1,27 @@
 'use strict'
 ###*
+# TODO: DEPRECATED
 # @ngdoc function
 # @name dcollective.controller:homeShowCtrl
 # @description
 # # homeShowCtrl
 # Controller of the dcollective
 ###
-angular.module('dcollective').controller 'showHomeCtrl', () ->
-  @data = {
-    title: 'Main title'
-    subTitle: 'Small sub title'
-    text: 'Some long small text for the special container'
-    buttonLink: 'http://collective.dev:3619/'
-    buttonText: 'This a button'
-    widget: {}
-    smallWidget: {}
-    sideWidget: {}
-  }
-  
+
+angular.module('dcollective').controller 'showHomeCtrl', [ 'Page','InstagramApi', (Page,InstagramApi) ->
+  @inViewHandler = ($index, $inview, $inviewpart)->
+    if $inviewpart == 'top'
+      @circleProgress = $index
+
+    if $inviewpart == undefined
+      @circleProgress = undefined
+
+  Page.get( id:'homepage' ).then (data)=>
+    @data = data
+
+  @getBackgroundImage = ()->
+    if @data && @data.heroBackgroundImage.content && @data.heroBackgroundImage.content.file
+      'background-image': 'url("' + @data.heroBackgroundImage.content.file.url + '")'
+
   @
+]

@@ -1,4 +1,4 @@
-.image-box(ng-repeat='person in iGrid.gridData', ng-style='iGrid.getBackground(person)')
+.image-box(ng-repeat='person in $ctrl.widgetData', ng-style='{"background-image" : "url({{person.photoSrc}})" }' )
     .box-content
         .description
             p.socials

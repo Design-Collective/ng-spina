@@ -1,0 +1,12 @@
+.filters
+  %span{data: {dropdown: true}}
+    = link_to spina.new_admin_member_path, class: 'button button-primary' do
+      = icon('plus')
+      New Member
+
+.dd#pages_list
+  - if @members.any?
+    %ol.dd-list
+      = render partial: 'member', collection: @members
+  - else
+    %em No members yet

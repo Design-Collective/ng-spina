@@ -1,0 +1,67 @@
+= form_for [spina, :admin, @member], html: {autocomplete: "off"} do |f|
+  - content_for :notification_alert do
+    = error_explanation!(@member)
+
+  #page_content.tab-content.active
+    .table-container
+      %table.table.table-form
+        %tr
+          %td
+            First Name
+          %td
+            = f.text_field :first_name, placeholder: "First name"
+        %tr
+          %td
+            Last Name
+          %td
+            = f.text_field :last_name, placeholder: "Last name"
+
+        / %tr
+        /   %td
+        /     Beoordeling
+        /   %td
+        /     .select-dropdown= f.select :rating, [["1 ster", 1], ["2 sterren", 2], ["3 sterren", 3], ["4 sterren", 4], ["5 sterren", 5]]
+        %tr
+          %td
+            Role
+          %td
+            = f.text_field :role, value: (@member.role unless @member.new_record?), placeholder: "Member role", class: 'text'
+
+        %tr
+          %td
+            E-mail
+          %td
+            = f.text_field :email, placeholder: "E-mail"
+
+        %tr
+          %td
+            Facebook
+          %td
+            = f.text_field :facebook_url, placeholder: "http://"
+
+        %tr
+          %td
+            Twitter
+          %td
+            = f.text_field :twitter_url, placeholder: "http://"
+
+        %tr
+          %td
+            Instagram
+          %td
+            = f.text_field :instagram_url, placeholder: "http://"
+
+        %tr
+          %td
+            Linkedin
+          %td
+            = f.text_field :linkedin_url, placeholder: "http://"
+
+
+  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+    Save Team Member
+
+  = link_to "Cancel", spina.admin_members_path, class: 'button button-link'
+
+  - unless @member.new_record?
+    .pull-right= link_to "Delete", spina.admin_member_path(@member), method: :delete, data: { confirm: "Are you sure you want to delete <strong>#{@member.full_name}</strong>?" }, class: 'button button-link button-danger'
