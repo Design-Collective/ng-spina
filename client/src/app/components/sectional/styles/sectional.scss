@@ -1,0 +1,117 @@
+@import "../../../stylesheets/variables";
+
+.slide-overlay {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+}
+
+.sectional {
+  padding: 50px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 105vh;
+
+  * {
+    z-index: 3;
+  }
+
+  &.overlay {
+    @extend .slide-overlay;
+  }
+
+  .slide-text {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    font-weight: 300;
+  }
+
+  //
+  // Specific V-Slide Styles
+  //
+
+  &.sky {
+    .md-button {
+      background-color: $sky;
+      color: #FFFFFF;
+    }
+    .sub-title {
+      color: $sky;
+    }
+  }
+
+  &.pink {
+    &.overlay:before {
+      background-color: rgba(204, 68, 99, 0.8) !important;
+    }
+
+    .md-button {
+      background-color: $pink-dark;
+      color: #FFFFFF;
+    }
+    .main-title,
+    .sub-title {
+      color: #FFFFFF;
+    }
+  }
+
+  &.pink-inverted {
+    &.overlay:before {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .md-button {
+      background-color: $pink;
+      color: #FFFFFF;
+    }
+    .main-title {
+      color: $grey-dark;
+    }
+    .sub-title {
+      color: $pink;
+    }
+  }
+
+  &.yellow {
+    &.overlay:before {
+      background-color: rgba(40, 40, 40, 0.6) !important;
+    }
+
+    .md-button {
+      background-color: transparent;
+      border: 2px solid $yellow;
+      color: $yellow;
+    }
+    .main-title {
+      color: #FFFFFF;
+    }
+    .sub-title {
+      color: $yellow;
+    }
+  }
+
+  //
+  // Specific slide styles
+  //
+
+  &.about {
+    background-size: 100% auto !important;
+    background-position: center bottom !important;
+    .sub-title {
+      margin-bottom: 22%;
+    }
+  }
+
+}
+
+

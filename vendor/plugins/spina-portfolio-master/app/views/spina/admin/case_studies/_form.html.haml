@@ -1,0 +1,54 @@
+= form_for [spina, :admin, @case_study], html: { autocomplete: "off" } do |f|
+  - content_for :notification_alert do
+    = error_explanation!(@case_study)
+
+  #page_content.tab-content.active
+    .table-container
+      %table.table.table-form
+        %tr
+          %td
+            Title
+          %td
+            = f.text_field :title
+        %tr
+          %td
+            Subtitle
+          %td
+            = f.text_field :subtitle
+        %tr
+          %td
+            Description
+          %td
+            = render 'spina/admin/shared/rich_text_field', form: f, field: :description
+        %tr
+          %td
+            Client Name
+          %td
+            = f.text_field :client_name
+        %tr
+          %td
+            Client Logo
+          %td
+            = f.file_field :client_logo
+        %tr
+          %td
+            Client Employee Name
+          %td
+            = f.text_field :employee_name
+        %tr
+          %td
+            Client Employee Title
+          %td
+            = f.text_field :employee_title
+        %tr
+          %td
+            Testimonial Content
+          %td
+            = f.text_field :testimonial
+  %button.button.button-primary{ type: 'submit', data: { icon: 'o' } }
+    Save Case Study
+
+  = link_to "Cancel", spina.admin_case_studies_path, class: 'button button-link'
+
+  - unless @case_study.new_record?
+    .pull-right= link_to "Delete", spina.admin_case_study_path(@case_study), method: :delete, data: {confirm: "Are you sure you want to remove this case study?"}, class: 'button button-link button-danger'
