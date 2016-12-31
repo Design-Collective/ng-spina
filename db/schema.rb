@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,23 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412134235) do
+ActiveRecord::Schema.define(version: 20161231052041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string   "slug",                      null: false
-    t.integer  "sluggable_id",              null: false
-    t.string   "sluggable_type", limit: 50
-    t.string   "scope"
-    t.datetime "created_at"
-  end
-
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "spina_accounts", force: :cascade do |t|
     t.string   "name"
@@ -43,17 +29,6 @@ ActiveRecord::Schema.define(version: 20160412134235) do
     t.string   "kvk_identifier"
     t.string   "vat_identifier"
     t.boolean  "robots_allowed", default: false
-  end
-
-  create_table "spina_articles", force: :cascade do |t|
-    t.string   "title"
-    t.string   "subtitle"
-    t.text     "content"
-    t.date     "publish_date"
-    t.boolean  "draft",             default: true
-    t.integer  "spina_category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "spina_attachment_collections", force: :cascade do |t|
@@ -72,28 +47,10 @@ ActiveRecord::Schema.define(version: 20160412134235) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spina_categories", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "spina_colors", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "spina_inquiries", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "message"
-    t.boolean  "archived",   default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "spam"
   end
 
   create_table "spina_layout_parts", force: :cascade do |t|
@@ -106,25 +63,39 @@ ActiveRecord::Schema.define(version: 20160412134235) do
     t.integer  "account_id"
   end
 
-  create_table "spina_lines", force: :cascade do |t|
+  create_table "spina_line_translations", force: :cascade do |t|
+    t.integer  "spina_line_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "content"
+    t.index ["locale"], name: "index_spina_line_translations_on_locale", using: :btree
+    t.index ["spina_line_id"], name: "index_spina_line_translations_on_spina_line_id", using: :btree
+  end
+
+  create_table "spina_lines", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "spina_members", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "role"
-    t.string   "facebook_url"
-    t.string   "twitter_url"
-    t.string   "instagram_url"
-    t.string   "linkedin_url"
-    t.boolean  "enabled",       default: false
-    t.integer  "spina_user_id"
+  create_table "spina_navigation_items", force: :cascade do |t|
+    t.integer  "page_id",                   null: false
+    t.integer  "navigation_id",             null: false
+    t.integer  "position",      default: 0, null: false
+    t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["page_id", "navigation_id"], name: "index_spina_navigation_items_on_page_id_and_navigation_id", unique: true, using: :btree
+  end
+
+  create_table "spina_navigations", force: :cascade do |t|
+    t.string   "name",                           null: false
+    t.string   "label",                          null: false
+    t.boolean  "auto_add_pages", default: false, null: false
+    t.integer  "position",       default: 0,     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["name"], name: "index_spina_navigations_on_name", unique: true, using: :btree
   end
 
   create_table "spina_page_parts", force: :cascade do |t|
@@ -137,17 +108,27 @@ ActiveRecord::Schema.define(version: 20160412134235) do
     t.string   "page_partable_type"
   end
 
-  create_table "spina_pages", force: :cascade do |t|
+  create_table "spina_page_translations", force: :cascade do |t|
+    t.integer  "spina_page_id",     null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "title"
     t.string   "menu_title"
     t.string   "description"
+    t.string   "seo_title"
+    t.string   "materialized_path"
+    t.index ["locale"], name: "index_spina_page_translations_on_locale", using: :btree
+    t.index ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id", using: :btree
+  end
+
+  create_table "spina_pages", force: :cascade do |t|
     t.boolean  "show_in_menu",        default: true
     t.string   "slug"
     t.boolean  "deletable",           default: true
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.string   "seo_title"
     t.boolean  "skip_to_first_child", default: false
     t.string   "view_template"
     t.string   "layout_template"
@@ -155,7 +136,6 @@ ActiveRecord::Schema.define(version: 20160412134235) do
     t.string   "link_url"
     t.string   "ancestry"
     t.integer  "position"
-    t.string   "materialized_path"
     t.boolean  "active",              default: true
   end
 
@@ -188,9 +168,8 @@ ActiveRecord::Schema.define(version: 20160412134235) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["structure_id"], name: "index_spina_structure_items_on_structure_id", using: :btree
   end
-
-  add_index "spina_structure_items", ["structure_id"], name: "index_spina_structure_items_on_structure_id", using: :btree
 
   create_table "spina_structure_parts", force: :cascade do |t|
     t.integer  "structure_item_id"
@@ -200,18 +179,26 @@ ActiveRecord::Schema.define(version: 20160412134235) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["structure_item_id"], name: "index_spina_structure_parts_on_structure_item_id", using: :btree
+    t.index ["structure_partable_id"], name: "index_spina_structure_parts_on_structure_partable_id", using: :btree
   end
-
-  add_index "spina_structure_parts", ["structure_item_id"], name: "index_spina_structure_parts_on_structure_item_id", using: :btree
-  add_index "spina_structure_parts", ["structure_partable_id"], name: "index_spina_structure_parts_on_structure_partable_id", using: :btree
 
   create_table "spina_structures", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "spina_texts", force: :cascade do |t|
+  create_table "spina_text_translations", force: :cascade do |t|
+    t.integer  "spina_text_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.text     "content"
+    t.index ["locale"], name: "index_spina_text_translations_on_locale", using: :btree
+    t.index ["spina_text_id"], name: "index_spina_text_translations_on_spina_text_id", using: :btree
+  end
+
+  create_table "spina_texts", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

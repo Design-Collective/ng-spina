@@ -1,14 +1,14 @@
 'use strict'
 ###*
 # @ngdoc component
-# @name dcollective.component:navSlides
+# @name dcollective.component:navSections
 # @description
-# The navSlides component use a template injection system.
+# The navSections component use a template injection system.
 # the caseName will be used to point out for a prepared template which will be compiled and included
 #
 ###
-angular.module('dcollective').component('navSlides',
-  templateUrl: 'app/caseStudy/partials/navSlides.html'
+angular.module('dcollective').component('navSections',
+  templateUrl: 'app/caseStudy/partials/navSections.html'
   bindings:
     menu: '='
     title: '@'
@@ -20,7 +20,7 @@ angular.module('dcollective').component('navSlides',
   controller:($templateRequest,TemplateCompiler, $scope, $log)->
     #required
     if !@menu || !@caseName || !@sectionName
-      $log.error 'navSlides required parameter is missing, component stopped'
+      $log.error 'navSections required parameter is missing, component stopped'
       return @
 
     @injector = '.slides-injector-'+@sectionName

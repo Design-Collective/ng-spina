@@ -11,13 +11,26 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-/.idea
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# RVM and RBENV
 .ruby-version
 .ruby-gemset
-dump.rdb
 
+# Database
+dump.rdb
 database.yml
+
+# Bower
 /vendor/assets/bower_components
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /solr
@@ -50,9 +63,6 @@ sftp-config.json
 
 # Ignore Bower Dependency folder
 /vendor/assets/bower_components
-
-#ingnore Public Wistia Media Items
-/public/wistia_media_items/
 
 startserver
 screenshot.png
