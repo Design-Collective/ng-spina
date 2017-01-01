@@ -24,7 +24,8 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
     @
 
   link: (scope, element, attrs)->
-    console.log scope
+    console.log 'SECTION COMPONENT FIRING?'
+    console.log scope.slideData, 'SLIDE DATA'
     scope.getBg = ()->
       if scope.slideData
         {'background-image': 'url('+scope.slideData.backgroundImage.content.file.background.url+')'}

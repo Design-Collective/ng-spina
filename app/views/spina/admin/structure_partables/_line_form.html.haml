@@ -1,6 +1,0 @@
-%label
-  = line_form.object.title
-= line_form.fields_for :structure_partable do |f|
-  = f.text_field :content, placeholder: line_form.object.title
-  - if line_form.object.title == 'Widget template'
-    = f.collection_check_boxes :animations, Spina::Line::ANIMATIONS_MAPPING.map{ |el| [el.first, el.second] }, :second, :first

@@ -201,19 +201,22 @@
         title: 'CSS Classes',
         partable_type: "Spina::Line"
       },
-      {
-        name: 'icon_class',
-        title: 'Icon class',
-        partable_type: "Spina::Icon"
-      },{
-        name: 'number',
-        title: 'Number',
-        partable_type: "Spina::Number"
-      },{
-        name: 'plugin_item',
-        title: 'Plugin Items',
-        partable_type: "Spina::PluginItem"
-      }]
+      # {
+      #   name: 'icon_class',
+      #   title: 'Icon class',
+      #   partable_type: "Spina::Icon"
+      # },
+      # {
+      #   name: 'number',
+      #   title: 'Number',
+      #   partable_type: "Spina::Number"
+      # },
+      # {
+      #   name: 'plugin_item',
+      #   title: 'Plugin Items',
+      #   partable_type: "Spina::PluginItem"
+      # }
+      ]
     },
     {
       name: 'budget_ranges',
@@ -303,7 +306,7 @@
 
   # # TODO: @andrii Rename/add the module name(s) here once they are reworked.
   # #theme.plugins = ['members'];
-  # theme.plugins = ['articles', 'members'];
+  theme.plugins = ['articles', 'members', 'portfolio'];
 
 end
 

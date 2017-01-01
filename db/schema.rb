@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< a6de5380b2c43a6c6210e015e3f99435335f4210
 ActiveRecord::Schema.define(version: 20161231052041) do
-=======
-ActiveRecord::Schema.define(version: 20160511131335) do
->>>>>>> Add animations to widgets
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +31,19 @@ ActiveRecord::Schema.define(version: 20160511131335) do
     t.boolean  "robots_allowed", default: false
   end
 
+  create_table "spina_articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "content"
+    t.date     "publish_date"
+    t.boolean  "draft",             default: true
+    t.integer  "spina_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_spina_articles_on_slug", using: :btree
+  end
+
   create_table "spina_attachment_collections", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,10 +60,37 @@ ActiveRecord::Schema.define(version: 20160511131335) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "spina_case_studies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "description"
+    t.string   "client_name"
+    t.string   "employee_name"
+    t.string   "employee_title"
+    t.text     "testimonial"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_spina_case_studies_on_slug", using: :btree
+  end
+
+  create_table "spina_categories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spina_colors", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "spina_icons", force: :cascade do |t|
+    t.string   "icon_class"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spina_layout_parts", force: :cascade do |t|
@@ -80,7 +116,23 @@ ActiveRecord::Schema.define(version: 20160511131335) do
   create_table "spina_lines", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "animations_value"
+  end
+
+  create_table "spina_members", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "role"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "instagram_url"
+    t.string   "linkedin_url"
+    t.boolean  "enabled",       default: false
+    t.integer  "spina_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_spina_members_on_slug", using: :btree
   end
 
   create_table "spina_navigation_items", force: :cascade do |t|
@@ -101,6 +153,13 @@ ActiveRecord::Schema.define(version: 20160511131335) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["name"], name: "index_spina_navigations_on_name", unique: true, using: :btree
+  end
+
+  create_table "spina_numbers", force: :cascade do |t|
+    t.integer  "number",     default: 0, null: false
+    t.string   "subtitle"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "spina_page_parts", force: :cascade do |t|

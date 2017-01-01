@@ -9,21 +9,21 @@ Spina::PagePart.module_eval do
 end
 
 Spina::Article.module_eval do
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
+  #extend FriendlyId
+  #friendly_id :title, use: [:slugged, :finders]
 end
 
 Spina::Member.module_eval do
-  extend FriendlyId
-  friendly_id :full_name, use: [:slugged, :finders]
+  #extend FriendlyId
+  #friendly_id :full_name, use: [:slugged, :finders]
 end
 
 Spina::CaseStudy.module_eval do
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
+  #extend FriendlyId
+  #friendly_id :title, use: [:slugged, :finders]
 end
 
 Spina::Line.module_eval do
-  include AttrBitwise
-  attr_bitwise :animations, mapping: [:fade_in, :fade_out, :slide_in, :slide_out]
+  #include AttrBitwise
+  #attr_bitwise :animations, mapping: [:fade_in, :fade_out, :slide_in, :slide_out]
 end

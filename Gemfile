@@ -48,6 +48,11 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 
 gem 'friendly_id', '~> 5.1.0'
 
+# Plugins
+gem 'spina-articles', path: 'vendor/plugins'
+gem 'spina-members', path: 'vendor/plugins'
+gem 'spina-portfolio', path: 'vendor/plugins'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

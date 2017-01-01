@@ -31,7 +31,7 @@ json.structures do
                 json.content part.try(:content)
                 json.id part.id
                 json.structure_partable_type part.try(:structure_partable_type)
-                json.animations part.structure_partable.animations if part.name == 'widget_template'
+                #json.animations part.structure_partable.animations if part.name == 'widget_template'
               end
             end
           end

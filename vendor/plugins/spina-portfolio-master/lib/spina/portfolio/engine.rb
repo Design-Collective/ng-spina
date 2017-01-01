@@ -10,11 +10,11 @@ module Spina
       end
       config.to_prepare &method(:require_decorators).to_proc
 
-      initializer "register plugin" do
-        plugin = ::Spina::Plugin.new
-        plugin.name = "Portfolio"
-        plugin.config = Portfolio.config
-        ::Spina.register_plugin(plugin)
+      initializer 'spina.plugin.register.portfolio', before: :load_config_initializers do
+        ::Spina::Plugin.register do |plugin|
+          plugin.name       = 'Portfolio'
+          plugin.namespace  = 'portfolio'
+        end
       end
     end
   end

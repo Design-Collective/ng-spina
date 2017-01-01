@@ -10,11 +10,12 @@ module Spina
       end
       config.to_prepare &method(:require_decorators).to_proc
 
-      initializer "register plugin" do
-        plugin = ::Spina::Plugin.new
-        plugin.name = "Members"
-        plugin.config = Members.config
-        ::Spina.register_plugin(plugin)
+
+      initializer 'spina.plugin.register.members', before: :load_config_initializers do
+        ::Spina::Plugin.register do |plugin|
+          plugin.name       = 'Members'
+          plugin.namespace  = 'members'
+        end
       end
     end
   end

@@ -1,4 +1,0 @@
-%label
-  = plugin_item_form.object.title
-= plugin_item_form.fields_for :structure_partable do |ff|
-  = ff.collection_check_boxes :items, Spina::PluginItem::ITEMS_MAPPING.map{ |el| [el.first, el.second] }, :second, :first

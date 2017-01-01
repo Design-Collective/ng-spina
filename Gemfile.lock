@@ -84,6 +84,13 @@ GIT
       capistrano
       sidekiq (>= 3.4)
 
+PATH
+  remote: vendor/plugins
+  specs:
+    spina-articles (0.0.2)
+    spina-members (0.0.2)
+    spina-portfolio (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -564,6 +571,9 @@ DEPENDENCIES
   ruby-prof
   sass-rails (~> 5.0)
   spina!
+  spina-articles!
+  spina-members!
+  spina-portfolio!
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)

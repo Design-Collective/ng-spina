@@ -6,7 +6,7 @@ angular.module 'dcollective'
       .state 'home',
         url: '/'
         component: 'page'
-        resolve: PageLoaderProvider.preparePage('homepage','home')
+        resolve: PageLoaderProvider.preparePage('homepage', 'home', '1')
       .state 'page',
         url: '/page/:slug'
         component: 'page'
