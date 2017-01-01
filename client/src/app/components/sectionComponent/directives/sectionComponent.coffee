@@ -10,7 +10,7 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
   templateUrl: 'app/components/sectionComponent/partials/sectionComponent.html'
   restrict: 'E'
   scope:
-    slideData: '&'
+    slideData: '='
   controllerAs: '$ctrl'
   bindToController: true
   controller: ()->

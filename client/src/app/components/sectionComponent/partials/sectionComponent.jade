@@ -1,13 +1,13 @@
 section.section-component(
     layout="column",
     layout-align="center start",
-    ng-class='$ctrl.slideData.cssClasses.content',
+    ng-class='$ctrl.slideData.structureParts.cssClasses.content',
     ng-style="$ctrl.getBg"
     in-view='$ctrl.inViewHandler()'
 )
-    h3.main-title {{::$ctrl.slideData.structureParts.title.content }}
-    h4.sub-title {{::$ctrl.slideData.structureParts.subTitle.content }}
-    p.slide-text(ng-bind-html="::$ctrl.slideData.structureParts.text.content")
+    h3.main-title {{$ctrl.slideData.structureParts.title.content }}
+    h4.sub-title {{$ctrl.slideData.structureParts.subTitle.content }}
+    p.slide-text(ng-bind-html="$ctrl.slideData.structureParts.text.content")
     .small-widget-container
-    md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='{{::$ctrl.slideData.structureParts.buttonLink.content}}' ng-if="::$ctrl.slideData.structureParts.buttonLink.content") {{::$ctrl.slideData.structureParts.buttonLabel.content}}
+    md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='{{$ctrl.slideData.structureParts.buttonLink.content}}' ng-if="$ctrl.slideData.structureParts.buttonLink.content") {{$ctrl.slideData.structureParts.buttonLabel.content}}
     .widget-container
