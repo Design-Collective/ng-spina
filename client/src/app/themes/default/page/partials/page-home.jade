@@ -1,5 +1,5 @@
 nav-menu
-section.v-slide.hero.overlay.p-50(
+section.section.hero.overlay.p-50(
     layout="column",
     layout-align="center center",
     layout-padding,
@@ -7,10 +7,13 @@ section.v-slide.hero.overlay.p-50(
 )
     img.m-b-25.dc-logo(src="assets/images/dc_icon.svg")
     img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
-    h2.main-title.text-center.white {{::templateData.heroTitle.content}}
-    h3.sub-title.text-center.white {{::templateData.heroSubtitle.content}}
+    h2.main-title.text-center.white {{::templateData.pageParts.heroTitle.content}}
+    h3.sub-title.text-center.white {{::templateData.pageParts.heroSubtitle.content}}
 
 md-content
-    section-component(ng-repeat="slideData in ::templateData.slides" slide-data="slideData")
+    div(ng-repeat="slideData in ::templateData.structures.sections")
+      pre
+        | {{slideData}}
+    section-component(ng-repeat="slideData in ::templateData.structures.sections" slide-data="slideData")
     insta-photos(limit='4', title='We in instagram')
     up-next.up-next(ng-if='templateData.nextPage' next-page='templateData.nextPage')

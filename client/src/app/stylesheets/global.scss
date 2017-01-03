@@ -3,7 +3,11 @@
   Global Styles
 
   */
+@import "variables";
 
+.section, .section-component {
+  background-color: $grey-light
+}
 .up-next {
   .section-component{
     min-height: 300px !important;
