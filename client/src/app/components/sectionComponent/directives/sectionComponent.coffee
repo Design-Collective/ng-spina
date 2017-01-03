@@ -24,10 +24,13 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
     @
 
   link: (scope, element, attrs)->
-    console.log scope
-    scope.getBg = ()->
-      if scope.slideData
-        {'background-image': 'url('+scope.slideData.backgroundImage.content.file.background.url+')'}
+    console.log scope.$ctrl.slideData
+    
+    scope.$ctrl.getBg = ()->
+      console.log 'GET BG IS CALLED'
+      if scope.$ctrl.slideData
+        console.log scope.$ctrl.slideData
+        {'background-image': 'url('+scope.$ctrl.slideData.structureParts.backgroundImage.content.file.background.url+')'}
 
     #Compile defined widget directive and append to view
     if typeof scope.$ctrl.slideData.widget != 'undefined'

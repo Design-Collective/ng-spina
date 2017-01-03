@@ -2,7 +2,7 @@ section.section-component(
     layout="column",
     layout-align="center start",
     ng-class='$ctrl.slideData.cssClasses.content',
-    ng-style="$ctrl.getBg"
+    ng-style="$ctrl.getBg()"
     in-view='$ctrl.inViewHandler()'
 )
     h3.main-title {{::$ctrl.slideData.structureParts.title.content }}

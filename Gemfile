@@ -47,7 +47,7 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 # https://github.com/radar/paranoia
 # gem 'paranoia', '~> 2.0'
 
-gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id', github: 'norman/friendly_id', branch: 'master'
 gem 'prerender_rails'
 gem 'fog'
 gem 'attr_bitwise'

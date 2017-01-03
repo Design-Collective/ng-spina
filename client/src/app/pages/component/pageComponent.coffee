@@ -15,6 +15,6 @@ angular.module('dcollective').component 'page',
       return
 
     @pageData.getBg = ()=>
-      if @pageData.hasOwnProperty 'pageParts' && @pageData.pageParts.heroBackgroundImage
+      if @pageData.hasOwnProperty 'pageParts'
         {'background-image': 'url('+@pageData.pageParts.heroBackgroundImage.content.file.background.url+')'}
     @
