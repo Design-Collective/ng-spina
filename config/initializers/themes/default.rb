@@ -43,6 +43,10 @@
       title: 'Hero background poster', 
       partable_type: "Spina::Photo" 
     },{ 
+      name: 'hero_classes', 
+      title: 'Hero - Extra CSS Classes', 
+      partable_type: 'Spina::Line' 
+    },{ 
       name: 'text', 
       title: 'Text content', 
       partable_type: 'Spina::Text' 
@@ -82,6 +86,7 @@
         'hero_background_video_webm',
         'hero_background_video_ogv',
         'hero_background_video_poster',
+        'hero_classes',
         'text',
         'sections',
         'budget_ranges'
