@@ -20,8 +20,16 @@ section.section.hero.overlay.p-50(
     )
       img.m-b-25.dc-logo(src="assets/images/dc_icon.svg")
       img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
-      h2.main-title.text-center.white {{::templateData.pageParts.heroTitle.content}}
-      h3.sub-title.text-center.white {{::templateData.pageParts.heroSubtitle.content}}
+      h2.main-title.text-center.white(
+        data-fittext=".8"
+        data-fittext-min="40"
+        data-fittext-load-delay="500"
+      ) {{::templateData.pageParts.heroTitle.content}}
+      h3.sub-title.text-center.white(
+        data-fittext=".8",
+        data-fittext-min="10"
+        data-fittext-max="40"
+      ) {{::templateData.pageParts.heroSubtitle.content}}
 
 md-content
     div(ng-repeat="slideData in ::templateData.structures.sections")

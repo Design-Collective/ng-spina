@@ -13,23 +13,31 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
     slideData: '='
   controllerAs: '$ctrl'
   bindToController: true
+
   controller: ()->
     # TODO: use inview for whatever you want
-    @inViewHandler = ($index, $inview, $inviewpart)->
-      if $inviewpart == 'top'
-        console.log $inview,$inviewpart
+    @inViewHandler = ($index, $inview, $inviewInfo)->
+      console.log "INVIEW", $index, $inview, $inviewInfo
 
-      if $inviewpart == undefined
-        console.log $inview,$inviewpart
+      if $inviewInfo.parts.top 
+        console.log "INVIEW PART TOP", $index, $inview, $inviewInfo
+
+      if $inviewInfo.parts.bottom
+        console.log "INVIEW PART BOTTOM", $index, $inview, $inviewInfo
+
+      if $inviewInfo.parts.top && $inviewInfo.parts.bottom
+        console.log "INVIEW PART both", $index, $inview, $inviewInfo
+
+      if !$inviewInfo.parts.top && !$inviewInfo.parts.bottom
+        console.log "INVIEW PART neither", $index, $inview, $inviewInfo
+
+      if $inviewInfo.parts == undefined
+        console.log "INVIEW PART undefined", $index, $inview, $inviewInfo
     @
 
-  link: (scope, element, attrs)->
-    console.log scope.$ctrl.slideData
-    
+  link: (scope, element, attrs)->    
     scope.$ctrl.getBg = ()->
-      console.log 'GET BG IS CALLED'
       if scope.$ctrl.slideData
-        console.log scope.$ctrl.slideData
         {'background-image': 'url('+scope.$ctrl.slideData.structureParts.backgroundImage.content.file.background.url+')'}
 
     #Compile defined widget directive and append to view
