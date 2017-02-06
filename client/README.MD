@@ -21,7 +21,7 @@ So dont delete it.
 This tasks is required for env.constants.json to work , read more about it below:
 
 ###### env.constants.json
-Here is an example of this file
+This file needs to be added for every environment within the client folder. This will end up being compiled into the dist folder at /client/dist/env.constants.json.
 
 ```json
 {
@@ -33,9 +33,23 @@ Here is an example of this file
 }
 ```
 
-the `"constants"` key is importants , inside it each key will be injected in angular as a constant, the file name is
+The `"constants"` key is importants , inside it each key will be injected in angular as a constant, the file name is
 important aswell , it will be converted to module name , which is injected in index.module.coffee ( index.module.js )
 
+When the application is served through the gulp server it will appear as a module on /client/.tmp/serve/app/env.constants.js and when the distribution build is used, it will already appear compiled into the dist js file automatically (i.e. /client/dist/scripts/app-eb8a87221e.js).
+
+```javascript
+angular.module("env.constants", [])
+
+.constant("instaAccessToken", "**************")
+
+.constant("instaClientId", "*******************")
+
+.constant("instaSecret", "*****************")
+
+;
+
+```
 ##### styles Additions
 The styles task got 2 new methods:
 ```
