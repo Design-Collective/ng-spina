@@ -7,7 +7,8 @@ angular.module('dcollective').component 'instaPhotos',
     @limit = @limit || 10
 
     #TODO: Use proper id instead of false
-    InstagramApi.getUsersRecentMedia(false).then (res)=>
+    console.log InstagramApi.getUsersRecentMedia
+    InstagramApi.getUsersRecentMedia().then (res)=>
       @photos = res.data.data
     @
   ]
