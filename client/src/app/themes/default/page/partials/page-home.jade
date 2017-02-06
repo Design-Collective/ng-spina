@@ -4,16 +4,27 @@ section.section.hero.overlay.p-50(
     layout-align="center center",
     layout-padding,
     ng-style="templateData.getBg()"
-)
-    img.m-b-25.dc-logo(src="assets/images/dc_icon.svg")
-    img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
-    h2.main-title.text-center.white {{::templateData.pageParts.heroTitle.content}}
-    h3.sub-title.text-center.white {{::templateData.pageParts.heroSubtitle.content}}
+)   
+    vid-bg(
+        resources='::templateData.heroVideo.resource',
+        poster='::templateData.heroVideo.poster',
+        full-screen='::templateData.heroVideo.fullScreen',
+        muted='::templateData.heroVideo.muted'
+        play-info='::templateData.heroVideo.playInfo'
+        z-index="::templateData.heroVideo.zIndex" 
+        pause-play="::templateData.heroVideo.pausePlay"
+    )
+    .hero-content(
+      layout="column",
+      layout-align="center center"
+    )
+      img.m-b-25.dc-logo(src="assets/images/dc_icon.svg")
+      img.m-b-20.dc-logo-text(src="assets/images/design_collective.svg")
+      h2.main-title.text-center.white {{::templateData.pageParts.heroTitle.content}}
+      h3.sub-title.text-center.white {{::templateData.pageParts.heroSubtitle.content}}
 
 md-content
     div(ng-repeat="slideData in ::templateData.structures.sections")
-      pre
-        | {{slideData}}
     section-component(ng-repeat="slideData in ::templateData.structures.sections" slide-data="slideData")
-    insta-photos(limit='4', title='We in instagram')
+    insta-photos(limit='4', title='We  are on instagram')
     up-next.up-next(ng-if='templateData.nextPage' next-page='templateData.nextPage')
