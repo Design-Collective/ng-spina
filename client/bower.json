@@ -17,7 +17,7 @@
     "animate.css": "~3.4.0",
     "angular": "~1.5.3",
     "angularjs-rails-resource": "^2.1.0",
-    "angular-inview": "^1.5.7",
+    "angular-inview": "^2.1.0",
     "ngFitText": "^4.2.1",
     "angular-scroll": "^1.0.0",
     "ngMeta": "^0.3.7",
