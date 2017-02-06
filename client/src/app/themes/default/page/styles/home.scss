@@ -2,6 +2,25 @@ $logo-width: 165px;
 
 .hero {
   height: 100vh;
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    // -webkit-align-items: center;
+    // -ms-flex-align: center;
+    // align-items: center;
+    // max-width: 100%;
+    // display: -webkit-flex;
+    // display: -ms-flexbox;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // max-width: 100%;
+    // justify-content: center;
+    // & > * {
+    //   max-width: 100%;
+    //   box-sizing: border-box;
+    // }
+  }
   .dc-logo {
     width: $logo-width;
   }

@@ -5,9 +5,17 @@
   */
 @import "variables";
 
+.section {
+  height: 100vh;
+}
 .section, .section-component {
   background-color: $grey-light
 }
+
+md-content {
+  z-index: 2;
+}
+
 .up-next {
   .section-component{
     min-height: 300px !important;
