@@ -28,8 +28,20 @@
       partable_type: "Spina::Photo" 
     },{ 
       name: 'hero_background_video', 
-      title: 'Hero background video', 
+      title: 'Hero background video MP4', 
       partable_type: "Spina::Line" 
+    },{ 
+      name: 'hero_background_video_webm', 
+      title: 'Hero background video WebM', 
+      partable_type: "Spina::Line" 
+    },{ 
+      name: 'hero_background_video_ogv', 
+      title: 'Hero background video OGV', 
+      partable_type: "Spina::Line" 
+    },{ 
+      name: 'hero_background_video_poster', 
+      title: 'Hero background poster', 
+      partable_type: "Spina::Photo" 
     },{ 
       name: 'text', 
       title: 'Text content', 
@@ -63,12 +75,15 @@
       title:      'Homepage',
        page_parts: [
         'sub_title',
-        'hero_title', 
-        'hero_subtitle', 
-        'hero_background_image', 
-        'hero_background_video', 
-        'text', 
-        'sections', 
+        'hero_title',
+        'hero_subtitle',
+        'hero_background_image',
+        'hero_background_video',
+        'hero_background_video_webm',
+        'hero_background_video_ogv',
+        'hero_background_video_poster',
+        'text',
+        'sections',
         'budget_ranges'
       ]
     },
