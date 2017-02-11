@@ -5,18 +5,19 @@ section.section-component(
     ng-style="$ctrl.getBg()"
     in-view='$ctrl.inViewHandler($index, $inview, $inviewInfo)'
     in-view-options='{ generateParts: true }'
-  )   
+  )
+    threejs-component
 
     h3.main-title(        
         data-fittext=".8"
         data-fittext-min="40"
         data-fittext-load-delay="500"
-    ){{::$ctrl.slideData.structureParts.title.content }}
+    ) {{::$ctrl.slideData.structureParts.title.content }}
     h3.sub-title(        
       data-fittext=".8",
       data-fittext-min="10"
       data-fittext-max="40"
-    ){{::$ctrl.slideData.structureParts.subTitle.content }}
+    ) {{::$ctrl.slideData.structureParts.subTitle.content }}
     p.slide-text(ng-bind-html="::$ctrl.slideData.structureParts.text.content")
     .small-widget-container
     md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='{{::$ctrl.slideData.structureParts.buttonLink.content}}' ng-if="::$ctrl.slideData.structureParts.buttonLink.content") {{::$ctrl.slideData.structureParts.buttonLabel.content}}

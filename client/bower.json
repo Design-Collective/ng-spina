@@ -21,11 +21,13 @@
     "ngFitText": "^4.2.1",
     "angular-scroll": "^1.0.0",
     "ngMeta": "^0.3.7",
-    "angular-vidbg": "angular-video-background#^0.0.12"
+    "angular-vidbg": "angular-video-background#^0.0.12",
+    "angular-threejs": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3",
-    "angularjs-rails-resource": "~2.0.0"
+    "angularjs-rails-resource": "~2.0.0",
+    "angular-threejs": "*"
   },
   "resolutions": {
     "angular": "~1.5.3"

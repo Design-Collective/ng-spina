@@ -19,7 +19,10 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
     @inViewHandler = ($index, $inview, $inviewInfo)->
       console.log "INVIEW", $index, $inview, $inviewInfo
 
-      if $inviewInfo.parts.top 
+      if $inviewInfo.parts.changed
+        console.log "INVIEW CHANGE", $index, $inview, $inviewInfo
+
+      if $inviewInfo.parts.top
         console.log "INVIEW PART TOP", $index, $inview, $inviewInfo
 
       if $inviewInfo.parts.bottom
@@ -35,9 +38,9 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
         console.log "INVIEW PART undefined", $index, $inview, $inviewInfo
     @
 
-  link: (scope, element, attrs)->    
+  link: (scope, element, attrs)->
     scope.$ctrl.getBg = ()->
-      if scope.$ctrl.slideData
+      if scope.$ctrl.slideData && scope.$ctrl.slideData.structureParts.backgroundImage.content
         {'background-image': 'url('+scope.$ctrl.slideData.structureParts.backgroundImage.content.file.background.url+')'}
 
     #Compile defined widget directive and append to view

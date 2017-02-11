@@ -15,6 +15,7 @@ angular.module 'dcollective', [
   'duScroll',
   'ngVidBg',
   'ngMeta',
-  'env.constants'
+  'threejs',
+  'env.constants',
 ]
 
