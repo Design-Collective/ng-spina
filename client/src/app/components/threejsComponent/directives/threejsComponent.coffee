@@ -3,12 +3,11 @@
 # @ngdoc directive
 # @name dcollective.directive:threjsComponent
 # @description
-# # loader
+# # threejsComponent
 ###
 angular.module('dcollective')
 .directive('threejsComponent', ['$rootScope', 'THREEService',($rootScope, THREEService)->
-  template: '<div></div>'
-  restrict: 'E'
+  restrict: 'EA'
   link: (scope, element, attrs) ->
     THREEService.load().then (THREE) ->
       container = undefined
@@ -22,10 +21,13 @@ angular.module('dcollective')
       animation = undefined
 
       scope.init = ->
+        console.log("threeJSCOMPONENT");
         container = element[0]
         viewsize = container.clientWidth
         renderer.setSize viewsize, viewsize
-        container.appendChild renderer.domElement
+        console.log("container", container)
+        console.log("RENDER DOM ELEMENT", renderer.domElement)
+        container.append renderer.domElement
         scene = new (THREE.Scene)
         camera = new (THREE.PerspectiveCamera)(50, 1, 150, 650)
         camera.position.z = 500
