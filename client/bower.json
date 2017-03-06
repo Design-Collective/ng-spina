@@ -22,7 +22,20 @@
     "angular-scroll": "^1.0.0",
     "ngMeta": "^0.3.7",
     "angular-vidbg": "angular-video-background#^0.0.12",
-    "angular-threejs": "git://github.com/Design-Collective/angular-threejs.git"
+    "angular-threejs": "git://github.com/Design-Collective/angular-threejs.git",
+    "threejs": "*"
+  },
+
+  "overrides": {
+      "threejs": {
+          "main": [
+              "build/three.min.js",
+              "examples/js/renderers/CanvasRenderer.js",
+              "examples/js/renderers/Projector.js",
+              "examples/js/renderers/CSS3DRenderer.js",
+              "examples/js/libs/stats.min.js"
+          ]
+      }
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3",

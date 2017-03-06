@@ -6,7 +6,7 @@
 # # threejsComponent
 ###
 angular.module('dcollective')
-.directive('threejsComponent', ['$rootScope', 'THREEService',($rootScope, THREEService)->
+.directive('torusKnotGeometry', ['$rootScope', 'THREEService',($rootScope, THREEService)->
   restrict: 'EA'
   link: (scope, element, attrs) ->
     THREEService.load().then (THREE) ->
@@ -21,13 +21,15 @@ angular.module('dcollective')
       animation = undefined
 
       scope.init = ->
-        console.log("threeJSCOMPONENT");
+        console.log("threeJSCOMPONENT")
         container = element[0]
         viewsize = container.clientWidth
         renderer.setSize viewsize, viewsize
         console.log("container", container)
         console.log("RENDER DOM ELEMENT", renderer.domElement)
-        container.append renderer.domElement
+        # Add canvas element
+        domElement = renderer.domElement
+        container.append domElement
         scene = new (THREE.Scene)
         camera = new (THREE.PerspectiveCamera)(50, 1, 150, 650)
         camera.position.z = 500

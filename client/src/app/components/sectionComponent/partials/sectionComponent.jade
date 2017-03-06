@@ -6,7 +6,6 @@ section.section-component(
     in-view='$ctrl.inViewHandler($index, $inview, $inviewInfo)'
     in-view-options='{ generateParts: true }'
   )
-    div(threejs-component="" style="height: 100%; width: 100%; position: fixed; top:0; left: 0;")
 
     h3.main-title(        
         data-fittext=".8"
@@ -21,4 +20,5 @@ section.section-component(
     p.slide-text(ng-bind-html="::$ctrl.slideData.structureParts.text.content")
     .small-widget-container
     md-button.md-raised.p-10.p-l-40.p-r-40(ng-href='{{::$ctrl.slideData.structureParts.buttonLink.content}}' ng-if="::$ctrl.slideData.structureParts.buttonLink.content") {{::$ctrl.slideData.structureParts.buttonLabel.content}}
-    .widget-container
+
+    div(ng-class="$ctrl.widgetClass")

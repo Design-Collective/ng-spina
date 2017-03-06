@@ -5,7 +5,7 @@
 # @description
 # # sectionComponent
 ###
-angular.module('dcollective').directive('sectionComponent',['$compile','TemplateCompiler',($compile,TemplateCompiler)->
+angular.module('dcollective').directive('sectionComponent',['$compile', '$timeout', 'TemplateCompiler',($compile, $timeout, TemplateCompiler)->
 
   templateUrl: 'app/components/sectionComponent/partials/sectionComponent.html'
   restrict: 'E'
@@ -15,6 +15,11 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
   bindToController: true
 
   controller: ()->
+
+    @widgetClass = @slideData.parameterizedName + "-widget-container"
+    @widgetName = @slideData.structureParts.widgetTemplate.content
+    @widgetApi = @slideData.structureParts.widgetApiFeed.content
+
     # TODO: use inview for whatever you want
     @inViewHandler = ($index, $inview, $inviewInfo)->
       console.log "INVIEW", $index, $inview, $inviewInfo
@@ -36,33 +41,38 @@ angular.module('dcollective').directive('sectionComponent',['$compile','Template
 
       if $inviewInfo.parts == undefined
         console.log "INVIEW PART undefined", $index, $inview, $inviewInfo
+
     @
 
   link: (scope, element, attrs)->
+
     scope.$ctrl.getBg = ()->
-      if scope.$ctrl.slideData && scope.$ctrl.slideData.structureParts.backgroundImage.content
-        {'background-image': 'url('+scope.$ctrl.slideData.structureParts.backgroundImage.content.file.background.url+')'}
+      backgroundImage = scope.$ctrl.slideData.structureParts.backgroundImage
+      if backgroundImage.content
+        {'background-image': 'url('+backgroundImage.content.file.background.url+')'}
 
     #Compile defined widget directive and append to view
-    if typeof scope.$ctrl.slideData.widget != 'undefined'
-      directive = ''
-
-      if scope.$ctrl.slideData.widget.widgetData
-        directive = '<' + scope.$ctrl.slideData.widget.widgetName + ' widget-data="$ctrl.slideData.widget.widgetData" >'
+    if scope.$ctrl.widgetName
+      if scope.$ctrl.widgetApi.length > 0
+        directive = "<#{scope.$ctrl.widgetName} widget-data='scope.$ctrl.widgetApi'>"
       else
-        directive = '<' + scope.$ctrl.slideData.widget.widgetName + '>'
+        directive = "<#{scope.$ctrl.widgetName}>"
 
-      widget = TemplateCompiler.getCompiledDirective directive, scope
-      TemplateCompiler.inject '.widget-container' , widget
+      widgetComponent = TemplateCompiler.getCompiledDirective directive, scope
+      widgetContainer = ".#{scope.$ctrl.widgetClass}"
+
+      $timeout ()->
+         TemplateCompiler.inject "#{widgetContainer}", widgetComponent
+      , 1500
+        
 
     #Compile defined small widget directive and append to view
-    if typeof scope.$ctrl.slideData.extraWidget != 'undefined'
-      directive = ''
+    if typeof scope.$ctrl.slideData.structureParts.extraWidget != 'undefined'
 
-      if scope.$ctrl.slideData.extraWidget.widgetData
-        directive = '<' + scope.$ctrl.slideData.extraWidget.widgetName + ' widget-data="$ctrl.slideData.extraWidget.widgetData" >'
+      if scope.$ctrl.slideData.structureParts.extraWidget.widgetData
+        directive = '<' + scope.$ctrl.slideData.structureParts.extraWidget.widgetName + ' widget-data="$ctrl.slideData.structureParts.extraWidget.widgetData" >'
       else
-        directive = '<' + scope.$ctrl.slideData.extraWidget.widgetName + '>'
+        directive = '<' + scope.$ctrl.slideData.structureParts.extraWidget.widgetName + '>'
 
       widget = TemplateCompiler.getCompiledDirective directive, scope
       TemplateCompiler.inject  '.small-widget-container' , widget

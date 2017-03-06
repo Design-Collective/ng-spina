@@ -14,6 +14,7 @@ angular.module('dcollective').directive('templateInjector',['TemplateCompiler','
     if templateUrl
       TemplateCompiler.getTemplate(templateUrl).then (template)->
         directive = TemplateCompiler.getCompiledDirective template, scope
+        console.log 'TEMPLATE COMPILER'
         TemplateCompiler.inject injectorContainer , directive
     else
       $log.error "pageInjector: Template url empty"

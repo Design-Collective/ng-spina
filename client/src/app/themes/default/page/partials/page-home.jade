@@ -30,9 +30,7 @@ section.section.hero.overlay.p-50(
         data-fittext-min="10"
         data-fittext-max="40"
       ) {{::templateData.pageParts.heroSubtitle.content}}
-
 md-content
-    div(ng-repeat="slideData in ::templateData.structures.sections")
     section-component(ng-repeat="slideData in ::templateData.structures.sections" slide-data="slideData")
     insta-photos(limit='4', title='We  are on instagram')
     up-next.up-next(ng-if='templateData.nextPage' next-page='templateData.nextPage')
