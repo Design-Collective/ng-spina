@@ -35,19 +35,23 @@ angular.module('dcollective')
         container.append domElement
 
         camera = new (THREE.PerspectiveCamera)(75, window.innerWidth / window.innerHeight, 1, 10000)
-        camera.position.z = 1000
+        camera.position.z = 200
         scene = new (THREE.Scene)
         particles = new Array
         PI2 = Math.PI * 2
 
-        program = (context) ->
-          context.beginPath()
-          context.arc 0, 0, 0.5, 0, PI2, true
-          context.fill()
-          return
 
-        material =  new THREE.SpriteMaterial( { color: 0xff0040, program: program } )
+        material =  new THREE.SpriteMaterial({ 
+          color: 0xff0040
+          program: (context) ->
+            console.log "context", context
+            context.beginPath()
+            context.arc 0, 0, 0.5, 0, PI2, true
+            context.fill()
+            return
+        })
 
+        console.log "MATERIAL", material
         i = 0
         ix = 0
         while ix < AMOUNTX
