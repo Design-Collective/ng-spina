@@ -7,7 +7,6 @@ Spina CMS based system.
 We've updated the migrations for this project, starting from scratch. You can essentially run:
 
 `$ bundle install`
-
 `$ bundle exec rake db:reset`
 `$ bundle exec rake db:migrate
 
@@ -15,7 +14,7 @@ We've updated the migrations for this project, starting from scratch. You can es
 
 For every Spina plugin installed, we'll need to make sure that the migrations are properly generated. Each may have a separate installation procedure. Please review the docs.
 
-### Test Reviews Plugin
+### Plugin Installation
 
 Run `rails g spina_reviews:install`
 
@@ -54,7 +53,23 @@ Homepage Page Parts
 
 https://www.dropbox.com/s/g8qqhh00ea44f4j/Screenshot%202016-04-01%2022.10.06.png?dl=0
 ## Run the App 
-- `$ gulp serve:fullstack`
+Use foreman to run the app suite
+
+- `$ foreman start`
+
+Its the equivalent of running the following;
+
+```
+mail:        mailcatcher -f
+web:         bundle exec rails s Puma -b 0.0.0.0 -p 3000
+gulp:        gulp serve --gulpfile ./client/gulpfile.js --cwd ./client
+log:         tail -f log/development.log
+
+```
+
+To just run the Client App
+
+- `$ gulp serve`
 
 This should run your rails app and the front end app together and open the browser sync instance proxied so that the back end application data can be retrieved with the same urls. 
 
@@ -64,6 +79,7 @@ Create a virtual host or user powder to run collective.dev on port 3619
 
 ### API Endpoints
 http://collective.dev/api/pages
+
 ### Also uses Resource Factory via Angular Rails Resources
 https://github.com/FineLinePrototyping/angularjs-rails-resource
 

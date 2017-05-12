@@ -14,7 +14,22 @@ angular.module('dcollective').component 'page',
       $log.error('pageComponent: No pageData provided , please provide data in resolve')
       return
 
+    @pageData.heroVideo =
+      # TODO: bind to backend-data / slideData
+      resource: [
+        "#{@pageData.pageParts.heroBackgroundVideoWebm.content}"
+        "#{@pageData.pageParts.heroBackgroundVideoOgv.content}"
+        "#{@pageData.pageParts.heroBackgroundVideo.content}"
+        '*.swf'
+      ]
+      poster: "#{@pageData.pageParts.heroBackgroundVideoPoster.content.file.background.url}"
+      playInfo: {}
+      fullScreen: true
+      muted: true
+      zIndex: '1'
+      pausePlay: true
+
     @pageData.getBg = ()=>
-      if @pageData.hasOwnProperty 'slideData'
-        {'background-image': 'url('+@pageData.slideData.backgroundImage.content.file.background.url+')'}
+      if @pageData.hasOwnProperty 'pageParts'
+        {'background-image': 'url('+@pageData.pageParts.heroBackgroundImage.content.file.background.url+')'}
     @

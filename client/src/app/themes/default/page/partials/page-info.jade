@@ -1,5 +1,5 @@
 nav-menu
 
 md-content
-    v-slide(ng-repeat="slideData in templateData.slides" slide-data="slideData")
+    section-component(ng-repeat="slideData in ::templateData.structures.sections" slide-data="slideData")
     up-next.up-next(next-page='templateData.upNext')

@@ -8,7 +8,7 @@
     "angular-sanitize": "~1.5.3",
     "angular-messages": "~1.5.3",
     "angular-aria": "~1.5.3",
-    "angular-ui-router": "1.0.0-alpha.1",
+    "angular-ui-router": "1.0.0-beta.3",
     "jquery": "~2.1.4",
     "angular-resource": "~1.5.3",
     "angular-material": "~0.11.2",
@@ -17,10 +17,25 @@
     "animate.css": "~3.4.0",
     "angular": "~1.5.3",
     "angularjs-rails-resource": "^2.1.0",
-    "angular-inview": "^1.5.7",
-    "ngFitText": "^4.1.1",
+    "angular-inview": "^2.1.0",
+    "ngFitText": "^4.2.1",
     "angular-scroll": "^1.0.0",
-    "ngMeta": "^0.3.7"
+    "ngMeta": "^0.3.7",
+    "angular-vidbg": "angular-video-background#^0.0.12",
+    "angular-threejs": "git://github.com/Design-Collective/angular-threejs.git",
+    "threejs": "*",
+    "gsap": "^1.19.1"
+  },
+  "overrides": {
+    "threejs": {
+      "main": [
+        "build/three.min.js",
+        "examples/js/renderers/CanvasRenderer.js",
+        "examples/js/renderers/Projector.js",
+        "examples/js/renderers/CSS3DRenderer.js",
+        "examples/js/libs/stats.min.js"
+      ]
+    }
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3",

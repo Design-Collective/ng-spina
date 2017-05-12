@@ -10,5 +10,5 @@ div.toolbar(layout='row')
         ul.menu
             li.menu-item(ng-repeat='item in ::$ctrl.menuItems')
                 a(ng-href='{{ item.slug }}')
-                    p.title {{ item.title }}
-                    p.small-title {{ item.subTitle.attributes.content }}
+                    p.title {{ item.title}}
+                    p.small-title {{ item.subTitle }}

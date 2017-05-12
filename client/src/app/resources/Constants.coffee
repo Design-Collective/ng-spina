@@ -6,8 +6,8 @@ angular.module('dcollective').factory 'Constants', ['RailsResource','$q','$timeo
 
     #TODO: Change url !!!
     @configure
-      url: 'http://angular.codeforges.com'
-      name: ''
+      url: 'api/constants'
+      name: 'constants'
 
     @init: ()=>
 

@@ -1,0 +1,11 @@
+.filters
+  %span{data: {dropdown: true}}
+    = link_to spina.new_admin_case_study_path, class: 'button button-primary' do
+      = icon('plus')
+      New Case Study
+.dd#pages_list
+  - if @case_studies.any?
+    %ol.dd-list
+      = render partial: 'case_study', collection: @case_studies
+  - else
+    %em No case studies yet

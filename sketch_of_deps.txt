@@ -1,0 +1,13 @@
+Jquery
+Sizzle.js
+Bootstrap Select
+Skrollr
+Greensock/GSAP
+Bootstrap
+Detectizr
+Jquery.parallax / Parallax.js
+WOW
+Owl Carousel
+Fastclick
+Slim-router
+Snap.svg
