@@ -25,8 +25,6 @@ angular.module('dcollective')
         container = element[0]
         viewsize = container.clientWidth
         renderer.setSize viewsize, viewsize
-        console.log("container", container)
-        console.log("RENDER DOM ELEMENT", renderer.domElement)
         # Add canvas element
         domElement = renderer.domElement
         container.append domElement

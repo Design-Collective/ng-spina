@@ -51,7 +51,7 @@ gem 'friendly_id', github: 'norman/friendly_id', branch: 'master'
 gem 'prerender_rails'
 gem 'fog'
 gem 'attr_bitwise'
-gem 'jazz_fingers', github: 'plribeiro3000/jazz_fingers', branch: 'master'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -79,8 +79,12 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
+  gem 'jazz_fingers', github: 'plribeiro3000/jazz_fingers', branch: 'master'
+  
   gem 'binding_of_caller'
   gem "better_errors"
+  gem 'awesome_print', require:"ap"
+
   # deploy
   gem 'capistrano'
   gem 'capistrano-rails'

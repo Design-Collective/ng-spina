@@ -26,9 +26,9 @@ Here is an example of this file
 ```json
 {
   "constants": {
-    "instaAccessToken": "**************",
+    "instaAccessToken": "*******************",
     "instaClientId": "*******************",
-    "instaSecret": "*****************"
+    "instaSecret": "*******************"
   }
 }
 ```
@@ -53,6 +53,7 @@ them to build folder
 
 #### App structure
 The application is written in a component based manner and the time this readme was writen has used latest Angular 1.5  version.
+
 To keep the app updated and match it to Angular2 $scope is 99% avoided as well as no controllers are used instead we are using 1.5 introduced feature `component`.
 
 ##### Routing has no templateUrls or controller calls , instead we are using so called `view components`

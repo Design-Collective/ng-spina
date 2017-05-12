@@ -15,6 +15,6 @@ angular.module('dcollective').component('threeJs',
     @canvasHeight = 400
     @dofillcontainer = true
     @scale = 1
-    @materialType = 'canvas-particles-waves'
+    @materialType = 'torus-knot-geometry'
     @
 )

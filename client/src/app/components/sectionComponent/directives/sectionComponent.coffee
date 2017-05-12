@@ -67,12 +67,14 @@ angular.module('dcollective').directive('sectionComponent',['$compile', '$timeou
         
 
     #Compile defined small widget directive and append to view
-    if typeof scope.$ctrl.slideData.structureParts.extraWidget != 'undefined'
+    $extraWidget = scope.$ctrl.slideData.structureParts.extraWidget
 
-      if scope.$ctrl.slideData.structureParts.extraWidget.widgetData
-        directive = '<' + scope.$ctrl.slideData.structureParts.extraWidget.widgetName + ' widget-data="$ctrl.slideData.structureParts.extraWidget.widgetData" >'
+    if typeof $extraWidget != 'undefined'
+
+      if $extraWidget.widgetData
+        directive = '<' + $extraWidget.widgetName + ' widget-data="$ctrl.slideData.structureParts.extraWidget.widgetData" >'
       else
-        directive = '<' + scope.$ctrl.slideData.structureParts.extraWidget.widgetName + '>'
+        directive = '<' +$extraWidget.widgetName + '>'
 
       widget = TemplateCompiler.getCompiledDirective directive, scope
       TemplateCompiler.inject  '.small-widget-container' , widget

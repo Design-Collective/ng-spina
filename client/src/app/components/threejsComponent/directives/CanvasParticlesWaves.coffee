@@ -1,7 +1,7 @@
 'use strict'
 ###*
 # @ngdoc directive
-# @name dcollective.directive:threjsComponent
+# @name dcollective.directive:threejsComponent
 # @description
 # # threejsComponent
 ###
@@ -41,7 +41,7 @@ angular.module('dcollective')
         PI2 = Math.PI * 2
 
 
-        material =  new THREE.SpriteMaterial({ 
+        material =  new THREE.SpriteMaterial({
           color: 0xff0040
           program: (context) ->
             console.log "context", context
